@@ -1,0 +1,354 @@
+/* .data,
+.data * {
+  border: 3px solid crimson;
+}
+
+*/
+.data{
+  width: 60%;
+}
+.atp >input{
+  margin: 0 !important;
+  width: fit-content !important;
+  
+  padding: 0 !important;
+}
+.atp{
+  flex:0.5;
+  border: 1px solid black;
+  padding: 5px 9px;
+  display: flex !important;
+  gap: 7px;
+  border-radius: 7px;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.acc-type{
+gap: 15px;
+  display: flex;
+  /* background: red; */
+  align-items: center;
+  justify-content: space-between;
+}
+#SpSignIn .left {
+  width: 30%;
+  overflow: hidden;
+  display: flex;
+align-items: center;
+text-transform: capitalize !important;
+justify-content: center;
+padding: 10vh 0;
+border-radius: 8px;
+background: #fff;
+flex-direction: column;
+  /* padding-top: 5vh; */
+  
+  gap: 25px;
+  /* border: 5px solid lime; */
+
+  /* background-color: var(--sup-lft); */
+}
+
+.spUp .left img {
+  width: 100%;
+}
+#SpSignIn .left #w-ico {  
+font-size: 3rem !important;
+}
+#SpSignIn .left span{
+  display: flex;gap: 5px;
+  align-items: center;}
+#SpSignIn .left .w-pp {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  font-size: 1.7rem;
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+#SpSignIn .left {
+
+}
+#SpSignIn .left img {
+  /* width: 80%; */
+}
+
+
+
+#SpSignIn .right form {
+  height: fit-content;
+  max-height: 70vh;
+  padding-right: 15px;
+}
+
+.img1{
+  object-fit: fill;
+  height: 800px;
+  width: 1050px;
+}
+
+#SpSignIn .right {
+  position: absolute;
+  background: gray;
+  right: 80px;
+  flex-shrink: 0 !important;
+  min-width: 60%;
+  flex-shrink: 0 !important;
+  border-radius: 1.2rem;
+  /* min-height: 5vh; */
+  height: 95% !important;
+  overflow: hidden;
+  /* overflow: scroll; */
+  place-items: center;
+}
+
+#SpSignIn .right .data {
+  display: flex;
+  /* width: 84%; */
+  min-width: 400px;
+  flex-direction: column;
+  gap: 13px;
+  color: var(--color2d) !important;
+}
+
+#SpSignIn header {
+  font-size: 1.7rem !important;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  /* margin-bottom: 25px; */
+}
+
+#SpSignIn #logo {
+  font-size: 3rem !important;
+}
+
+/* #SpSignIn {
+  background: var(--db2);
+} */
+
+
+#SpSignIn h1 {
+  font-size: 2.5rem;
+  font-weight: 400 !important;
+  font-family: var(--font4) !important;
+  color: #252525;
+}
+
+#SpSignIn h2 >*{
+  color: rgb(88, 171, 254);
+}
+#SpSignIn h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  font-weight: 400 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
+}
+
+#SpSignIn h3 {
+  font-size: 0.9rem;
+  margin-bottom: 7px;
+  font-weight: 500 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
+}
+
+.form-s{
+  margin-top: 2rem;
+}
+
+.btn-signin{
+  margin-top: 1rem;
+  background: #000;
+  color: #fff;
+  width: 100%;
+  padding: 7.5px 12px;
+  border-radius: 8px;
+}
+
+#other-s-in{
+  margin-top: 1rem;
+  padding: 7.5px 12px;
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+}
+
+#other-s-in button{
+  padding-left: 10px;
+  font-weight: 500;
+  color: #000;
+}
+
+#SpSignIn small {
+width: 100%;
+  font-size: 0.9rem;
+  margin-bottom: 7px;
+  font-weight: 500 !important;
+  font-family: var(--font4) !important;
+  color: #252525 !important;
+  padding: 7.5px !important;
+}
+
+#SpSignIn input,
+.otp input {
+  font-size: 1.05rem;
+  /* background-color: var(--db); */
+  padding: 13px 25px;
+  width: 100%;
+  border: 1.05px solid rgba(0, 0, 0, 0.918);
+  outline: none;
+  border-radius: 8px;
+  margin-bottom: 13px;
+  color: #252525;
+  /* color: var(--color2d); */
+}
+
+#SpSignIn .right .data input::placeholder,
+.otp input::placeholder {
+  color: var(--color2d);
+}
+
+#SpSignIn .right .data form .btn-blk {
+  width: 100%;
+  color: #fff;
+  background: #161616;
+  border-radius: 5px;
+  margin-top: 2rem;
+}
+
+#SpSignIn .right .data .b-box {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+#SpSignIn .right .data .b-box>* {
+  flex: 0.5;
+  font-size: 0.9rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+}
+
+#SpSignIn .right .data .b-box .btn:nth-child(1) {
+  /* background-color: #3b5998; */
+  background-color: #4267b2;
+  color: var(--color2d);
+}
+
+#SpSignIn .right .data .b-box .btn:nth-child(2) {
+  /* background-color: #3b5998; */
+  background-color: #00b9ff;
+  color: var(--color2d);
+}
+
+#SpSignIn .right .data p {
+  margin-top: 15px;
+  display: flex;
+  gap: 5px;
+}
+
+#SpSignIn .right .data .gray {
+  color: var(--gray);
+  /* width: 60% !important; */
+  flex: 1 !important;
+}
+
+@media (min-width: 1100px) {
+  #SpSignIn .left {
+    width: 39% !important;
+  }
+  #SpSignIn .right{
+    min-width: 20%;
+    max-height: 80%;
+  }
+  #SpSignIn .right {
+    width: 50%;
+  }
+}
+
+
+@media only screen and (max-width: 850px) {
+ .right {
+    display: none;
+  }
+
+  #SpSignIn .left{
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 650px) {
+  #SpSignIn .b-box {
+    flex-direction: column;
+  }
+  #SpSignIn .left{
+    width: 100% !important;
+  }
+
+  #SpSignIn .data {
+    width: 80% !important;
+  }
+
+  #SpSignIn .b-box>* {
+    width: 100%;
+  }
+}
+
+#SpSignIn a {
+  text-decoration: underline;
+}
+
+#test-btn {
+  margin: 0;
+}
+#SpSignIn {
+  height: auto;
+  width: 100vw !important;
+  box-shadow: 0 0 50px 1px rgba(45, 45, 45, 0.316);
+  padding: 5vh 0 !important;
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  /* background-color: var(--db2); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0 !important;
+  /* overflow: hidden; */
+  /* justify-content: space-between; */
+}
+
+#mcd {
+  width: 100vw;
+  /* height: auto;
+  background: var(--db2);
+  display: grid;
+  place-items: center;
+  padding: 5vw 5vw; */
+}#o-g{
+  font-size: 1.5rem !important;
+  color: #161616 !important;
+}
+
+.last-p{
+  text-align: center;
+  font-size: 12px;
+}
+.last-p a{
+  font-weight: 500;
+}
+.last-p a:hover{
+  color: burlywood;;
+}

@@ -1,0 +1,57 @@
+#dash-cpn {
+    padding: 35px;
+    background: #eee;
+    max-height: 100dvh;
+    overflow-y: scroll;
+}
+
+#dash-cpn #of-g {
+    /* height: 100vh; */
+}
+
+#dash-cpn .t-title {
+    background: rgb(255, 255, 255);
+}
+
+#dash-site .t-title {
+    background: #fff;
+    padding-top: 35px;
+
+}
+
+#dash-site #ds3 .work-dia {
+    display: grid;
+    place-items: center;
+}
+
+#dash-site #ds3 img {
+    width: 80%;
+}
+
+#dash-site {
+    padding: 35px;
+    height: 100vh;
+    overflow-y: scroll;
+    background: #eee;
+}
+
+#dash-site #comp {
+    justify-content: space-around;
+    padding: 7.5vh 35px;
+    background: #fff;
+    align-items: flex-start;
+}
+
+#dash-site p {
+    background: #fff;
+    padding: 15px 35px;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+#gr {
+    height: 50px;
+    width: 100%;
+    background: #eee;
+}

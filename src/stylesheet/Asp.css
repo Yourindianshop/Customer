@@ -1,0 +1,59 @@
+.nmar{
+    margin: 0 !important;
+}
+.kd-pl{
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.225);
+}
+.mll {
+    flex: 0.5;
+    /* justify-content: center; */
+}
+.mll img{
+    min-height: 300px;
+    max-width: 80%;
+    width: 75%;
+
+}
+.ml2{
+    flex: 0.6;
+}
+.ngp{
+    gap: 0;
+}
+.asp-step{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row !important;
+
+}
+.asp-grid{
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.asp-c p{
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.asp-c small{
+    text-transform: capitalize;
+    font-size: 1.1rem;
+}
+.asp-c {}
+.asp-c{
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+}
+.npm{
+   padding: 7px 20px;
+    display: grid;
+    place-items: center;
+    color: #252525;
+    font-size: 1.5rem;
+    background: #fff;
+    border-radius: 50%;
+}

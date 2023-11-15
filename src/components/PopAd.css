@@ -1,0 +1,88 @@
+.popup-ads {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1111111;
+    width: 400px;
+    background-color: var(--blue);
+    color: #fff;
+    /* Text color */
+    padding: 25px 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    /* Choose an appropriate Indian-themed font */
+}
+
+/* #wts {
+
+    background: var(--blue2) !important;
+    padding: 35px !important;
+    border-radius: 50% !important;
+} */
+
+/* #wts>* {
+    color: #000 !important;
+    z-index: 1111111;
+    position: fixed;
+    right: 15px;
+    font-size: 2rem;
+    bottom: 15px;
+
+}
+
+*/
+
+.popup-content {
+    /* text-align: center; */
+}
+
+.popup-ads h2 {
+    font-size: 1.7rem;
+    /* background: var(--org); */
+    margin-bottom: 10px;
+}
+
+.popup-ads p {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.view-more-button:hover {
+    background: rgb(225, 115, 19);
+}
+
+
+.close-button:hover {
+    background-color: #aa001f;
+}
+
+.btn-v-o {
+
+    background: var(--org);
+    color: #fff;
+cursor: pointer;
+}
+
+.btn-v-r {
+    background: crimson;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-v-o,
+
+.btn-v-r {
+    font-size: 0.8rem;
+    padding: 8px 22px !important;
+}
+.invis {
+    visibility: hidden;
+    /* transition: all 0.3s ease-in-out; */
+
+}

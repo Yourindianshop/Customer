@@ -1,0 +1,49 @@
+/* DispatchRequestForm.css */
+/* #dash-dreq .dispatch-request-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+#dash-dreq {
+    padding: 35px;
+    height: 100dvh;
+    max-height: 100dvh;
+    overflow-y: scroll;
+}
+
+#dash-dreq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#dash-dreq .form-group {
+    margin-bottom: 15px;
+}
+
+#dash-dreq input[type="text"],
+#dash-dreq input[type="email"],
+#dash-dreq input[type="tel"],
+#dash-dreq select,
+#dash-dreq button,
+#dash-dreq label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+#dash-dreq select {
+    appearance: none;
+}
+
+#dash-dreq label {
+    font-weight: bold;
+}

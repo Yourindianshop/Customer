@@ -1,0 +1,56 @@
+/* AssistedPurchaseForm.css */
+/* .assisted-purchase-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+} */
+#dash-ap {
+    padding: 35px;
+}
+
+#dash-ap h2 {
+    font-size: 2rem;
+    text-align: center;
+    font-family: var(--font6) !important;
+    margin-bottom: 20px;
+}
+
+#dash-ap .form-group {
+    margin-bottom: 15px;
+}
+
+#dash-ap input[type="text"],
+#dash-ap input[type="email"],
+#dash-ap input[type="tel"],
+#dash-ap input[type="url"],
+#dash-ap textarea,
+#dash-ap button,
+#dash-ap label {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 5px;
+}
+
+
+#dash-ap label {
+    font-weight: bold;
+}
+
+/* #dash-ap button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#dash-ap button:hover {
+    background-color: #0056b3;
+} */

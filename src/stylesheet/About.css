@@ -1,0 +1,252 @@
+#ab-sec-title h1 {
+  font-size: 3rem;
+  color: #fff;
+
+  font-family: var(--font3) !important;
+  text-shadow: 1px 1px 5px #000;
+}
+#dash-site h1 {
+  padding: 0 35px;
+}
+#ab-sec-title > div {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem !important;
+  gap: 9px;
+  text-shadow: 1px 1px 5px #000;
+}
+.sttt {
+  width: 100vw !important;
+}
+#ab-sec-title {
+  height: 50dvh;
+  background: linear-gradient(to left, white),
+    url("../../public/imgs/home1-section-4.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10vh 10vw;
+}
+
+#vidd {
+  padding: 10vh 10vw;
+}
+#ab-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10vh;
+  min-height: 50vh;
+  background-image: url("../../public/imgs/home1-rev-3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  font-size: 3rem;
+  font-family: var(--font3);
+}
+#abt-sec > * {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  gap: 25px;
+}
+#abt-sec {
+  display: flex;
+  width: 100%;
+  gap: 5vw;
+  padding: 10vh 5vw;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+.abt-l {
+  justify-content: space-between;
+}
+.abt-l {
+  font-size: 2rem;
+  font-family: var(--font3) !important;
+  font-weight: 600 !important;
+  text-align: center;
+  margin-top: 5rem;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 98, 26, 1) 0%,
+    rgba(242, 226, 233, 1) 43%,
+    rgba(238, 227, 224, 1) 59%,
+    rgba(166, 237, 63, 1) 100%
+  ) !important;
+}
+.abt-l .btn {
+  width: fit-content;
+}
+.img-about {
+  width: 100%;
+}
+
+.div-1 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 8rem;
+  font-size: 1.1rem;
+}
+
+.div-2 {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-right: 8rem;
+}
+.div-3 {
+  display: flex;
+  width: 50%;
+  margin: 25px;
+}
+.head-1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.head-2 {
+  font-size: 3rem !important;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.about-button {
+  padding: 11px !important;
+  background-color: var(--blue) !important;
+  border-radius: 10px;
+  color: #fff !important;
+}
+.works {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  margin: 0 4rem;
+  flex-wrap: wrap;
+  /* gap: 2px; */
+}
+
+@media (max-width: 600px) {
+  .about-s{
+    margin-top: 3rem;
+  }
+}
+.work-box {
+  width: 350px;
+  margin-bottom: 1rem;
+  background: #edfaff;
+  border-radius: 2rem;
+}
+
+.footer {
+  /* background: linear-gradient(
+    90deg,
+    rgba(232, 98, 26, 1) 0%,
+    rgba(242, 226, 233, 1) 43%,
+    rgba(238, 227, 224, 1) 59%,
+    rgba(166, 237, 63, 1) 100%
+  ) !important; */
+  /* display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("https://forwardparcel.com/assets/fp/images/hero/footer.svg");
+  width: 100%;
+  margin: 5rem; */
+  clip-path: polygon(0 0, 100% 31%, 100% 100%, 0% 100%);
+  background-color: #a9e1f7;
+}
+
+.footer-text {
+  /* clip-path: circle(45.7% at 81% 92%);
+  background-color: red; */
+
+  background-size: cover; /* Adjust as needed */
+  background-position: center; /* Adjust as needed */
+  color: black;
+  font-size: 2rem;
+  font-family: var(--font3) !important;
+  font-weight: bold;
+  text-align: center;
+  /* margin-top: ; */
+  padding: 4rem;
+}
+
+@media only screen and (min-width: 601px) {
+  .div-2 {
+    width: 100%;
+  }
+  .head-1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .work-box {
+    width: calc(25% - 2rem);
+    /* padding: 2px; */
+    padding: 2rem;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .work-box {
+    width: calc(33.33% - 2rem);
+  }
+  .div-2 {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  /* Adjustments for smaller screens */
+  .div-1 {
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 3rem;
+  }
+  .abt-l {
+    font-size: 1.5rem;
+  }
+  .div-2 {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 4rem;
+  }
+
+  .div-3 {
+    display: flex;
+    width: 100%;
+    margin: 5px;
+  }
+
+  .head-1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .work-box {
+    width: calc(50% - 2rem);
+    padding: 2rem;
+  }
+
+  .abt-l {
+    font-size: 1.2rem;
+  }
+
+  .footer-text {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  /* Adjustments for screens with a width greater than 600px */
+  .div-1 {
+    flex-direction: row;
+  }
+}

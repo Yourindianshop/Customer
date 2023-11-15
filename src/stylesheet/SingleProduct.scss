@@ -1,0 +1,138 @@
+/* SingleProduct.css */
+
+/* Default styles for large screens */
+#single-product {
+  display: flex;
+  justify-content: space-between;
+  padding: 5vh 35px;
+  gap: 50px;
+  margin: 35px;
+  background: #fff;
+  width: 95%;
+}
+
+#single-product .product-images {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+#single-product .big-image {
+  width: 100%;
+  min-width: 300px;
+  overflow: hidden;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+  border: 1px solid #ddd;
+}
+
+#single-product .big-image img {
+  width: 100% !important;
+position: absolute;
+// height: 100%;
+}
+
+#single-product .small-images {
+  margin-top: 20px;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+#single-product .small-images img {
+  width: 30%;
+  height: auto;
+  border: 1px solid #ddd;
+  padding: 5px;
+  &:hover {
+    border-color: #333;
+  }
+}
+
+#single-product .product-details {
+  flex: 1;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+#single-product h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-family: var(--font6);
+  font-weight: 500;
+}
+
+#single-product .price {
+  font-size: 1.7rem;
+  font-family: var(--font4);
+  font-weight: 500;
+  color: var(--org);
+}
+
+#single-product .description {
+  font-size: 1.1rem;
+}
+
+#single-product .quantity-counter {
+  /* Add your quantity counter styles here */
+}
+
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  #single-product {
+    // width: 100%;
+    // overflow-x: hidden;
+    flex-direction: column;
+    align-items: center;
+    // width: 98%;
+  }
+
+  #single-product .big-image {
+    
+    min-width: auto;
+  }
+
+  #single-product .small-images {
+    flex-direction: row;
+    justify-content: center;
+  }
+#single-product .big-image img{
+  position: relative;
+}
+  #single-product .small-images img {
+    // max-width: 150px;
+    min-width: 70px;
+  }
+  
+#single-product .product-details {
+    flex-direction: column-reverse;
+    width: 100%;
+}
+}
+#pd-t{width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.product-details .row{
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.qt-btn{
+    padding: 12.5px !important;
+}
+.qunt{
+    padding: 12.5px;
+}.quantity-counter{
+    background-color: #f0f0f0;
+}

@@ -1,0 +1,51 @@
+.btn{
+    cursor: pointer;
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .btn-o{
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+   .img1{
+    width: 200px !important;
+   }
+}
+
+@media (min-width: 1100px) {
+    #SpSignIn .left {
+      width: 39% !important;
+    }
+    #SpSignIn .right{
+      min-width: 20%;
+      max-height: 80%;
+    }
+    #SpSignIn .right {
+      width: 50%;
+    }
+  }
+
+
+.right {
+    position: absolute;
+    background: gray;
+    right: 80px;
+    flex-shrink: 0 !important;
+    min-width: 60%;
+    flex-shrink: 0 !important;
+    border-radius: 1.2rem;
+    /* min-height: 5vh; */
+    height: 90% !important;
+    overflow: hidden;
+    /* overflow: scroll; */
+    place-items: center;
+}
+
+.right img{
+    height: 100%;
+}

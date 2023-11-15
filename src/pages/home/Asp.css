@@ -1,0 +1,47 @@
+.client-sliderr .client-slide-trackk {
+    -webkit-animation: scroll 25s linear infinite;
+    animation: scroll 25s linear infinite;
+    display: -webkit-box;
+    display: flex;
+    gap: 35px;
+    width: calc(500px * 6);
+
+}
+.assistant {
+    margin-top: 4rem;
+    padding: 20px 10px;
+    height: fit-content;
+    background: white;
+    border: 1px solid grey;
+
+}
+
+.assistant-h{
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.assistant-img{
+    height: 450px;
+}
+.client-slide {
+    height: 20vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background: #009378;
+    justify-content: space-between;
+}
+
+.client-sliderr {
+    margin-top: 4rem;
+    height: 300px;
+}
+
+.btn-shop{
+    margin-top: 1rem;
+    padding: 10px;
+    background: var(--blue);
+    border-radius: 8px;
+}

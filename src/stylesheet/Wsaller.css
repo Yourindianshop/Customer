@@ -1,0 +1,160 @@
+.ar-1 > * {
+  height: 100%;
+}
+
+.ar-1 {
+  position: absolute !important;
+  top: -50px;
+  left: 60%;
+  height: 210px;
+  mix-blend-mode: multiply;
+}
+.ws-l {
+  position: relative !important;
+}
+.ar-2 {
+  left: 30%;
+  mix-blend-mode: multiply;
+}
+.wsl-qr {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.wsl-title {
+  font-size: 4.5rem;
+  font-family: var(--font6);
+  text-transform: capitalize;
+  font-weight: 400;
+  color: var(--blue) !important;
+}
+
+.marquee {
+  padding: 0.5rem;
+}
+
+.box-out {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  border-radius: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.box {
+  background: linear-gradient(to right, #87ceeb, #4169e1);
+  border-radius: 2rem;
+  /* width: 100%;
+  height: 100vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 77%;
+  padding: 2rem;
+  justify-content: space-between;
+  /* gap: 10rem; */
+  flex-wrap: wrap;
+}
+
+.circle {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ship {
+  border-radius: 50%;
+  height: 23rem;
+  width: 23rem;
+}
+
+.head {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.shop {
+  color: white;
+}
+
+.btnn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.btn-1 {
+  background: #fff;
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  border-radius: 0.5rem;
+  font: bold;
+}
+
+.chat {
+  height: 2rem;
+  width: 2rem;
+  color: #fff;
+}
+
+.word {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .circle {
+    height: 15rem;
+    width: 15rem;
+    margin-top: 2rem;
+  }
+  .ship {
+    height: 13rem;
+    width: 13rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .box {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .circle {
+    height: 15rem;
+    width: 15rem;
+    margin-top: 2rem;
+  }
+
+  .ship {
+    height: 13rem;
+    width: 13rem;
+  }
+
+  .btnn {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+}

@@ -1,0 +1,40 @@
+/* Slider Container */
+.slider-container {
+  position: relative;
+  height: 100%;
+}
+
+/* Slide */
+.slide {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 10px; */
+  background-size: cover;
+  background-position: center;
+  margin-top: 5rem;
+}
+
+/* Arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 45px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.left-arrow {
+  left: 32px;
+}
+
+.right-arrow {
+  right: 32px;
+}
+
+@media only screen and (max-width: 600px) {
+  .slide {
+    margin-top: 5.2rem;
+  }
+}

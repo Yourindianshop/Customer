@@ -1,0 +1,68 @@
+#dash-calc {
+  overflow-y: scroll;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: 220vh 100vh;
+  background-image: url("../../../public/home/calculator.png");
+}
+
+#dash-calc .sh-r .MuiFormControl-root {
+  width: 25% !important;
+}
+#prc {
+  font-family: var(--font6);
+  font-weight: 500;
+  font-size: 1.7rem;
+  margin-top: 5px;
+  color: #1e1e1e;
+}
+.map-cal {
+  width: 650px;
+}
+#dash-calc .btn {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: var(--font6);
+  padding: 12.5px 38px;
+  /* background: red; */
+  transition: all ease-in-out 0.25s;
+  cursor: pointer;
+}
+
+#dash-calc .btn-b {
+  color: #fff;
+  background: var(--blue);
+}
+@media (max-width: 400px) {
+   
+    
+}
+#dash-calc .btn-o {
+  color: #fff;
+  background: var(--org);
+}
+
+#dash-calc .btn-b:hover {
+  background: var(--org);
+}
+
+#dash-calc .btn-o:hover {
+  background: var(--blue);
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.styled-table th {
+  background-color: #8fedff;
+}

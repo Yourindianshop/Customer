@@ -1,0 +1,136 @@
+.dashboard-profile {
+    /* background: url('https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/home1-rev-3.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 35px;
+    max-height: 100dvh;
+    height: 100dvh;
+    overflow-y: scroll;
+    background: gray;
+    color: black;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 5px; */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.top{
+    padding-top: 2rem;
+    background: #fff;
+    margin: 0 30%;
+    border-radius: 8px 8px 0 0;
+}
+
+.name{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.img-profile{
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .top{
+        margin: 0 !important;
+    }
+    #pfl{
+        margin: 0 !important;
+    }
+    .detail-item {
+        padding: 15px;
+    }
+}
+
+
+.profile-details{
+    
+    margin: 50px auto;
+}
+
+.img-profile{
+    border-radius: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+#pfl {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    background: #fff;
+    margin: 0 30%;
+    border-radius: 0 0 8px 8px;
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.edit-button,
+.save-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-button:hover,
+.save-button:hover {
+    background-color: #0056b3;
+}
+
+.profile-details .detail-item {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black;
+}
+
+.detail-label {
+    width: fit-content;
+    font-weight: bold;
+}
+
+.detail-value {
+    margin-left: 10px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.copy-button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    width: fit-content;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.copy-button:hover {
+    background-color: #1e7e34;
+}

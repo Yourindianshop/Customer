@@ -1,0 +1,276 @@
+/* PlanCard.css */
+#plan-cards {
+  display: flex;
+  /* padding: 10vh 10vw; */
+  gap: 35px;
+  background: #eee;
+  flex-wrap: wrap;
+  height: auto;
+  /* min-height: 100dvh; */
+  /* overflow-y: scroll; */
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 8rem;
+}
+
+#pl-ol {
+  border-radius: 25px;
+  position: relative;
+  /* min-width: 330px; */
+  width: 30%;
+  transition: max-height 0.3s ease;
+  color: #fff;
+  border: 1px solid rgba(3, 3, 3, 0.179);
+  box-shadow: 0 0 25px 1px rgba(26, 26, 26, 0.2);
+  /* background-color: #fff; */
+  /* Adjust this value to control the initial card height */
+}
+
+.plan-card {
+  /* min-width: 300px; */
+  /* max-width: 375px; */
+  padding: 35px 25px;
+  position: relative;
+  display: flex;
+  height: 100%;
+  border-radius: 25px;
+  justify-content: space-between;
+  flex-direction: column;
+}
+#pl-ol .btn {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 8px;
+  background: rgb(81, 3, 159) !important;
+}
+/* #pl-ol:nth-child(2) .btn {
+    background-color: var(--org);
+    border: 2px solid var(--org);
+
+}
+
+
+#pl-ol:nth-child(2) .btn:hover {
+    background-color: var(--blue);
+
+} */
+
+.btn-b {
+  background: #fff;
+}
+
+#pl-ol:nth-child(2) {
+  top: -25px;
+}
+#pl-ol:nth-child(2) .plan-card {
+  /* background-image: url('https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/home1-el-3.png'); */
+  /* background-position: right 100px; */
+  /* background-repeat: no-repeat; */
+  /* background: rgba(82, 19, 107, 0.273) ; */
+  background: #fff;
+  color: #000;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgb(81, 3, 159);
+}
+
+#pl-ol:nth-child(1) .plan-card {
+  /* background: linear-gradient(to left, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    url('../../public/imgs/in-bz.jpg') !important;
+    background-position: 0 100% !important;
+    background-repeat: repeat-x !important;
+    background-size: 460px !important; */
+  /* background: rgba(34, 13, 49, 0.341) ; */
+  /* background: rgb(255, 168, 106); */
+  background: #fff;
+  color: #000;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgb(81, 3, 159);
+}
+
+#pl-ol:nth-child(3) .plan-card {
+  /* background: #eee;
+    background:linear-gradient(to left, rgba(255, 255, 255, 0.80), rgba(255, 255, 255, 0.80)),
+    url('https://media.istockphoto.com/id/1281211874/vector/indian-famous-monuments.jpg?s=170667a&w=0&k=20&c=AhJ6iQ7VJiuKXbCnuOP2TxMLgS-BL2fVFH16SVNI4Lc=');
+    background-size: 700px !important;
+    background-position: 50% 285px !important;
+    background-repeat: repeat-x; */
+  /* background: rgba(34, 13, 49, 0.164) ; */
+  /* background: rgb(113, 255, 113) ; */
+  background: #fff;
+  backdrop-filter: blur(25px);
+  color: #000;
+  border: 2px solid rgb(81, 3, 159);
+}
+
+#pl-ol:nth-child(2) .plan-name {
+  /* color: #fff; */
+}
+
+#pl-ol:nth-child(2) {
+  /* background: var(--blue); */
+}
+
+#pl-ol:nth-child(2) li {
+  /* background: var(--blue); */
+
+  /* color: #eee; */
+}
+
+.plan-page-title {
+  text-align: left;
+  font-weight: 600;
+  font-size: 3rem;
+  text-shadow: 0 0 3px black;
+  /* -webkit-text-stroke: black 1px; */
+  color: rgb(202, 61, 245);
+  /* font-size:; */
+}
+
+.plan-page-title > * {
+  font-family: var(--font6) !important;
+}
+
+#pc-top {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  margin-bottom: 16px;
+  position: relative;
+  top: 0;
+}
+
+.plan-name {
+  font-size: 0.8rem;
+  font-weight: 500;
+  align-self: center !important;
+  color: rgba(229, 229, 229, 0.852) !important;
+  font-family: var(--font4);
+  /* font-weight: bold; */
+}
+
+.plan-price small {
+  font-size: 1.6rem;
+  text-align: center !important;
+}
+#pl-ol:nth-child(2) > * {
+  color: #252525 !important;
+}
+#pl-ol:nth-child(2) .btn {
+  color: #fff !important;
+}
+.plan-duretion {
+  font-size: 1.6rem;
+  width: 100% !important;
+  /* background: red; */
+  font-weight: 600;
+  text-align: center !important;
+}
+/* #pl-ol:nth-child(1) .plan-duretion:before{
+    content: 'Basic';
+  
+}
+#pl-ol:nth-child(2) .plan-duretion:before{
+    content: 'Pro';
+  
+}
+#pl-ol:nth-child(3) .plan-duretion:before{
+    content: 'Pro Plus';
+  
+} */
+
+.plan-price {
+  display: flex;
+  gap: 3px;
+  font-family: var(--font4);
+  font-weight: 700;
+  font-size: 3.5rem;
+  align-self: center !important;
+  /* background: red; */
+  /* color: var(--org); */
+}
+
+#pc-mid {
+  flex: 1;
+}
+
+#pc-mid ul {
+  margin-top: 1rem;
+  padding-top: 15px;
+  list-style: circle;
+}
+
+button {
+  border: 0;
+  outline: none;
+}
+
+#pc-bot {
+}
+
+#pc-mid ul {
+  list-style: none;
+  padding-left: 20px;
+  margin-bottom: 16px;
+  /* Remove default bullets */
+}
+
+#pc-mid ul li {
+  display: flex;
+  margin: 7.5px 0;
+  position: relative;
+  /* color: #353535; */
+  color: #000;
+  justify-content: center;
+  align-items: center;
+  /* text-align: center !important; */
+}
+#pl-ol:nth-child(2) #pc-mid ul li {
+  color: black;
+}
+
+/* #pc-mid ul li::before {
+    content: "";
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--org);
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: -15px;
+} */
+
+#dp-pl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0vh 5vw;
+  justify-content: space-between;
+  min-height: 100dvh;
+  gap: 2.5vw;
+}
+.plan-bg {
+  background-image: url("../../public/home/plans-bg.png");
+  background-repeat: no-repeat;
+  background-size: 210vh 160vh;
+}
+#dp-pl > * {
+  background: none;
+}
+#dp-pl > center > p {
+  color: rgba(26, 26, 26, 0.899);
+  text-align: left;
+}
+#dp-pl > center {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  width: 30%;
+}
+#pur {
+  color: #252525 !important;
+  text-shadow: none !important;
+}

@@ -1,0 +1,22 @@
+#plan-img {
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .ele {
+    display: none !important;
+  }
+  #plan-img {
+    display: none !important;
+  }
+}
+
+.plan-h {
+  font-size: 50px;
+  font-weight: 700;
+  padding-top: 10rem;
+  width: fit-content;
+  margin: auto;
+}
