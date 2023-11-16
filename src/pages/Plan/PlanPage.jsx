@@ -5,7 +5,7 @@ import { MyContext } from "../../App";
 
 const PlanPage = ({inBill}) => {
   const [plans,setPlans]=useState([]);
-  const {isLogin}=useContext(MyContext);
+  const {isLogin,setIsFromPlan}=useContext(MyContext);
 
   const loadplans = async ()=>{
     const pl = await fetchreq("GET","plans",{});
@@ -13,6 +13,7 @@ const PlanPage = ({inBill}) => {
   }
   useEffect(()=>{
     loadplans();
+    setIsFromPlan(false);
   },[])
   return (
     <div>

@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { fetchreq, walletTransaction } from "../Helper/fetch";
 import { Link } from "react-router-dom";
 const Plans = ({ plan, state }) => {
-  const { setPlanId, isLogin, user, wh, setUser } = useContext(MyContext);
+  const { setPlanId, isLogin, user, wh, setUser,setIsFromPlan } = useContext(MyContext);
   const nav = useNavigate();
   const [ispro, setIspro] = useState(false);
   const choseplan = () => {
@@ -14,7 +14,7 @@ const Plans = ({ plan, state }) => {
       duration: plan.duration,
       Price: plan.Price,
       storage: plan.storage
-    }
+    } 
     if(user?.Wallete>=plan?.Price){
       setPlanId(given);
       setTimeout(() => {
@@ -74,9 +74,12 @@ const Plans = ({ plan, state }) => {
           {/* <div className="plan-duretion"></div> */}
         </div>
         {state == 0 && (
-          <Link to="/signUp" className="btn btn-o">
+          <button onClick={()=>{
+            setIsFromPlan(true);
+            nav("/signIn");
+          }} className="btn btn-o">
             Buy Now
-          </Link>
+          </button>
         )}
         <div style={{marginTop: "4rem"}}>
           <ul style={{ padding: "25px"}}>

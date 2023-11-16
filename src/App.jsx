@@ -60,7 +60,7 @@ const App = () => {
   const [isBLogin, setIsBLogin] = useState(false);
   const [applyCoupen,setApplyCoupen]=useState(null); // 1 means redirect from warehouse
   const [saveWarehouse,setSaveWarehouse]=useState(null); // use for coupen
-
+  const [isFromPlan,setIsFromPlan]=useState(false);
 
 
   return (
@@ -86,7 +86,9 @@ const App = () => {
           applyCoupen,
           setApplyCoupen,
           saveWarehouse,
-          setSaveWarehouse
+          setSaveWarehouse,
+          isFromPlan,
+          setIsFromPlan
         }}
       >
         <Router>
