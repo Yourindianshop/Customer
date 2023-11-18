@@ -40,7 +40,7 @@ const Calc = () => {
   };
 
   useEffect(() => {
-    ship();
+    // ship();
   }, []);
 
   const calculatePrice = () => {

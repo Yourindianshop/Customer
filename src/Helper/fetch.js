@@ -138,7 +138,7 @@ export async function walletTransaction(amount,wid,note,user,setUser,nav){
         return false;
     }else if(amount ==0){
         return true;
-    }else if(!window.confirm(`₹${amount} will deducted from you wallete...`)){
+    }else if(!window.confirm(`₹${amount} will deduct from your wallet...`)){
         return false;
     }else{
         const body2 = {

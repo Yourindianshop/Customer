@@ -15,8 +15,8 @@ const Plans = ({ plan, state }) => {
       Price: plan.Price,
       storage: plan.storage
     } 
+    setPlanId(given);
     if(user?.Wallete>=plan?.Price){
-      setPlanId(given);
       setTimeout(() => {
         nav("/select-warehouse");
       }, 1000);
@@ -24,6 +24,7 @@ const Plans = ({ plan, state }) => {
       alert(
         "You have not Sufficient Amount to buy plan Add Balace to the Wallete..."
       );
+      setIsFromPlan(plan?.Price);
       nav("/Walete");
     }
   };
@@ -83,7 +84,6 @@ const Plans = ({ plan, state }) => {
         )}
         <div style={{marginTop: "4rem"}}>
           <ul style={{ padding: "25px"}}>
-            
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>CONSOLIDATION</span> ₹{plan.consolidation}</li>
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>STORAGE </span>25 DAYS (after 25 days ₹{plan.storage} per item per day)</li>
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>PHOTO</span> {plan.photo} PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹{plan.photoPrice})</li>
@@ -98,7 +98,6 @@ const Plans = ({ plan, state }) => {
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Receive Parcels</span> {plan.detail}</li>
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Set Up a Local Hub for Your Business </span>{plan.detail}</li>
               <li style={{borderBottom: "1px solid grey",padding: "10px"}}><span style={{color: "rgb(81, 3, 159)"}}>Assisted Purchase</span> Actual charges + other charges</li> 
-          
           </ul>
         </div>
         

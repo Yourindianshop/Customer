@@ -31,7 +31,7 @@ const SingleProduct = () => {
   const currentDate = new Date();
   const timeDifference = indianDate.getTime() - currentDate.getTime();
   const dayDifference = (Math.abs(Math.floor(timeDifference / (24 * 60 * 60 * 1000))))
-  const setbyadmin=  2;
+  const setbyadmin=  3;
   // Handle image selection
   const handleImageClick = (image) => {
     setSelectedImage(image);
