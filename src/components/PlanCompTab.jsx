@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./PlanCompTab.css";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -8,12 +7,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Navigation } from "swiper/modules";
 const PlanCompTab = () => {
-
-
-
- const [visible1 , setVisible1] = useState(true);
- const [visible2 , setVisible2] = useState(false);
- const [visible3 , setVisible3] = useState(false);
 
 
   return (
