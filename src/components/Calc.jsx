@@ -134,7 +134,7 @@ const Calc = () => {
     }
   };
 
-  console.log("hiiii",cp);
+ 
 
   const calculatePrices = () => {
     const volumetricWeight = (length * width * height) / 5000;
