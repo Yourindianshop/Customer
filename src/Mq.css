@@ -195,6 +195,9 @@ position: absolute;
   .fl-bx>*{
     width: 100% !important;
   }
+  .fd-title, #sec-head .t-title, #dash-calc .t-title, #offer .t-title, #service .ser-head h1{
+    margin: 3rem 0 !important;
+  }
   .bkl {
     width: 100% !important;
     margin: 0 !important;
