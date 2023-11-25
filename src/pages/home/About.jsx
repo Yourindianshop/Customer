@@ -36,7 +36,7 @@ const About = () => {
             </p>
             <p style={{ marginTop: "5rem" }}></p>
             <div>
-              <button className="about-button">Click here</button>
+              <Link to="/signIn" className="about-button">Click here</Link>
             </div>
           </div>
           <div className="div-3">

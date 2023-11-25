@@ -40,7 +40,7 @@ const Calc = () => {
   };
 
   useEffect(() => {
-    // ship();
+     ship();
   }, []);
 
   const calculatePrice = () => {
@@ -351,19 +351,19 @@ const Calc = () => {
                                 <td>{shipping.NAME}</td>
                                 <td>
                                   {isFirstGreater(volumetriweight, weight)
-                                    ? (
+                                    ? ((
                                         volumetriweight * shipping.PRICE
-                                      ).toFixed(2)
-                                    : (weight * shipping.PRICE).toFixed(2)}
+                                      )/50).toFixed(2)
+                                    : ((weight * shipping.PRICE)/500).toFixed(2)}
                                 </td>
                                 <td>
                                   {isFirstGreater(volumetriweight, weight)
-                                    ? (
+                                    ? ((
                                         volumetriweight *
                                         shipping.PRICE *
                                         0.9
-                                      ).toFixed(2)
-                                    : (weight * shipping.PRICE * 0.9).toFixed(
+                                      )/50).toFixed(2)
+                                    : ((weight * shipping.PRICE * 0.9)/500).toFixed(
                                         2
                                       )}
                                 </td>

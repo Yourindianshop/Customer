@@ -768,7 +768,7 @@ section {
   height: 37vh;
   border-radius: 7px;
   box-shadow: 0 0 12px 1px rgba(60, 43, 70, 0.107);
-
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -814,7 +814,7 @@ section {
 #steps .st-2 {
   margin: 7px 0;
   width: 100%;
-  font-size: 1rem !important;
+  font-size: 0.8rem !important;
   /* font-weight: 500; */
   /* padding: 0 15px; */
   text-transform: uppercase;
@@ -853,14 +853,14 @@ section {
   }
   .s-cd {
     min-height: 300px !important;
-    width: 45% !important;
-    padding: 15px 9px !important;
+    width: 80% !important;
+    padding: 15px !important;
   }
   #steps .st {
     font-size: 1.2rem !important;
   }
   #steps .st-2 {
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }
   .expl {
     font-size: 1rem !important;
@@ -1069,7 +1069,7 @@ section {
   flex-wrap: wrap;
 }
 #lnl > * {
-  width: 27%;
+  width: 31%;
   flex-wrap: wrap;
 }
 #sp-of {
@@ -1577,7 +1577,7 @@ section {
   margin: auto;
   width: fit-content;
   font-size: 3rem;
-  color: rgb(43, 52, 43) !important;
+  color: #fff !important;
 }
 
 .border {
@@ -1612,14 +1612,12 @@ section {
 
   /* justify-content: ; */
 }
-@media (max-width: 600px) {
-}
 #feed-r .swiper {
   background-color: transparent !important;
 }
 
 .fd-cd {
-  overflow: auto;
+  overflow: hidden;
   box-shadow: 0 0 25px 0px rgba(128, 128, 128, 0.591) !important;
 }
 
@@ -1630,6 +1628,7 @@ section {
   /* width: 30%; */
   display: grid;
   place-items: center;
+  gap: 150px;
   /* margin: 0px; */
 }
 #feed-r .swiper-slide #feed-r .swiper-slide-next {
@@ -1690,28 +1689,10 @@ section {
   flex-direction: column;
 }
 
-.mySwiper {
-  overflow: hidden;
-}
-
-.swip {
-  width: 3rem;
-}
-
 .feed-info #blue {
   /* margin-top: -60px !important; */
   /* position: relative; */
   /* top: 0 !important; */
-}
-
-#feed-r .swiper-wrapper > * {
-  width: 100%; /* Set to 100% on small devices */
-}
-
-@media (min-width: 600px) {
-  #feed-r .swiper-wrapper > * {
-    width: 30%; /* Set back to 30% on larger devices */
-  }
 }
 
 .sitara > * {

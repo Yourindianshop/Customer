@@ -854,15 +854,15 @@ section {
     display: none;
 }
   .s-cd {
-  min-height: 300px !important;
-    width: 45% !important;
-    padding: 15px 9px !important;
+    min-height: 300px !important;
+    width: 80% !important;
+    padding: 15px 0px !important;
   }
   #steps .st {
     font-size: 1.2rem !important;
   }
   #steps .st-2{
-    font-size: 0.9rem !important;
+    font-size: 0.8rem !important;
   }.expl{
     font-size: 1rem !important;
   }

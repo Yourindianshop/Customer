@@ -96,7 +96,7 @@ if( window.innerWidth > 1340) {
             section, the customer will have the provision to request the admin
             to add that product to the assisted purchase section.
           </p>
-          <div className="btn btn-b">Explore</div>
+          <Link to="/disp-plan" className="btn btn-b">Explore</Link>
         </div>
         <div className="ws-r mll">
           <img src="./imgs/ML.png" alt="" />
@@ -159,69 +159,69 @@ if( window.innerWidth > 1340) {
         <div class="client-sliderr">
               <div class="client-slide-trackk">
                 <div class="client-slide">
-                  <img className='assistant-img' src="/assisted/001.png"></img>
+                  <img className='assistant-img' src="/Assisted/001.png"></img>
                   <div>
                   <p>Men Suit</p>
                   </div>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/002.png"></img>
+                <img className='assistant-img' src="/Assisted/002.png"></img>
                   <p>T-shirt</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/003.png"></img>
+                <img className='assistant-img' src="/Assisted/003.png"></img>
                   <p>Shoes</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div className="client-slide">
-                <img className='assistant-img' src="/assisted/004.png"></img>
+                <img className='assistant-img' src="/Assisted/004.png"></img>
                   <p>Table</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/005.png"></img>
+                <img className='assistant-img' src="/Assisted/005.png"></img>
                   <p>Ladies Bag</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/006.png"></img>
+                <img className='assistant-img' src="/Assisted/006.png"></img>
                   <p>Life Jacket</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/007.png"></img>
+                <img className='assistant-img' src="/Assisted/007.png"></img>
                   <p>Men Jacket</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/008.png"></img>
+                <img className='assistant-img' src="/Assisted/008.png"></img>
                   <p>Nehru Jacket</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/009.png"></img>
+                <img className='assistant-img' src="/Assisted/009.png"></img>
                   <p>Chair</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/010.png"></img>
+                <img className='assistant-img' src="/Assisted/010.png"></img>
                   <p>Mat</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/011.png"></img>
+                <img className='assistant-img' src="/Assisted/011.png"></img>
                   <p>Swimming Ring</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/012.png"></img>
+                <img className='assistant-img' src="/Assisted/012.png"></img>
                   <p>Jeans</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>
                 <div class="client-slide">
-                <img className='assistant-img' src="/assisted/013.png"></img>
+                <img className='assistant-img' src="/Assisted/013.png"></img>
                   <p>Girl Dress</p>
                   <button className='btn-shop'> Shop Now</button>
                 </div>

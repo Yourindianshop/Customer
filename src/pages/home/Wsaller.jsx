@@ -139,7 +139,7 @@ const Wsaller = () => {
               </div> */}
               <div id="sdsc-ol">
                 {" "}
-                <img src="/home/white0.png" alt="" width={190} />
+                <img src="/ftrd/whole-01.jpeg" alt="" width={ 140} />
               </div>
               {/* <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div> */}
 

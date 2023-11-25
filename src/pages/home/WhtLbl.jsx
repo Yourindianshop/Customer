@@ -110,9 +110,9 @@ if( window.innerWidth > 1340) {
             awards and recognition that you have received. Think of this as your
             elevator pitch to get the reader's attention.
           </p>
-          <button className="head-btn"> 
+          <Link to="/signIn"  className="head-btn"> 
             Contact Us
-          </button>
+          </Link>
           </div>
          
         </div>

@@ -24,7 +24,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Fade from "react-reveal/Fade";
-import SwiperCore, { Pagination, Autoplay } from "swiper/modules";
+import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper/modules";
+import CalculateIcon from '@mui/icons-material/Calculate';
 import CallMadeIcon from "@mui/icons-material/CallMade";
 
 // import Calc from "../../components/Calc";
@@ -269,6 +270,13 @@ const Home = () => {
       message:
         "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
     },
+    {
+      name: "Rishav Jaiswal",
+      stars: 4.5,
+      organization: "CLIENT OF COMPANY",
+      message:
+        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+    },
     // Add more data for other testimonials
   ];
 
@@ -485,44 +493,7 @@ const Home = () => {
                     </Link>
                   </div>
                 </div>
-                <div className="ps">
-                  <div className="ps-l">
-                    <CardGiftcardOutlinedIcon />
-                    {/* <LocalShippingOutlinedIcon /> */}
-                  </div>
-                  <div className="ps-r">
-                    <div className="st wt">Offer Coupons</div>
-                    <div className="s-txt">
-                      WE PROVIDE SEVERAL OFFER COUPONS. ALL YOU HAVE TO DO IS
-                      BROWSE AND APPLY THE COUPON CODE OF YOUR CHOICE IN ORDER
-                      TO REDEEM IT.
-                    </div>
-                    <div className="rm " id="org">
-                      <Link to="/offers" rel="noopener noreferrer">
-                        View Coupons
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="ps">
-                  <div className="ps-l">
-                    <EngineeringOutlinedIcon />
-                  </div>
-                  <div className="ps-r">
-                    <div className="st">BUSINESS PLAN</div>
-                    <div className="s-txt">
-                      WE OFFER A RANGE OF PLANS TO SUIT YOUR NEEDS, FROM BASIC
-                      TO PREMIUM, ENSURING AFFORDABILITY, FLEXIBILITY AND
-                      QUALITY SERVICE.
-                    </div>
-                    <div className="rm " id="org">
-                      <Link to="/disp-plan" rel="noopener noreferrer">
-                        View Plans
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                
                 <div className="ps">
                   <div className="ps-l">
                     <ComputerIcon />
@@ -713,10 +684,10 @@ const Home = () => {
                     <div className="st ss">White Labeling</div>
                     <div className="st-2">
                       <p className="st-p">
-                        White labeling is when a company rebrands and sells a
-                        product or service originally created by another company
-                        under its own name.
+                      White labeling is when a company rebrands and sells a product or service originally created by 
+                      another company under its own name.
                       </p>
+                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/white-labeling" className="btn btn-db">
@@ -747,10 +718,10 @@ const Home = () => {
                     </div>
                     <div className="st-2">
                       <p className="st-p">
-                        When you buy bulk items with us, Our commitment to
-                        providing cost-effective solutions ensures that you get
-                        the most value for your investment.
+                      When you buy bulk items with us,
+                      Our commitment to providing cost-effective solutions ensures that you get the most value for your investment. 
                       </p>
+                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/wholesaler" className="btn btn-db">
@@ -901,9 +872,10 @@ const Home = () => {
             <div className="cal-banner">
               <section id="cal">
                 <div className="cal-head">
-                  <div className="t-title" id="dg">
-                    Shipping Rate Calculator{" "}
-                  </div>
+                <div className="ps-l ps-vs">
+                  <CalculateIcon />
+                <div className="t-title">Shipping Rate Calculator{" "}</div>
+                </div>
                   <Link to="/calc" rel="noopener noreferrer">
                     <div className="btn btn-o">Calculate Now</div>
                   </Link>
@@ -947,11 +919,11 @@ const Home = () => {
                   <div className=" ps-fo">
                     <div className="ps-l ps-vs">
                       <ShoppingCartOutlinedIcon />
-                      <div className="t-title">View Our Offers</div>
+                      <div className="t-title">View Offers</div>
                     </div>
                     <div className="ps-r">
                       <Link to="/offers">
-                        <div className="btn btn-o">View Offers</div>
+                        <div className="btn btn-o">Click here</div>
                       </Link>
                     </div>
                   </div>
@@ -972,37 +944,20 @@ const Home = () => {
             <section id="feed">
               <div id="feed-r" style={{ paddingTop: "3rem" }}>
                 <Swiper
-                  id="fd-scr"
-                  slidesPerView={1} // Set to 3 to fit three reviews on one page
-                  spaceBetween={20} // Adjust as needed
+                  
+                  slidesPerView={value} // Set to 3 to fit three reviews on one page
+                  spaceBetween={10} // Adjust as needed
+                  centeredSlides={true}
                   autoplay={{
                     delay: 3000,
                     disableOnInteraction: false,
                   }}
                   loop={true}
-                  modules={[Autoplay]}
-                  breakpoints={{
-                    // when window width is <= 640px
-                    640: {
-                      slidesPerView: 1,
-                    },
-                    // when window width is <= 768px
-                    768: {
-                      slidesPerView: 1.5,
-                    },
-                    // when window width is <= 992px
-                    992: {
-                      slidesPerView: 2,
-                    },
-                    // when window width is <= 1200px
-                    1200: {
-                      slidesPerView: 2.5,
-                    },
-                  }}
-                  className="mySwiper"
+                  modules={[Autoplay, Pagination, Navigation]}
+                  
                 >
                   {testimonialsData.map((testimonial, index) => (
-                    <SwiperSlide key={index} className="swip">
+                    <SwiperSlide key={index}>
                       <div className="testimonial-card">
                         <div className="testimonial-info">
                           <div className="name">{testimonial.name}</div>
@@ -1033,7 +988,6 @@ const Home = () => {
             </section>
           </Fade>
         </div>
-        {/* <Testimonials /> */}
 
         <div id="scroll-fade11" className="fff-in">
           <Fade bottom when={isVisible3}>
