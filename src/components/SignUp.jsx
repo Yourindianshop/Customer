@@ -5,6 +5,7 @@ import "../stylesheet/SignUp.css";
 import AddCardIcon from "@mui/icons-material/AddCard";
 import { fetchreq } from "../Helper/fetch";
 import emailjs from "@emailjs/browser";
+import axios from "axios";
 
 import { Google, WhatsApp } from "@mui/icons-material";
 const SignUp = () => {
@@ -25,6 +26,7 @@ const SignUp = () => {
   const [State, setState] = useState("");
   const [inputOTP, setInputOTP] = useState("");
   const [code, setCode] = useState(null);
+  const [fetchcontries,setFetchcountries]=useState([]);
   const form = useRef();
   const sendEmail = async (e) => {
     e.preventDefault();
@@ -126,7 +128,56 @@ const SignUp = () => {
     }
     setSubmit("Continue");
   }
+  const getContries = async ()=>{
 
+    const options = { 
+      method: 'GET',
+      url: 'https://referential.p.rapidapi.com/v1/country',
+      params: {
+        fields: 'currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code',
+        limit: '250'
+      },
+      headers: {
+        'X-RapidAPI-Key': '1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4',
+        'X-RapidAPI-Host': 'referential.p.rapidapi.com'
+      }
+    };
+
+    try {
+      const response = await axios.request(options);
+      setFetchcountries(response.data);
+      console.log(response.data)
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const getContryCode = async (cname)=>{
+    const options = {
+      method: 'GET',
+      url: 'https://metropolis-api-phone.p.rapidapi.com/iso',
+      params: {country: cname},
+      headers: {
+        'X-RapidAPI-Key': '1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4',
+        'X-RapidAPI-Host': 'metropolis-api-phone.p.rapidapi.com'
+      }
+    };
+    try {
+      const response = await axios.request(options);
+      if(response.status==404){
+        return false;
+      }else{
+        const countryCallingCode = response?.data["country-calling-code"];
+        return countryCallingCode;
+      }
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  }
+  useEffect(()=>{
+    getContries();
+    // getContryCode("india");
+  },[])
   return (
     <div id="mcd">
       <section id="SpSignIn" className="spUp">
@@ -205,6 +256,11 @@ const SignUp = () => {
                     setPassword2(e.target.value);
                   }}
                 />
+                <h3>Contry</h3>
+                <select >
+                  <option value="-1">Select Country</option>
+                  {fetchcontries.map((e)=><option>  {e.key} - {e.value}</option>)}
+                </select>
                 <h3>Mobile No</h3>
                 <input
                   required
@@ -238,6 +294,11 @@ const SignUp = () => {
               </div>
             )}
           </div>
+          {/* {fetchcontries.map((e)=>{
+                return <div>
+                  <p>{e.value}</p>
+                </div>
+              })} */}
           <div id="verify">
             <form
               style={{ display: "none" }}
@@ -303,6 +364,7 @@ const SignUp = () => {
               <button type="submit" className="btn btn-b">
                 Create Account
               </button>
+              
             </form>
           </div>
           <p className="last-p">

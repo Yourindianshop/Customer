@@ -30,7 +30,8 @@
 
 #single-product .big-image img {
   width: 100% !important;
-position: absolute;
+  // position: absolute;
+  object-fit: contain;
 // height: 100%;
 }
 

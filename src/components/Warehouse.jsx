@@ -44,6 +44,27 @@ const Warehouse = ({ warehouse }) => {
       }
     }
   };
+  const directselect = async ()=>{
+    const body = {
+      cid: user.Cid,
+      pid: planId.Pid,
+      wid: warehouse.Wid,
+      paid: planId.Price,
+      renew: planId.duration == 0 ? -1 : planId.duration,
+      fs: planId.storage,
+    };
+    console.log("free stor", planId.storage);
+    console.log(planId);
+    const dt = await fetchreq("POST", "buyplan", body);
+    if (dt) {
+      if (user.Status == 0) {
+        await fetchreq("GET", `upadateUserStatus/${user.Cid}/1`, {});
+      }
+      nav("/dashboard/locker");
+    } else {
+      alert("something went wrong");
+    }
+  }
   const handleSelectfirst = async ()=>{
     const price = planId.Price;
     setIspayment(true);
@@ -123,7 +144,7 @@ const Warehouse = ({ warehouse }) => {
             <br />
             <strong>Capacity:</strong> {warehouse.Capacity}
             <br />
-            <button className="btn btn-b" onClick={handleSelectfirst}>
+            <button className="btn btn-b" onClick={final<=0?directselect:handleSelectfirst}>
               Select{" "}
               {planId.Price != 0 && `And Pay from Wallet ₹${planId.Price}`}
             </button>
@@ -172,6 +193,7 @@ const Warehouse = ({ warehouse }) => {
           >
             final Payment amount : ₹{final}
           </p>
+          <h2 style={{color:'red'}}>Note: This amount will Deduct From Your Wallet</h2>
           <div
             style={{
               display: "flex",
@@ -182,12 +204,12 @@ const Warehouse = ({ warehouse }) => {
             <button className="btn btn-r" onClick={handleSelect}>
               {final <= 0 ? "Proceed To Select" : "Proceed to Payment"}
             </button>
-            <button
-              className="btn-r btn"
-              onClick={() => setIspayment(false)}
-            >
-              Cancel payment
-            </button>
+              <button
+                className="btn-r btn"
+                onClick={() => nav("/plan")}
+              >
+                Cancel Transaction
+              </button>
           </div>
         </div>
       )}

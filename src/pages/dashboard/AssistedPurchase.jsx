@@ -122,7 +122,7 @@ function AssistedPurchase({WhiteLabeling}) {
         <div className="form-group">
           <textarea
             required
-            placeholder="Other SPL Details"
+            placeholder="Product URL"
             name="special-details"
             value={specialDetails}
             onChange={(e) => setSpecialDetails(e.target.value)}

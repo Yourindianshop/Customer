@@ -7,7 +7,7 @@ import {PayPalButtons, PayPalScriptProvider} from '@paypal/react-paypal-js'
 function Wallete() {
     const nav = useNavigate();
     const clientId = "ASMQ8cIBYPm5-ZaxGZhFpodBXIF0n2PBlfyO8mlmGZxoiH0ejWvXGHuZJ3YMH48nocz-2f28DoMhk-ze"
-    const {isLogin,user,setUser}=useContext(MyContext)
+    const {isLogin,user,setUser,isFromPlan,setIsFromPlan}=useContext(MyContext)
     const [transaction,setTransaction]=useState(null);
     const [isClick,setIsclick]=useState(false);
     const [isClick2,setIsclick2]=useState(false);
@@ -34,12 +34,17 @@ function Wallete() {
                 setUser(us);
                 loadTransaction();
             }else{
-                alert("something went wrong")
+                alert("something went wrong");
             }
+            setPayment(false)
             setIsclick(false);
             setIsclick2(false);
             setAmount(0)
-            alert("Transaction Successfully")
+            alert("Transaction Successfully");
+            if(isFromPlan){
+              setIsFromPlan(false);
+              nav("/select-warehouse");
+            }
         }
     }
     const handlesubmit2 =async (e)=>{
@@ -84,6 +89,7 @@ function Wallete() {
             const {payer}=details;
             setSuccess(true)
             handlesubmit();
+            
         })
     }
     const createOrder=(data,actions)=>{
@@ -112,7 +118,13 @@ function Wallete() {
         if(!isLogin){
             nav("/")
         }else{
-            loadTransaction()
+            loadTransaction();
+            if(isFromPlan){
+              setIsclick(true);
+              setIsclick2(false);
+              setAmount(isFromPlan-user?.Wallete);
+              setPayment(true);
+            }
         }
     },[])
     
@@ -146,9 +158,9 @@ function Wallete() {
                 type="number"
                 placeholder="Enter Amount to Add"
               />
-              <button onClick={showpaymentButton} className="btn btn-o-1">
+              {!payment && <button onClick={showpaymentButton} className="btn btn-o-1">
                 Pay to Wallet
-              </button>
+              </button>}
 
               {payment && (
                 <div className='credit-card'>

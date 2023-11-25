@@ -8,7 +8,6 @@ const SelectWareHouse = () => {
   const [warehouse,setWareHouses]=useState(null);
   const {planId,user,isLogin}=useContext(MyContext);
   const nav = useNavigate();
-
   const getWarehose = async ()=>{
     const dt = await fetchreq('GET',`selectWarehouse/${user.Cid}`,{});
     dt?setWareHouses(dt.result):setWareHouses([]);

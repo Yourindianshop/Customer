@@ -262,6 +262,13 @@ const Home = () => {
       message:
         "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
     },
+    {
+      name: "Rishav Jaiswal",
+      stars: 4.5,
+      organization: "CLIENT OF COMPANY",
+      message:
+        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+    },
     // Add more data for other testimonials
   ];
 
@@ -706,10 +713,10 @@ const Home = () => {
                     <div className="st ss">White Labeling</div>
                     <div className="st-2">
                       <p className="st-p">
-                      White labeling is when a company rebrands and sells a product or service originally created by 
-                      another company under its own name.
+                        White labeling is when a company rebrands and sells a
+                        product or service originally created by another company
+                        under its own name.
                       </p>
-                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/white-labeling" className="btn btn-db">
@@ -740,10 +747,10 @@ const Home = () => {
                     </div>
                     <div className="st-2">
                       <p className="st-p">
-                      When you buy bulk items with us,
-                      Our commitment to providing cost-effective solutions ensures that you get the most value for your investment. 
+                        When you buy bulk items with us, Our commitment to
+                        providing cost-effective solutions ensures that you get
+                        the most value for your investment.
                       </p>
-                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/wholesaler" className="btn btn-db">
@@ -966,7 +973,7 @@ const Home = () => {
               <div id="feed-r" style={{ paddingTop: "3rem" }}>
                 <Swiper
                   id="fd-scr"
-                  slidesPerView={3} // Set to 3 to fit three reviews on one page
+                  slidesPerView={1} // Set to 3 to fit three reviews on one page
                   spaceBetween={20} // Adjust as needed
                   autoplay={{
                     delay: 3000,
@@ -974,10 +981,28 @@ const Home = () => {
                   }}
                   loop={true}
                   modules={[Autoplay]}
+                  breakpoints={{
+                    // when window width is <= 640px
+                    640: {
+                      slidesPerView: 1,
+                    },
+                    // when window width is <= 768px
+                    768: {
+                      slidesPerView: 1.5,
+                    },
+                    // when window width is <= 992px
+                    992: {
+                      slidesPerView: 2,
+                    },
+                    // when window width is <= 1200px
+                    1200: {
+                      slidesPerView: 2.5,
+                    },
+                  }}
                   className="mySwiper"
                 >
                   {testimonialsData.map((testimonial, index) => (
-                    <SwiperSlide key={index}>
+                    <SwiperSlide key={index} className="swip">
                       <div className="testimonial-card">
                         <div className="testimonial-info">
                           <div className="name">{testimonial.name}</div>
@@ -1008,6 +1033,7 @@ const Home = () => {
             </section>
           </Fade>
         </div>
+        {/* <Testimonials /> */}
 
         <div id="scroll-fade11" className="fff-in">
           <Fade bottom when={isVisible3}>

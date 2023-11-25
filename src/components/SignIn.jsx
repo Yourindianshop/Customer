@@ -10,7 +10,7 @@ import { auth, provider } from "../firebase";
 import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const SignIn = () => {
-  const { user, setUser, setIsLogin,setIsBLogin, setWh, setWd } = useContext(MyContext);
+  const { user, setUser, setIsLogin,setIsBLogin, setWh, setWd,isFromPlan } = useContext(MyContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signin, setSignin] = useState("Sign In");
@@ -29,7 +29,7 @@ const SignIn = () => {
       const {token}=dt3.det;
       window.localStorage.setItem("token", JSON.stringify(token));
       setUser(users);
-      if (users.Status == 0) {
+      if ( isFromPlan || users.Status == 0) {
         nav("/plan");
       } else {
         nav("/dashboard");
@@ -44,7 +44,7 @@ const SignIn = () => {
         const {token}=dt3.det;
         window.localStorage.setItem("token", JSON.stringify(token));
         setUser(users);
-        if (users.Status == 0) {
+        if (isFromPlan || users.Status == 0) {
           nav("/plan");
         } else {
           nav("/dashboard");
@@ -52,7 +52,6 @@ const SignIn = () => {
       }else{
         alert("User Already Exists");
       }
-      
     }
   }
   const handlesubmit = async (e) => {
@@ -71,7 +70,7 @@ const SignIn = () => {
       }else{
         window.localStorage.setItem("token", JSON.stringify(out.token));
         setIsLogin(true);
-        if (users.Status == 0) {
+        if (isFromPlan || users.Status == 0) {
           nav("/plan");
         } else {
           nav("/dashboard");
@@ -279,7 +278,7 @@ const SignIn = () => {
                     {!fpp ? "Send Email" : "Sending Mail..."}
                   </button>
                 </form>
-                <br />
+                <br />  
                 <br />
                 <br />
                 <p>

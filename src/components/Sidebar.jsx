@@ -51,11 +51,11 @@ const Sidebar = () => {
         <div id="side_nav">
           <header id="side_header" className="row">
             <span className="sidebar_nav_txt">
-              <div className="logo">
+              <Link to={"/"} className="logo">
                 <span id="org">Your</span>
                 <img src="../imgs/6.png" style={{ width: "40px" }} />
                 <span className="">Shop</span>
-              </div>
+              </Link>
             </span>
             <button
               className="toggle gray toggle_btn"
