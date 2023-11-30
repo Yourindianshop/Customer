@@ -24,10 +24,11 @@ const SignUp = () => {
   const [Country, setCountry] = useState("");
   const [pincode, setPincode] = useState("");
   const [State, setState] = useState("");
-  const [inputOTP, setInputOTP] = useState("");
+  const [inputOTP, setInputOTP] = useState(""); 
   const [code, setCode] = useState(null);
   const [fetchcontries,setFetchcountries]=useState([]);
   const form = useRef();
+  const [cc,setCc]=useState(null);
   const sendEmail = async (e) => {
     e.preventDefault();
     if (password != password2) {
@@ -65,6 +66,7 @@ const SignUp = () => {
   };
   const handlesubmit = async () => {
     // e.preventDefault();
+    // cc is the county code;
     console.log("first")
     if (submit === "Creating...") {
       return;
@@ -146,12 +148,17 @@ const SignUp = () => {
     try {
       const response = await axios.request(options);
       setFetchcountries(response.data);
-      console.log(response.data)
+      // console.log(response.data)
     } catch (error) {
       console.error(error);
     }
   }
   const getContryCode = async (cname)=>{
+    // console.log(cname);
+    if(cname==-1){
+      setCc(null);
+      return;
+    }
     const options = {
       method: 'GET',
       url: 'https://metropolis-api-phone.p.rapidapi.com/iso',
@@ -164,13 +171,16 @@ const SignUp = () => {
     try {
       const response = await axios.request(options);
       if(response.status==404){
+        setCc(null);
         return false;
       }else{
         const countryCallingCode = response?.data["country-calling-code"];
+        setCc(countryCallingCode);
         return countryCallingCode;
       }
     } catch (error) {
       console.error(error);
+      setCc(null);
       return false;
     }
   }
@@ -257,9 +267,9 @@ const SignUp = () => {
                   }}
                 />
                 <h3>Contry</h3>
-                <select >
+                <select onChange={(e)=>{getContryCode(e.target.value)}} >
                   <option value="-1">Select Country</option>
-                  {fetchcontries.map((e)=><option>  {e.key} - {e.value}</option>)}
+                  {fetchcontries.map((e)=><option value={e.value}>  {e.key} - {e.value}</option>)}
                 </select>
                 <h3>Mobile No</h3>
                 <input
