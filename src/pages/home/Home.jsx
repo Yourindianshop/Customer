@@ -343,6 +343,7 @@ const Home = () => {
                 <img src="/home/signup-i.png" alt="" />
               </div>
               {/* <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div> */}
+              <div className="st-phone">01</div>
               <div className="st">SIGN UP</div>
               <div className="st-2">
                 {" "}
@@ -363,6 +364,7 @@ const Home = () => {
                 />
               </div>
               {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+              <div className="st-phone">02</div>
               <div className="st">Shop</div>
               <div className="st-2">
                 BROWSE & SHOP FROM TOP INDIAN E-COMMERCE STORES & BRANDS.
@@ -381,6 +383,7 @@ const Home = () => {
                 />
               </div>
               {/* <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div> */}
+              <div className="st-phone">03</div>
               <div className="st">Ship</div>
               <div className="st-2">
                 SHIP YOUR CONSOLIDATED PARCELS TO YOUR GLOBAL ADDRESS.
@@ -394,6 +397,7 @@ const Home = () => {
                 <img src="/home/service-i.png" alt="" />
               </div>{" "}
               {/* <div className="st">SIGN-UP TO GET VIRTUAL ADDRESS</div> */}
+              <div className="st-phone">04</div>
               <div className="st">RECEIVE</div>
               <div className="st-2">
                 GET YOUR PARCEL AT YOUR ADDRESS WITHIN 3-6 DAYS FROM INDIA.

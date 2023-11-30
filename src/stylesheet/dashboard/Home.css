@@ -451,6 +451,7 @@ section {
 
 .s-txt {
   font-size: 0.8rem;
+  font-weight: 300;
 }
 
 .rm {
@@ -846,18 +847,10 @@ section {
   .marquee2{
     top: 6px !important;
   }
-
-  #sdsc-ol{
-    height: fit-content !important;
-  }
 .service-img{
     display: none;
 }
-  .s-cd {
-    min-height: 300px !important;
-    width: 80% !important;
-    padding: 15px 0px !important;
-  }
+
   #steps .st {
     font-size: 1.2rem !important;
   }
