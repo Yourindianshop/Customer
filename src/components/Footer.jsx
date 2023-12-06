@@ -41,6 +41,13 @@ const Footer = () => {
         Copyright © 2023 &nbsp;&nbsp; Privacy Policy &nbsp;&nbsp; Terms &
         Conditions &nbsp; &nbsp;
       </center>
+      <footer className="flex items-center justify-center mb-24">
+        <div className="px-6 lg:px-20 3xl:px-0 mx-auto max-w-[1440px] flex w-full flex-col gap-14">
+          <p className="regular-14 w-full text-center text-gray-30">
+            2023 | Created and Managed by Metawebtx
+          </p>
+        </div>
+      </footer>
     </footer>
   );
 };

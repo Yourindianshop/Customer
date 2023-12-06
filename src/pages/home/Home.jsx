@@ -25,7 +25,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Fade from "react-reveal/Fade";
 import SwiperCore, { Pagination, Autoplay, Navigation } from "swiper/modules";
-import CalculateIcon from '@mui/icons-material/Calculate';
+import CalculateIcon from "@mui/icons-material/Calculate";
 import CallMadeIcon from "@mui/icons-material/CallMade";
 
 // import Calc from "../../components/Calc";
@@ -497,7 +497,7 @@ const Home = () => {
                     </Link>
                   </div>
                 </div>
-                
+
                 <div className="ps">
                   <div className="ps-l">
                     <ComputerIcon />
@@ -674,7 +674,7 @@ const Home = () => {
             <br />
             <div id="service" className="ser-sec-2">
               <div className="ser-cards">
-                <div
+                {/* <div
                   className="ps"
                   style={{ flexDirection: "column", height: "fit-content" }}
                 >
@@ -682,16 +682,16 @@ const Home = () => {
                     <EngineeringOutlinedIcon
                       style={{ height: "50px", width: "100px" }}
                     />
-                    {/* <LocalShippingOutlinedIcon /> */}
                   </div>
+
                   <div className="ps-r">
                     <div className="st ss">White Labeling</div>
                     <div className="st-2">
                       <p className="st-p">
-                      White labeling is when a company rebrands and sells a product or service originally created by 
-                      another company under its own name.
+                        White labeling is when a company rebrands and sells a
+                        product or service originally created by another company
+                        under its own name.
                       </p>
-                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/white-labeling" className="btn btn-db">
@@ -708,7 +708,6 @@ const Home = () => {
                 >
                   <div className="ps-l">
                     <ComputerIcon style={{ height: "50px", width: "100px" }} />
-                    {/* <LocalShippingOutlinedIcon /> */}
                   </div>
                   <div className="ps-r">
                     <div
@@ -722,15 +721,57 @@ const Home = () => {
                     </div>
                     <div className="st-2">
                       <p className="st-p">
-                      When you buy bulk items with us,
-                      Our commitment to providing cost-effective solutions ensures that you get the most value for your investment. 
+                        When you buy bulk items with us, Our commitment to
+                        providing cost-effective solutions ensures that you get
+                        the most value for your investment.
                       </p>
-                      
                     </div>{" "}
                     <div style={{ display: "flex", margin: "auto" }}>
                       <Link to="/wholesaler" className="btn btn-db">
                         {" "}
                         Click Here
+                      </Link>
+                    </div>
+                  </div>
+                </div> */}
+                <div id="lnl">
+                  <div className="ps">
+                    <div className="ps-l">
+                      <EngineeringOutlinedIcon
+                        style={{ height: "50px", width: "100px" }}
+                      />
+                    </div>
+                    <div className="ps-r">
+                      <div className="st">White Labeling</div>
+                      <div className="s-txt">
+                        White labeling is when a company rebrands and sells a
+                        product or service originally created by another company
+                        under its own name.
+                      </div>
+                      <div className="rm " id="org">
+                        <Link to="/white-labeling" rel="noopener noreferrer">
+                          Click Here
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="ps">
+                    <div className="ps-l">
+                      <ComputerIcon
+                        style={{ height: "50px", width: "100px" }}
+                      />
+                    </div>
+                    <div className="ps-r">
+                      <div className="st wt">Wholesaler Plan</div>
+                      <div className="s-txt">
+                        When you buy bulk items with us, Our commitment to
+                        providing cost-effective solutions ensures that you get
+                        the most value for your investment.{" "}
+                      </div>
+                      <Link to="/wholesaler" rel="noopener noreferrer">
+                        <div className="rm " id="org">
+                          Click Here
+                        </div>
                       </Link>
                     </div>
                   </div>
@@ -876,10 +917,10 @@ const Home = () => {
             <div className="cal-banner">
               <section id="cal">
                 <div className="cal-head">
-                <div className="ps-l ps-vs">
-                  <CalculateIcon />
-                <div className="t-title">Shipping Rate Calculator{" "}</div>
-                </div>
+                  <div className="ps-l ps-vs">
+                    <CalculateIcon />
+                    <div className="t-title">Shipping Rate Calculator </div>
+                  </div>
                   <Link to="/calc" rel="noopener noreferrer">
                     <div className="btn btn-o">Calculate Now</div>
                   </Link>
@@ -948,7 +989,6 @@ const Home = () => {
             <section id="feed">
               <div id="feed-r" style={{ paddingTop: "3rem" }}>
                 <Swiper
-                  
                   slidesPerView={value} // Set to 3 to fit three reviews on one page
                   spaceBetween={10} // Adjust as needed
                   centeredSlides={true}
@@ -958,7 +998,6 @@ const Home = () => {
                   }}
                   loop={true}
                   modules={[Autoplay, Pagination, Navigation]}
-                  
                 >
                   {testimonialsData.map((testimonial, index) => (
                     <SwiperSlide key={index}>
