@@ -7,10 +7,16 @@ import { fetchreq, uploadImageAws, jwtauth } from "../Helper/fetch";
 import { MyContext } from "../App";
 import GoogleIcon from "@mui/icons-material/Google";
 import { auth, provider } from "../firebase";
-import { FacebookAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  FacebookAuthProvider,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
+import Foot from "./Foot";
 
 const SignIn = () => {
-  const { user, setUser, setIsLogin,setIsBLogin, setWh, setWd,isFromPlan } = useContext(MyContext);
+  const { user, setUser, setIsLogin, setIsBLogin, setWh, setWd, isFromPlan } =
+    useContext(MyContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [signin, setSignin] = useState("Sign In");
@@ -18,30 +24,30 @@ const SignIn = () => {
   const [fpp, setFpp] = useState(false);
   const nav = useNavigate();
   const [check, setCheck] = useState(false);
-  const [isbusiness,setIsBusiness]=useState(false);
-  const loginwithGoogle = async (email,name)=>{
-    const dt = await fetchreq("POST","googleLogin",{name,email});
-    if(dt){
-      const dt3= await fetchreq("GET",`getCustomerbyEmail/${email}`,{});
+  const [isbusiness, setIsBusiness] = useState(false);
+  const loginwithGoogle = async (email, name) => {
+    const dt = await fetchreq("POST", "googleLogin", { name, email });
+    if (dt) {
+      const dt3 = await fetchreq("GET", `getCustomerbyEmail/${email}`, {});
       setIsLogin(true);
       const out = dt3.result;
       const users = out[0];
-      const {token}=dt3.det;
+      const { token } = dt3.det;
       window.localStorage.setItem("token", JSON.stringify(token));
       setUser(users);
-      if ( isFromPlan || users.Status == 0) {
+      if (isFromPlan || users.Status == 0) {
         nav("/plan");
       } else {
         nav("/dashboard");
       }
-    }else{
-      const dt3= await fetchreq("GET",`getCustomerbyEmail/${email}`,{});
+    } else {
+      const dt3 = await fetchreq("GET", `getCustomerbyEmail/${email}`, {});
       // console.log(dt3);
-      if(dt3 && dt3.result.length>0){
+      if (dt3 && dt3.result.length > 0) {
         setIsLogin(true);
         const out = dt3.result;
         const users = out[0];
-        const {token}=dt3.det;
+        const { token } = dt3.det;
         window.localStorage.setItem("token", JSON.stringify(token));
         setUser(users);
         if (isFromPlan || users.Status == 0) {
@@ -49,25 +55,29 @@ const SignIn = () => {
         } else {
           nav("/dashboard");
         }
-      }else{
+      } else {
         alert("User Already Exists");
       }
     }
-  }
+  };
   const handlesubmit = async (e) => {
     e.preventDefault();
     if (signin == "Just A Sec...") {
       return;
     }
     setSignin("Just A Sec...");
-    const out = await fetchreq("POST", isbusiness?"loginBusinessCustomer":"loginUser", { email, password });
+    const out = await fetchreq(
+      "POST",
+      isbusiness ? "loginBusinessCustomer" : "loginUser",
+      { email, password }
+    );
     if (out) {
       const users = out.user;
       setUser(users);
-      if(isbusiness){
+      if (isbusiness) {
         setIsBLogin(true);
         nav("/WhiteLabeling");
-      }else{
+      } else {
         window.localStorage.setItem("token", JSON.stringify(out.token));
         setIsLogin(true);
         if (isFromPlan || users.Status == 0) {
@@ -84,7 +94,11 @@ const SignIn = () => {
   const forgotpass = async (e) => {
     e.preventDefault();
     setFpp(true);
-    const dt = await fetchreq("GET", `${isbusiness?"forgotPassBC":"forgotPass"}/${email}`, {});
+    const dt = await fetchreq(
+      "GET",
+      `${isbusiness ? "forgotPassBC" : "forgotPass"}/${email}`,
+      {}
+    );
     if (dt) {
       if (dt.msg == "ok") {
         alert(" Password Is Sended To your Mail...");
@@ -113,11 +127,11 @@ const SignIn = () => {
             {!isfp ? (
               <div>
                 <h1>Sign In</h1>
-                  <h3>Type</h3>
+                {/* <h3>Type</h3>
                   <div className="acc-type" >
                    <button className={`btn ${isbusiness?"":"btn btn-b"}`} onClick={()=>{setIsBusiness(false)}}>Personal</button>
                    <button className={`btn ${!isbusiness?"":"btn btn-b"}`} onClick={()=>{setIsBusiness(true)}}>Business</button>
-                  </div>
+                  </div> */}
                 <form className="form-s" onSubmit={handlesubmit}>
                   <h3>Email</h3>
                   <input
@@ -165,7 +179,7 @@ const SignIn = () => {
                       </div>
                     </div>
                   )}
-                  <button type="submit" className="btn-signin">
+                  <button type="submit" className="btn-signin bg-primary">
                     {signin}
                   </button>
 
@@ -202,42 +216,45 @@ const SignIn = () => {
                       </div>
                     </center> */}
                 </form>
-               {!isbusiness &&  <center>
-                  <div id="other-s-in">
-                    <GoogleIcon />
-                    <button
-                      onClick={async () => {
-                        await signInWithPopup(auth, provider)
-                          .then(async (result) => {
-                            const credential =
-                              GoogleAuthProvider.credentialFromResult(result);
-                            const token = credential.accessToken;
-                            const user = result.user;
-                            const name = user.displayName;
-                            const email = user.email;
-                            const profileUrl = user.profileUrl;
-                            const emailAuth = user.emailVerified;
-                            if (emailAuth) {
-                              await loginwithGoogle(email, name);
-                            } else {
-                              alert("email is Not Verified...");
-                            }
-                          })
-                          .catch((error) => {
-                            const errorCode = error.code;
-                            const errorMessage = error.message;
-                            const email = error.customData.email;
-                            const credential =
-                              GoogleAuthProvider.credentialFromError(error);
-                            // ...
-                          });
-                      }}
-                    >
-                      Sign up with google
-                    </button>
-                  </div>
-                </center>}
-                <div className="last-p"><br /> 
+                {!isbusiness && (
+                  <center>
+                    <div id="other-s-in">
+                      <GoogleIcon />
+                      <button
+                        onClick={async () => {
+                          await signInWithPopup(auth, provider)
+                            .then(async (result) => {
+                              const credential =
+                                GoogleAuthProvider.credentialFromResult(result);
+                              const token = credential.accessToken;
+                              const user = result.user;
+                              const name = user.displayName;
+                              const email = user.email;
+                              const profileUrl = user.profileUrl;
+                              const emailAuth = user.emailVerified;
+                              if (emailAuth) {
+                                await loginwithGoogle(email, name);
+                              } else {
+                                alert("email is Not Verified...");
+                              }
+                            })
+                            .catch((error) => {
+                              const errorCode = error.code;
+                              const errorMessage = error.message;
+                              const email = error.customData.email;
+                              const credential =
+                                GoogleAuthProvider.credentialFromError(error);
+                              // ...
+                            });
+                        }}
+                      >
+                        Sign up with google
+                      </button>
+                    </div>
+                  </center>
+                )}
+                <div className="last-p">
+                  <br />
                   <p className="last-p">
                     Don't remember your password?
                     <Link
@@ -248,7 +265,7 @@ const SignIn = () => {
                     >
                       Forget Password
                     </Link>
-                  </p> 
+                  </p>
                   <p className="last-p">
                     Don't have an account?
                     <Link to={"/signup"} className="gray">
@@ -259,8 +276,10 @@ const SignIn = () => {
               </div>
             ) : (
               <div>
-
-                <h2>Forgot Password for {isbusiness?"Business Account":"Customer"}</h2>
+                <h2>
+                  Forgot Password for{" "}
+                  {isbusiness ? "Business Account" : "Customer"}
+                </h2>
                 <form onSubmit={forgotpass}>
                   <h3>Email</h3>
                   <input
@@ -278,7 +297,7 @@ const SignIn = () => {
                     {!fpp ? "Send Email" : "Sending Mail..."}
                   </button>
                 </form>
-                <br />  
+                <br />
                 <br />
                 <br />
                 <p>
@@ -296,9 +315,10 @@ const SignIn = () => {
           </div>
         </div>
         <div className="right">
-          <img className="img1" src="/signup-img/indian.jpg" alt="no"></img>
+          <img className="img1" src="/signup-img/img-2.jpg" alt="no"></img>
         </div>
       </section>
+      {/* <Foot /> */}
     </div>
   );
 };

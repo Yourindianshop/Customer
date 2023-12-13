@@ -46,6 +46,8 @@ import WhiteLabelingRequest from "./pages/dashboard/WhiteLabeling";
 import WhiteLabeling from "./components/WhiteLabeling";
 import Marquee from "react-fast-marquee";
 import Slider from "./components/Slider";
+import Plan from "./pages/home/Plan";
+import Pl from "./pages/Plans/Pl";
 
 export const MyContext = createContext();
 
@@ -58,10 +60,9 @@ const App = () => {
   const [did, setDid] = useState(null);
   const [muldis, setMuldis] = useState(null);
   const [isBLogin, setIsBLogin] = useState(false);
-  const [applyCoupen,setApplyCoupen]=useState(null); // 1 means redirect from warehouse
-  const [saveWarehouse,setSaveWarehouse]=useState(null); // use for coupen
-  const [isFromPlan,setIsFromPlan]=useState(false);
-
+  const [applyCoupen, setApplyCoupen] = useState(null); // 1 means redirect from warehouse
+  const [saveWarehouse, setSaveWarehouse] = useState(null); // use for coupen
+  const [isFromPlan, setIsFromPlan] = useState(false);
 
   return (
     <div>
@@ -88,7 +89,7 @@ const App = () => {
           saveWarehouse,
           setSaveWarehouse,
           isFromPlan,
-          setIsFromPlan
+          setIsFromPlan,
         }}
       >
         <Router>
@@ -525,12 +526,13 @@ const App = () => {
                   <Nav />
                   <main>
                     {" "}
-                    <DispPl />
+                    <Pl />
                     {/* <PlanPage inBill={false} /> */}
                   </main>
                 </div>
               }
             />
+            <Route path="/planss" element={<Plan />} />
             <Route
               path="/coming-soon"
               element={

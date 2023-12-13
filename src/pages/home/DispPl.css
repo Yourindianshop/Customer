@@ -1,22 +1,23 @@
-#plan-img {
-  position: absolute;
-  top: 10px;
-  left: 30px;
+.wrappserinside {
+  margin-top: 10rem;
 }
 
-@media only screen and (max-width: 600px) {
-  .ele {
-    display: none !important;
-  }
-  #plan-img {
-    display: none !important;
-  }
+.wrapper {
+  @apply mt-24 flex items-center justify-center flex-col;
+  margin-top: 20rem;
 }
 
-.plan-h {
-  font-size: 50px;
-  font-weight: 700;
-  padding-top: 10rem;
-  width: fit-content;
-  margin: auto;
+.btn1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  margin-top: 3rem;
+}
+
+.btn1 > div {
+  border: 2px solid red;
+  padding: 0 20px 0 20px;
+  border-radius: 4px;
+  font-size: 30px;
 }

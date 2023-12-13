@@ -15,12 +15,12 @@
   /* height: 120%; */
 }
 
-.marquee{
+.marquee {
   margin-top: 8vh;
   background: black;
   color: white;
 }
-.marquee2{
+.marquee2 {
   margin-top: 8vh;
   background: black;
   color: white;
@@ -37,16 +37,16 @@
   margin-top: 2rem;
 }
 
-.mbm{
+.mbm {
   width: 100%;
-  mix-blend-mode:multiply !important;
+  mix-blend-mode: multiply !important;
 }
-.ftr-im{
+.ftr-im {
   min-width: 150px;
   max-width: 250px;
   width: 30% !important;
 }
-.rcc{
+.rcc {
   padding: 15px;
   /* overflow-x: scroll; */
   display: flex;
@@ -163,7 +163,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10vh ;
+  margin-top: 10vh;
 }
 
 .swiper-slide img {
@@ -360,7 +360,7 @@ section {
 
   z-index: 11;
 }
-.ps .rm{
+.ps .rm {
   color: #fff !important;
 }
 .ps {
@@ -384,8 +384,7 @@ section {
 .pp .t-title {
   color: #fff !important;
 }
-.ps:nth-child(even)
- {
+.ps:nth-child(even) {
   background: var(--db2);
   color: #fff;
   position: relative;
@@ -431,22 +430,21 @@ section {
 }
 
 .st {
-  font-size: 1.25rem ;
+  font-size: 1.25rem;
   font-weight: 600;
   text-align: center;
   bottom: 0 !important;
   font-family: var(--font3);
   color: #292929;
 }
-.ss{
+.ss {
   margin-bottom: 1rem;
 }
-.st-p{
+.st-p {
   margin-bottom: 1rem;
 }
-.st-2{
+.st-2 {
   margin-bottom: 2rem;
-
 }
 
 .s-txt {
@@ -743,7 +741,7 @@ section {
   /* background: linear-gradient(to top, rgba(107, 79, 30, 0.097), rgba(33, 36, 115, 0.426)),
         url('https://png.pngtree.com/thumb_back/fw800/background/20230525/pngtree-different-brown-paper-shopping-bags-on-a-dark-background-image_2624565.jpg'); */
 }
-.cal-banner{
+.cal-banner {
   padding: 5px;
   margin: 0 5%;
   border-radius: 15px;
@@ -793,7 +791,7 @@ section {
   place-items: center;
   overflow: hidden;
 }
-.s-cd{
+.s-cd {
   background: linear-gradient(to top, #e4f8ff, #effbff);
   padding: 15px;
   border-radius: 12px;
@@ -841,25 +839,26 @@ section {
     max-height: none !important;
     max-width: none !important;
   }
-  .ps{
+  .ps {
     max-width: 375px;
   }
-  .marquee2{
+  .marquee2 {
     top: 6px !important;
   }
-.service-img{
+  .service-img {
     display: none;
-}
+  }
 
   #steps .st {
     font-size: 1.2rem !important;
   }
-  #steps .st-2{
+  #steps .st-2 {
     font-size: 0.8rem !important;
-  }.expl{
+  }
+  .expl {
     font-size: 1rem !important;
   }
-  
+
   /* #lnl >*{}
   #lnl{
     flex-direction: row !important;
@@ -961,7 +960,7 @@ section {
   height: 90vh !important;
 }
 
-.map{
+.map {
   display: none;
 }
 
@@ -1133,13 +1132,12 @@ section {
   align-self: flex-end;
   gap: 15px;
 }
-.cal-box h1{
+.cal-box h1 {
   font-size: 1.5rem;
   font-weight: 500;
   font-family: var(--font6);
-
 }
-.fl-bx>*{
+.fl-bx > * {
   padding: 7.5px;
   border-radius: 7px;
   width: 50%;
@@ -1147,13 +1145,13 @@ section {
   background: transparent !important;
 }
 
-.fl-bx{
+.fl-bx {
   gap: 7px;
   display: flex;
   align-items: center;
   /* justify-content: /; */
 }
-#cl-bl{
+#cl-bl {
   color: white !important;
 }
 #indianshopcart {
@@ -1265,11 +1263,11 @@ section {
     flex-direction: column !important;
     margin-left: 10vh !important;
   }
-.map{
-  display: block;
-  margin: 4vh;
-  padding-right: 5px;
-}
+  .map {
+    display: block;
+    margin: 4vh;
+    padding-right: 5px;
+  }
   .ps {
     margin: 15px auto;
     flex-direction: column;
@@ -1307,7 +1305,7 @@ section {
   align-self: flex-start !important;
   justify-self: flex-start !important;
 }
-.abt-l p{
+.abt-l p {
   font-size: 1.1rem;
 }
 .ser-cards {
@@ -1336,7 +1334,7 @@ section {
 #scroll-fade3 {
   margin: 0 7vw;
 }
-#scroll-fade3 #pl-kd-sec{
+#scroll-fade3 #pl-kd-sec {
   width: 90vw !important;
 }
 .ser-cards > * {
@@ -1806,7 +1804,7 @@ footer center {
   display: flex;
   flex-direction: column;
   width: 86.5vw;
-  padding: 35px 10vw ;
+  padding: 35px 10vw;
   gap: 25px;
 }
 
@@ -1933,13 +1931,11 @@ background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);  */
 }
 
 @media only screen and (max-width: 600px) {
-
-  .cal-box .sh-top{
+  .cal-box .sh-top {
     width: 100%;
   }
 }
-.t-title{
-
+.t-title {
 }
 .kd-l {
   width: 45%;

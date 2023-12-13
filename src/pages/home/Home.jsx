@@ -68,7 +68,7 @@ const Home = () => {
       ? 1
       : window.innerWidth >= 900 && window.innerWidth <= 1300
       ? 2
-      : 4
+      : 3
   );
   const handelsubmit = async (e) => {
     e.preventDefault();
@@ -224,7 +224,7 @@ const Home = () => {
 
   const slides = [
     {
-      url: "https://res.cloudinary.com/du196ag4l/image/upload/v1699781870/Great_Deals_on_-_4_qmm2k9.png",
+      url: "https://res.cloudinary.com/du196ag4l/image/upload/v1702356944/bg_wwhkvb.jpg",
       title: "neet",
     },
     {
@@ -917,9 +917,11 @@ const Home = () => {
             <div className="cal-banner">
               <section id="cal">
                 <div className="cal-head">
-                  <div className="ps-l ps-vs">
-                    <CalculateIcon />
-                    <div className="t-title">Shipping Rate Calculator </div>
+                  <div className="ps-l b ps-vs  ">
+                    <div className=" ">
+                      <CalculateIcon />
+                    </div>
+                    <div className="t-title">Shipping Rate Calculators </div>
                   </div>
                   <Link to="/calc" rel="noopener noreferrer">
                     <div className="btn btn-o">Calculate Now</div>
@@ -990,7 +992,7 @@ const Home = () => {
               <div id="feed-r" style={{ paddingTop: "3rem" }}>
                 <Swiper
                   slidesPerView={value} // Set to 3 to fit three reviews on one page
-                  spaceBetween={10} // Adjust as needed
+                  spaceBetween={5} // Adjust as needed
                   centeredSlides={true}
                   autoplay={{
                     delay: 3000,
@@ -1027,6 +1029,69 @@ const Home = () => {
                     </SwiperSlide>
                   ))}
                 </Swiper>
+              </div>
+            </section>
+          </Fade>
+        </div>
+        <div id="scroll-fade10">
+          <Fade bottom when={isVisible3}>
+            <div id="feed-l">
+              <center className="fd-title" id="dg">
+                Video <span style={{ color: "var(--blue)" }}>Testimonials</span>
+              </center>
+            </div>
+            <section id="feed">
+              <div
+                id="feed-r "
+                className="flex justify-between gap-16 sm:gap-8 sm:flex-col"
+                style={{ paddingTop: "3rem" }}
+              >
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/w_eEnbApH0A?si=mEbllzhrP_Mr6bqc"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  className="sm:h-[15rem] sm:w-[19rem] sm:ml-1"
+                ></iframe>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/Z4DaDwzgD6w?si=AbMA03yKQXGqVxYq"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  className="sm:h-[15rem] sm:w-[19rem] "
+                ></iframe>
+              </div>
+              <div
+                id="feed-r "
+                style={{ paddingTop: "3rem" }}
+                className="flex justify-between gap-16 sm:gap-8 mb-10 sm:flex-col"
+              >
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/wjcEh_w_qdI?si=uKZ-Vsj0ks5a7gnp"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  className="sm:h-[15rem] sm:w-[19rem] sm:ml-1"
+                ></iframe>
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/M7vXOK_ZKY0?si=8G7a1e9NzQqqfo8R"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                  className="sm:h-[15rem] sm:w-[19rem] sm:mb-10"
+                ></iframe>
               </div>
             </section>
           </Fade>

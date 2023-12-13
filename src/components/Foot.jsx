@@ -1,6 +1,6 @@
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "../constants";
 
-const Footer = () => {
+const Foot = () => {
   return (
     <div className="bg-[#1a202c] max-width px-6 lg:px-20 3xl:px-0 text-white py-12">
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-16">
@@ -86,4 +86,4 @@ const FooterColumn = ({ title, children }) => {
   );
 };
 
-export default Footer;
+export default Foot;
