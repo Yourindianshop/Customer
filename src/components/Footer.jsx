@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto flex flex-wrap items-center justify-between gap-16">
         <div className=" md:text-left max-w-md">
           <a href="/" className="mb-6 inline-block text-center items-center">
-            <h1 className="text-primary-light text-4xl font-bold">
+            <h1 className="text-primary-light text-4xl sm:text-2xl font-bold">
               Your Indian Shop
             </h1>
           </a>

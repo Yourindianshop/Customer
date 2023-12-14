@@ -87,16 +87,12 @@ const Slider = ({ slides }) => {
             onClick={goToPrevious}
             style={leftArrowStyles}
             className="sm:hidden cursor-pointer"
-          >
-          
-          </div>
+          ></div>
           <div
             onClick={goToNext}
             style={rightArrowStyles}
             className="sm:hidden"
-          >
-          
-          </div>
+          ></div>
         </div>
         <div style={{ ...slideStyles }}>
           <img

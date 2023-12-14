@@ -396,6 +396,13 @@ const Pl = () => {
       {activeLink === "Trial Plan" && <SaleComponent />}
       {activeLink === "Half Yearly" && <HalfYearly />}
       {activeLink === "Yearly Plan" && <Yearly />}
+      <div className="footer">
+        <div className="footer-img">
+          <div className="footer-text">
+            So Start Your YIS Journey With Us Now !!
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

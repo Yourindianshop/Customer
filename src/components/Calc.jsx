@@ -32,15 +32,14 @@ const Calc = () => {
   // Function to fetch shipping data from the backend
   const header = process.env.REACT_APP_API_CODE;
   const ship = async () => {
-    let response = await fetchreq("GET","getAllShippers",{});
-    if(response){
+    let response = await fetchreq("GET", "getAllShippers", {});
+    if (response) {
       setShippingData(response.shippings);
     }
- 
   };
 
   useEffect(() => {
-     ship();
+    ship();
   }, []);
 
   const calculatePrice = () => {
@@ -134,8 +133,6 @@ const Calc = () => {
     }
   };
 
- 
-
   const calculatePrices = () => {
     const volumetricWeight = (length * width * height) / 5000;
 
@@ -165,13 +162,11 @@ const Calc = () => {
 
   const volumetriweight = (height * width * length) / 5000;
 
-  console.log(volumetriweight)
+  console.log(volumetriweight);
 
   function isFirstGreater(volumetriweight, weight) {
-   return volumetriweight > weight ? 1: 0
-   }
-  
-
+    return volumetriweight > weight ? 1 : 0;
+  }
 
   return (
     <div id="dash-calc">
@@ -209,7 +204,6 @@ const Calc = () => {
                 <TextField
                   className="nor-feild"
                   id="outlined-required"
-                  
                   label="Weight (kg)"
                   value={weight}
                   onChange={(e) => setWeight(e.target.value)}
@@ -328,7 +322,7 @@ const Calc = () => {
           >
             <DialogTitle id="alert-dialog-title">Shipping Prices</DialogTitle>
             <DialogContent>
-              {isDimentsion  || weight ? (
+              {isDimentsion || weight ? (
                 <DialogContentText id="alert-dialog-description">
                   <div className="flex justify-center mt-[-20rem] ml-[35rem] h-[30rem] w-[30rem] items-center fixed bg-red-500 p-4">
                     <div className="modal">
@@ -351,21 +345,26 @@ const Calc = () => {
                                 <td>{shipping.NAME}</td>
                                 <td>
                                   {isFirstGreater(volumetriweight, weight)
-                                    ? ((
-                                        volumetriweight * shipping.PRICE
-                                      )/50).toFixed(2)
-                                    : ((weight * shipping.PRICE)/500).toFixed(2)}
+                                    ? (
+                                        (volumetriweight * shipping.PRICE) /
+                                        50
+                                      ).toFixed(2)
+                                    : ((weight * shipping.PRICE) / 500).toFixed(
+                                        2
+                                      )}
                                 </td>
                                 <td>
                                   {isFirstGreater(volumetriweight, weight)
-                                    ? ((
-                                        volumetriweight *
-                                        shipping.PRICE *
-                                        0.9
-                                      )/50).toFixed(2)
-                                    : ((weight * shipping.PRICE * 0.9)/500).toFixed(
-                                        2
-                                      )}
+                                    ? (
+                                        (volumetriweight *
+                                          shipping.PRICE *
+                                          0.9) /
+                                        50
+                                      ).toFixed(2)
+                                    : (
+                                        (weight * shipping.PRICE * 0.9) /
+                                        500
+                                      ).toFixed(2)}
                                 </td>
                               </tr>
                             ))}
@@ -430,6 +429,13 @@ const Calc = () => {
                 alt="no"
               />
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="footer">
+        <div className="footer-img">
+          <div className="footer-text">
+            So Start Your YIS Journey With Us Now !!
           </div>
         </div>
       </div>

@@ -125,343 +125,330 @@ const Wsaller = () => {
           </div>
         </div>
       </div>
-      
 
-          <div className="t-title" style={{ marginBottom: "5rem" }} id="dg">
-            HOW
-            <span id="bul"> THIS </span>
-            WORKS
-          </div>
-          <div id="steps">
-            <div className="s-cd-p">
-              {/* <div className="pin">
+      <div className="t-title" style={{ marginBottom: "5rem" }} id="dg">
+        HOW
+        <span id="bul"> THIS </span>
+        WORKS
+      </div>
+      <div id="steps">
+        <div className="s-cd-p">
+          {/* <div className="pin">
                 <img src="./imgs/pin.png" alt="" />
               </div> */}
-              <div id="sdsc-ol">
-                {" "}
-                <img src="/ftrd/whole-01.jpeg" alt="" width={ 140} />
-              </div>
-              {/* <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div> */}
+          <div id="sdsc-ol">
+            {" "}
+            <img src="/ftrd/whole-01.jpeg" alt="" width={140} />
+          </div>
+          {/* <div className="st">RECEIVE WITHIN 7 / 8 WORKING DAYS</div> */}
 
-              <div className="st-2">
-                {" "}
-                MAIL US YOUR NEED AND WE'LL RRVERT YOU BACK WITH THE BEST
-                SOLUTION
-              </div>
-            </div>
-            <div className="s-cd-p">
-              {/* <div className="pin">
+          <div className="st-2">
+            {" "}
+            MAIL US YOUR NEED AND WE'LL RRVERT YOU BACK WITH THE BEST SOLUTION
+          </div>
+        </div>
+        <div className="s-cd-p">
+          {/* <div className="pin">
                <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
               </div> */}
-              <div id="sdsc-ol">
-                {" "}
-                <img
-                  // src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/08/sr-menu-1-1-64cb708d894d5.webp"
-                  src="/home/white1.png"
-                  alt=""
-                  width={190}
-                />
-              </div>
-              {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
-              <div className="st-2" style={{ marginTop: "rem" }}>
-                OUR EXPERT TEAM WILL HELP YOU IN CREATING YOUR PERSONALIZE BRAND
-              </div>{" "}
-            </div>
-            <div className="s-cd-p">
-              {/* <div className="pin">
+          <div id="sdsc-ol">
+            {" "}
+            <img
+              // src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/08/sr-menu-1-1-64cb708d894d5.webp"
+              src="/home/white1.png"
+              alt=""
+              width={190}
+            />
+          </div>
+          {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+          <div className="st-2" style={{ marginTop: "rem" }}>
+            OUR EXPERT TEAM WILL HELP YOU IN CREATING YOUR PERSONALIZE BRAND
+          </div>{" "}
+        </div>
+        <div className="s-cd-p">
+          {/* <div className="pin">
                <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
               </div> */}
-              <div id="sdsc-ol-p">
-                {" "}
-                <img
-                  // src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/shipping-rv-2.webp"
-                  src="/home/white2.png"
-                  alt=""
-                  width={120}
-                />
+          <div id="sdsc-ol-p">
+            {" "}
+            <img
+              // src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2023/07/shipping-rv-2.webp"
+              src="/home/white2.png"
+              alt=""
+              width={120}
+            />
+          </div>
+          {/* <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div> */}
+          <div className="st-2">
+            YOUR BRAND IS MARKET READY TO GRAB CUSTOMER'S ATTENTION
+          </div>{" "}
+        </div>{" "}
+      </div>
+
+      <div id="wl-sec-3">
+        <div className="ws-l">
+          <div className="ws-title">Order in bulk now !!!</div>
+
+          <Link to={"/signIn"} className="btn btn-b">
+            Contact us
+          </Link>
+        </div>
+        <div className="ws-r">
+          <img src="./imgs/wh-sec-3.jpg" alt="" />
+        </div>
+      </div>
+
+      <div id="feed-l">
+        <center className="fd-title" id="dg">
+          What People Say About{" "}
+          <span style={{ color: "var(--blue)" }}>Wholesaler's Plan</span>
+        </center>
+      </div>
+      <section id="feed">
+        <div id="feed-r" style={{ paddingTop: "3rem" }}>
+          <Swiper
+            id="fd-scr"
+            // spaceBetween={120}
+            slidesPerView={value}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            modules={[Autoplay]}
+            className="mySwiper"
+            // loop={true}
+          >
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Rishav Jaiswal
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>{" "}
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
               </div>
-              {/* <div className="st">SHIP PARCELS TO YOUR WAREHOUSE</div> */}
-              <div className="st-2">
-                YOUR BRAND IS MARKET READY TO GRAB CUSTOMER'S ATTENTION
-              </div>{" "}
-            </div>{" "}
-          </div>
-      
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    {" "}
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Saurav Singh
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>{" "}
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Aman Kumar
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>{" "}
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>
+                </div>{" "}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    {" "}
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Lilly Singh
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>{" "}
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    {" "}
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Happy Singh
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    {" "}
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Guldeep
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="fd-cd">
+                <div className="feed-info">
+                  <div id="hd-fd">
+                    {" "}
+                    <div
+                      style={{
+                        borderBottom: "1px solid black",
+                        width: "fit-content",
+                        margin: "auto",
+                      }}
+                    >
+                      Sanaya
+                    </div>
+                    <div className="sitara">
+                      <StarBorder />
+                      <StarHalf />
+                      <Star />
+                      <Star />
+                      <Star />
+                    </div>
+                    <div className="msg-title">"Great Work"</div>
+                    <div id="org">CLIENT OF COMPANY</div>
+                    <div className="msg-desc">
+                      I work in project management and joined Unicoach because I
+                      get great courses for less. The instructors are fantastic,
+                      interesting, and helpful. I plan to use for a long time!
+                    </div>
+                  </div>{" "}
+                </div>{" "}
+              </div>
+            </SwiperSlide>
 
-      
-          <div id="wl-sec-3">
-            <div className="ws-l">
-              <div className="ws-title">Order in bulk now !!!</div>
-
-              <Link to={"/signIn"} className="btn btn-b">
-                Contact us
-              </Link>
-            </div>
-            <div className="ws-r">
-              <img src="./imgs/wh-sec-3.jpg" alt="" />
-            </div>
-          </div>
-        
-
-      
-          <div id="feed-l">
-            <center className="fd-title" id="dg">
-              What People Say About{" "}
-              <span style={{ color: "var(--blue)" }}>Wholesaler's Plan</span>
-            </center>
-          </div>
-          <section id="feed">
-            <div id="feed-r" style={{ paddingTop: "3rem" }}>
-              <Swiper
-                id="fd-scr"
-                // spaceBetween={120}
-                slidesPerView={value}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                loop={true}
-                modules={[Autoplay]}
-                className="mySwiper"
-                // loop={true}
-              >
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Rishav Jaiswal
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>{" "}
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        {" "}
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Saurav Singh
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>{" "}
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Aman Kumar
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>{" "}
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        {" "}
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Lilly Singh
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>{" "}
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        {" "}
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Happy Singh
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        {" "}
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Guldeep
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                  <div className="fd-cd">
-                    <div className="feed-info">
-                      <div id="hd-fd">
-                        {" "}
-                        <div
-                          style={{
-                            borderBottom: "1px solid black",
-                            width: "fit-content",
-                            margin: "auto",
-                          }}
-                        >
-                          Sanaya
-                        </div>
-                        <div className="sitara">
-                          <StarBorder />
-                          <StarHalf />
-                          <Star />
-                          <Star />
-                          <Star />
-                        </div>
-                        <div className="msg-title">"Great Work"</div>
-                        <div id="org">CLIENT OF COMPANY</div>
-                        <div className="msg-desc">
-                          I work in project management and joined Unicoach
-                          because I get great courses for less. The instructors
-                          are fantastic, interesting, and helpful. I plan to use
-                          for a long time!
-                        </div>
-                      </div>{" "}
-                    </div>{" "}
-                  </div>
-                </SwiperSlide>
-
-                {/* <div className="feed-info">
+            {/* <div className="feed-info">
                         <div id="hd-fd">
                           <div id="blue" className="btn btn-b">
                             {r.Name}
                           </div>
                           {/* <div className="msg-title">"Great Work"</div> */}
-                {/* <div id="org">CLIENT OF COMPANY</div>
+            {/* <div id="org">CLIENT OF COMPANY</div>
                           <div className="msg-desc">{r.Review}</div>
                           <div className="sitara">
                             {Array(r.Star)
@@ -472,9 +459,16 @@ const Wsaller = () => {
                           </div>{" "}
                         </div>{" "}
                       </div> */}
-              </Swiper>
-            </div>
-          </section>
+          </Swiper>
+        </div>
+      </section>
+      <div className="footer">
+        <div className="footer-img">
+          <div className="footer-text">
+            So Start Your YIS Journey With Us Now !!
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
