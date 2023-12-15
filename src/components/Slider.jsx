@@ -97,10 +97,10 @@ const Slider = ({ slides }) => {
         <div style={{ ...slideStyles }}>
           <img
             src={slideImageUrl}
-            alt="Picture of the author"
+            alt="Picture "
             height={450}
             width={950}
-            className="slide"
+            className="slide sm:h-52"
           />
         </div>
       </div>

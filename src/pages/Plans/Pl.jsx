@@ -161,7 +161,9 @@ const Pl = () => {
           </div>
         </div>
       </div>
-      {activeLink === "Trial Plan" && <SaleComponent />}
+      {activeLink === "Trial Plan" && window.innerWidth <= 768 && (
+        <SaleComponent />
+      )}
       {activeLink === "Half Yearly" && <HalfYearly />}
       {activeLink === "Yearly Plan" && <Yearly />}
       <div className="footer">

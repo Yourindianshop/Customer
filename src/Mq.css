@@ -1,13 +1,12 @@
-
-#oooo main{
-  overflow-x:hidden !important ;
+#oooo main {
+  overflow-x: hidden !important ;
   width: 100% !important;
 }
-#oooo #side-nav{
-position: absolute;
-/* visibility: hidden; */
+#oooo #side-nav {
+  position: absolute;
+  /* visibility: hidden; */
 }
-#oooo{
+#oooo {
   width: 100dvw !important;
   position: relative;
 }
@@ -64,7 +63,7 @@ position: absolute;
   }
 }
 @media (max-width: 1400px) {
-  #dp-pl  #plan-comp{
+  #dp-pl #plan-comp {
     width: 100% !important;
   }
 
@@ -83,20 +82,20 @@ position: absolute;
   }
 }
 @media (max-width: 1350px) {
-      #pl-kd-sec>*{
-        /* background: red; */
+  #pl-kd-sec > * {
+    /* background: red; */
     width: 100% !important;
   }
-  .ser-cards{
-    justify-content: space-evenly !important;
+  .ser-cards {
+    justify-content: !important;
   }
-  .kd-r{
+  .kd-r {
     justify-content: center !important;
   }
-.kd-pl {
-  width: 35% !important;
-}
-  #pl-kd-sec{
+  .kd-pl {
+    width: 35% !important;
+  }
+  #pl-kd-sec {
     flex-direction: column !important;
   }
   .section-m {
@@ -169,7 +168,7 @@ position: absolute;
   .cal-box .sh-top {
     /* flex-direction: column !important; */
   }
-  .sh-l{
+  .sh-l {
     width: 100% !important;
   }
 
@@ -188,154 +187,153 @@ position: absolute;
   .pop-2 {
     margin: 0 !important;
   }
-
 }
 
 @media only screen and (max-width: 600px) {
-  .fl-bx>*{
+  .fl-bx > * {
     width: 100% !important;
   }
-  .fd-title, #sec-head .t-title, #dash-calc .t-title, #offer .t-title, #service .ser-head h1{
+  .fd-title,
+  #sec-head .t-title,
+  #dash-calc .t-title,
+  #offer .t-title,
+  #service .ser-head h1 {
     margin: 3rem 0 !important;
   }
   .bkl {
     width: 100% !important;
     margin: 0 !important;
   }
-  .fl-bx{
+  .fl-bx {
     flex-direction: column;
   }
-  #wl-sec-3>*{
+  #wl-sec-3 > * {
     width: 100% !important;
   }
-  #wl-sec-3{
+  #wl-sec-3 {
     padding: 35px !important;
     flex-direction: column !important;
-
   }
-  #dash-calc .t-title>*{
+  #dash-calc .t-title > * {
     font-size: 2rem !important;
   }
-  .cal-box{
+  .cal-box {
     padding-top: 0 !important;
   }
   #cal {
- 
-  /* padding: 35px ; */
-  gap: 25px;
-}
+    /* padding: 35px ; */
+    gap: 25px;
+  }
 
-#cal .cal-head {
-padding: 25px 0 !important;
-}
-   #lnl{
+  #cal .cal-head {
+    padding: 25px 0 !important;
+  }
+  #lnl {
     margin: 3vh 0;
-   }
-  .sc{
-
+  }
+  .sc {
     min-height: fit-content !important;
   }
-  .ps{
+  .ps {
     padding: 20px 15px !important;
     gap: 7.5px !important;
     height: fit-content !important;
-    min-height:  fit-content !important;
+    min-height: fit-content !important;
     min-width: 40% !important;
-  } 
-  #lnl >*{
+  }
+  #lnl > * {
     width: 40%;
-  }#pop-ser {
+  }
+  #pop-ser {
     padding: 0 7px !important;
-  }.s-txt{
+  }
+  .s-txt {
     margin: 7px 0;
     font-size: 0.8rem !important;
-  }.st{
+  }
+  .st {
     text-align: left !important;
     font-size: 1.4rem !important;
   }
-  .ps-r>*{
+  .ps-r > * {
     width: 100%;
     align-items: flex-start !important;
     justify-self: flex-start !important;
     text-align: left !important;
   }
-  .ps-r{
+  .ps-r {
     height: 100% !important;
     justify-content: space-between !important;
   }
   /* #lnl{
     flex-direction: row !important;
   }  */
-   .ps-l{
+  .ps-l {
     display: none !important;
-  }  
-  .ps-fo >*{
+  }
+  .ps-fo > * {
     width: 100%;
   }
-  .ser-cards {
-    margin-bottom: -5vh !important;
-  }
-  .ps-fo{
+
+  .ps-fo {
     gap: 25px;
-flex-direction: column;
+    flex-direction: column;
   }
-  .ps-vs{
+  .ps-vs {
     display: flex !important;
   }
   .kd-l h1 {
     font-size: 2.5rem !important;
     line-height: 45px !important;
   }
-  #pl-kd-sec>*{
+  #pl-kd-sec > * {
     width: 90% !important;
   }
-  #oooo #pl-kd-sec>*{
+  #oooo #pl-kd-sec > * {
     width: 100% !important;
   }
-  #pl-kd-sec{
-        display: flex;
-        flex-direction: column;
-    }   
-    .kd-r > *{
-        width: 100% !important;
-        justify-self: center !important;
-        align-self: center !important;
-    }
-    .kd-r{
-      display: flex;
-      flex-direction: column;
-      width: 90% !important;
-    }
-    .kd-l{
-        width: 90% !important;
-    }
-  .kd-r{
+  #pl-kd-sec {
+    display: flex;
+    flex-direction: column;
+  }
+  .kd-r > * {
+    width: 100% !important;
+    justify-self: center !important;
+    align-self: center !important;
+  }
+  .kd-r {
+    display: flex;
+    flex-direction: column;
+    width: 90% !important;
+  }
+  .kd-l {
+    width: 90% !important;
+  }
+  .kd-r {
     flex-direction: column !important;
-
   }
-.ser-cards{
-    padding: 3vh 0 !important;
+  .ser-cards {
+    padding: 0 0 !important;
   }
-  .ds-top{
+  .ds-top {
     align-items: flex-start !important;
   }
   .t-title {
     font-family: var(--font6) !important;
     font-size: 2.1rem !important;
     font-weight: 600 !important;
-  } 
-  .content2{
-    height:30vh !important;
   }
-  .content1{
-    height:45vh !important ;
+  .content2 {
+    height: 30vh !important;
   }
-  #cal .cal-head .t-title{
-
+  .content1 {
+    height: 45vh !important ;
+  }
+  #cal .cal-head .t-title {
     font-size: 1.2rem !important;
     margin-bottom: 1rem;
   }
-  .sh1 #dg span{
+  .sh1 #dg span {
     font-size: 2rem !important;
   }
   #dg {
@@ -358,8 +356,9 @@ flex-direction: column;
   }
 }
 
-  .footer-main{
-    display: none !important;}
+.footer-main {
+  display: none !important;
+}
 /*==============nav==============*/
 nav {
   padding: 7px 25px !important;
@@ -427,8 +426,8 @@ section {
 }
 
 .bkl {
-  width: 87% ;
-  padding: 0 ;
+  width: 87%;
+  padding: 0;
 }
 
 #indianshopcart .t-title {
@@ -584,12 +583,11 @@ footer {
 }
 
 @media only screen and (max-width: 750px) {
-  #pl-kd-sec{
+  #pl-kd-sec {
     padding: 25px !important;
   }
 
-  #sec-section
-  #sec-head{
+  #sec-section #sec-head {
     margin-top: 5vh !important;
   }
   .cp-hd-title {
@@ -625,14 +623,13 @@ footer {
   .ftr2 {
     display: none !important;
   }
-  .ftr3{
+  .ftr3 {
     display: none;
   }
-  .footer-main{
+  .footer-main {
     display: flex !important;
     margin: 2rem 0;
   }
-
 
   .pop-3.st {
     font-family: var(--font6) !important;

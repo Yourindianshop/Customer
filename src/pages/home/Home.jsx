@@ -672,7 +672,7 @@ const Home = () => {
               </center>
             </div>
             <br />
-            <div id="service" className="ser-sec-2">
+            <div className="ser-sec-2">
               <div className="ser-cards">
                 {/* <div
                   className="ps"
@@ -734,7 +734,7 @@ const Home = () => {
                     </div>
                   </div>
                 </div> */}
-                <div id="lnl">
+                <div id="lnl" className="sm:mt-0">
                   <div className="ps">
                     <div className="ps-l">
                       <EngineeringOutlinedIcon
