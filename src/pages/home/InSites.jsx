@@ -1,8 +1,72 @@
 import React, { useEffect, useState } from "react";
 import "./Sts.css";
-import SearchIcon from '@mui/icons-material/Search';
-import { Link, useLocation } from "react-router-dom";
+import SearchIcon from "@mui/icons-material/Search";
+import { useLocation } from "react-router-dom";
 import Marquee from "react-fast-marquee";
+import { FaBars } from "react-icons/fa";
+import { ImCross } from "react-icons/im";
+
+const Sidebar = ({
+  isSidebarOpen,
+  setSidebarOpen,
+  handleSearch,
+  handleOfferChange,
+  handleCategoryChange,
+  availableOffers,
+  availableCategories,
+  selectedOffer,
+  selectedCategory,
+  searchQuery,
+}) => (
+  <div className={`sidebar ${isSidebarOpen ? "open" : ""}`}>
+    {isSidebarOpen && (
+      <div className="side-filt-container">
+        <div className="side-filt">
+          <div className="search-d">
+            <SearchIcon />
+            <input
+              className="search-p"
+              type="text"
+              placeholder="Search by site name"
+              onChange={handleSearch}
+              value={searchQuery}
+            />
+          </div>
+        </div>
+        <div className="side-filt mt-2">
+          <select
+            className="select-s side-filt"
+            onChange={handleOfferChange}
+            value={selectedOffer}
+          >
+            {availableOffers.map((offer) => (
+              <option key={offer} value={offer}>
+                {offer}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="side-filt">
+          <span id="linn">-------------------------------------</span>
+          <h3>Category</h3>
+          {availableCategories.map((category) => (
+            <label key={category} className="side-filt-cb">
+              <input
+                type="radio"
+                value={category}
+                checked={selectedCategory === category}
+                onChange={handleCategoryChange}
+              />
+              <span className="ctgr">{category}</span>
+            </label>
+          ))}
+        </div>
+        <span id="linn">-------------------------------------</span>
+      </div>
+    )}
+  </div>
+);
+
 const Sts = () => {
   const { pathname } = useLocation();
   const [sites, setSites] = useState([
@@ -295,67 +359,32 @@ const Sts = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
+  const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   return (
     <div className="ecommerce-sites">
-        <div  className="marquee">
-    <Marquee speed={150}>
-        Save Upto 80% on International Shipping • Exciting Discounts on Premium Plans • Get Your Virtual Indian Address
-    </Marquee>
-    <div>
-      <img className="image-shop" src="/home/fest-1.png" />
-    </div>
-    </div>
-      <div className="side-filt-container">
-        <div className="side-filt">
-          <div className="search-d">
-            <SearchIcon />
-            <input
-              className="search-p"
-              type="text"
-              placeholder="Search by site name"
-              onChange={handleSearch}
-              value={searchQuery}
-            />
-          </div>
+      <div className="marquee">
+        <Marquee speed={150}>
+          Save Upto 80% on International Shipping • Exciting Discounts on
+          Premium Plans • Get Your Virtual Indian Address
+        </Marquee>
+        <div>
+          <img className="image-shop" src="/home/fest-1.png" alt="img-shop" />
         </div>
-        <div className="side-filt mt-2">
-          {/* <h3>Offers</h3> */}
-          {/* Apply "side-filt" class to the select element */}
-          <select
-            className="select-s side-filt"
-            onChange={handleOfferChange}
-            value={selectedOffer}
-          >
-            {availableOffers.map((offer) => (
-              <option key={offer} value={offer}>
-                {offer}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="side-filt">
-          <span id="linn">-------------------------------------</span>
-          <h3>Category</h3>
-
-          {/* Apply "side-filt" class to labels and checkboxes */}
-          {availableCategories.map((category) => (
-            <label key={category} className="side-filt-cb">
-              <input
-                type="radio"
-                value={category}
-                checked={selectedCategory === category}
-                onChange={handleCategoryChange}
-              />
-              <span className="ctgr">{category}</span>
-            </label>
-          ))}
-        </div>
-        <span id="linn">-------------------------------------</span>
       </div>
-      {/* <Link to="/disp-plan" className="content-1">
-        <img src="/banner/banner.png" alt="no img" />
-      </Link> */}
+
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        handleSearch={handleSearch}
+        handleOfferChange={handleOfferChange}
+        handleCategoryChange={handleCategoryChange}
+        availableOffers={availableOffers}
+        availableCategories={availableCategories}
+        selectedOffer={selectedOffer}
+        selectedCategory={selectedCategory}
+        searchQuery={searchQuery}
+      />
 
       <div className="site-grid">
         {filteredSites.map((site) => (
@@ -366,7 +395,6 @@ const Sts = () => {
           </div>
         ))}
       </div>
-      {/* <div className="content2"></div> */}
     </div>
   );
 };

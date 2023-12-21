@@ -2,49 +2,33 @@ import React, { useContext, useState } from "react";
 import MenuOpenIcon from "@mui/icons-material/MenuOpen";
 import "../stylesheet/Sidebar.css";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import HomeRoundedIcon from "@mui/icons-material/HomeRounded";
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
-import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
-import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import { Link, useNavigate } from "react-router-dom";
-
-import FlightTakeoffOutlinedIcon from "@mui/icons-material/FlightTakeoffOutlined";
 import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import StoreMallDirectoryOutlinedIcon from "@mui/icons-material/StoreMallDirectoryOutlined";
-import DiscountOutlinedIcon from "@mui/icons-material/DiscountOutlined";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DoNotDisturbAltOutlinedIcon from "@mui/icons-material/DoNotDisturbAltOutlined";
-import BookOutlinedIcon from "@mui/icons-material/BookOutlined";
 import CalculateOutlinedIcon from "@mui/icons-material/CalculateOutlined";
-import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";
-import Groups2Icon from "@mui/icons-material/Groups2";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
-import ArticleOutlinedIcon from "@mui/icons-material/ArticleOutlined";
-import LogoutIcon from '@mui/icons-material/Logout';
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import LogoutIcon from "@mui/icons-material/Logout";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import { MyContext } from "../App";
 const Sidebar = () => {
   const [isCollapsedSidebar, setisCollapsedSidebar] = useState(false);
-  const {setIsLogin}=useContext(MyContext);
-  const nav = useNavigate()
+  const { setIsLogin } = useContext(MyContext);
+  const nav = useNavigate();
 
   const toggleSidebarCollapseHandler = () => {
     setisCollapsedSidebar((prev) => !prev);
     console.log(isCollapsedSidebar);
   };
-  const {isLogin,isBLogin,setIsBLogin}=useContext(MyContext)
-  const logOut = async ()=>{
+  const { isLogin, isBLogin, setIsBLogin } = useContext(MyContext);
+  const logOut = async () => {
     window.localStorage.clear();
     setIsLogin(false);
     setIsBLogin(false);
-    nav("/")
-  }
+    nav("/");
+  };
   return (
     <>
       <aside data-collapse={isCollapsedSidebar}>
@@ -53,7 +37,7 @@ const Sidebar = () => {
             <span className="sidebar_nav_txt">
               <Link to={"/"} className="logo">
                 <span id="org">Your</span>
-                <img src="../imgs/6.png" style={{ width: "40px" }} />
+                <img src="../imgs/6.png" style={{ width: "40px" }} alt="img" />
                 <span className="">Shop</span>
               </Link>
             </span>
@@ -92,18 +76,6 @@ const Sidebar = () => {
                   <b className="sidebar_nav_txt">indian shops</b>
                 </Link>
 
-                {/* <Link to="/dashboard/assisted-purchase">
-                <span>
-                  <StickyNote2OutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">Assisted purchase Request</b>
-              </Link> */}
-                {/* <Link to="/dashboard/coupon">
-                <span>
-                  <DiscountOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt">coupons available</b>
-              </Link> */}
                 <small className="sidebar_nav_txt">Help</small>
                 <Link to="/dashboard/prohibited-items">
                   <span>
@@ -111,12 +83,7 @@ const Sidebar = () => {
                   </span>
                   <b className="sidebar_nav_txt">prohibited items</b>
                 </Link>
-                {/* <Link to="/">
-                <span>
-                  <BookOutlinedIcon />
-                </span>
-                <b className="sidebar_nav_txt"> country guide </b>
-              </Link> */}
+
                 <Link to="/dashboard/calc">
                   <span>
                     <CalculateOutlinedIcon />
@@ -125,12 +92,7 @@ const Sidebar = () => {
                 </Link>
 
                 <small className="sidebar_nav_txt">your stuff</small>
-                {/* <Link to="/">
-                <span>
-                  <Groups2Icon />
-                </span>
-                <b className="sidebar_nav_txt"> refer and earn</b>
-              </Link> */}
+
                 <Link to="/dashboard/profile">
                   <span>
                     <AccountCircleIcon />
@@ -143,12 +105,7 @@ const Sidebar = () => {
                   </span>
                   <b className="sidebar_nav_txt"> wallet</b>
                 </Link>
-                {/* <Link to="/billing">
-                <span>
-                  <AccountBalanceIcon />
-                </span>
-                <b className="sidebar_nav_txt"> billing</b>
-              </Link> */}
+
                 <Link to="/Customer-Review">
                   <span>
                     <AccountBalanceIcon />

@@ -243,40 +243,34 @@ const Home = () => {
 
   const testimonialsData = [
     {
-      name: "Rishav Jaiswal",
+      name: "Rajesh Mishra",
       stars: 4.5,
-      organization: "CLIENT OF COMPANY",
+      organization: "Living in Canada",
       message:
-        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+        "Impressive service! Our family relies on timely and secure parcel deliveries. Your Indian Shop's service has consistently exceeded our expectations. Fast, reliable, and professional—truly a game-changer for people living outside India",
     },
     {
-      name: "Rishav Jaiswal",
-      stars: 4.5,
-      organization: "CLIENT OF COMPANY",
+      name: "Vibhuti Sharma",
+      stars: 4,
+      organization: " Living in Dubai",
       message:
-        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+        "I've been using YIS for personal shipments, and I'm thrilled with the experience. From the easy shipping process to on-time deliveries, it's been hassle-free. The rates are reasonable, and their half yearly plans are awesome",
     },
     {
-      name: "Rishav Jaiswal",
-      stars: 4.5,
-      organization: "CLIENT OF COMPANY",
+      name: "Harpreet Singh",
+      stars: 4.3,
+      organization: "Living in London",
       message:
-        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+        "Working remotely means I often need to send and receive important documents. YIS service has been a lifesaver",
     },
     {
-      name: "Rishav Jaiswal",
-      stars: 4.5,
-      organization: "CLIENT OF COMPANY",
+      name: "Cris Leina",
+      stars: 5,
+      organization: "Living in Mallorca , Spain",
       message:
-        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
+        "Frequent travel to India can be chaotic, but your service ensures my packages reach me wherever I am in the world. The international shipping is seamless",
     },
-    {
-      name: "Rishav Jaiswal",
-      stars: 4.5,
-      organization: "CLIENT OF COMPANY",
-      message:
-        "I work in project management and joined Unicoach because I get great courses for less. The instructors are fantastic, interesting, and helpful. I plan to use for a long time!",
-    },
+
     // Add more data for other testimonials
   ];
 
