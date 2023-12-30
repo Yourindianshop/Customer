@@ -91,7 +91,7 @@ function Paypal({afterpayment,amount}) {
             'clientId':clientId,
             'intent':intent,
             'currency': currency,
-            'sdkBaseUrl': paypal_sdk_url
+            'sdkBaseUrl': paypal_sdk_url,
           }}
         >
             {success && <h1>Payment mad successfully</h1>}

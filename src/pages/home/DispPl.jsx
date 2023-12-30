@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+
+import React, { useEffect, useState } from "react";
 import { fetchreq } from "../../Helper/fetch";
 import "./DispPl.css";
 
@@ -48,3 +49,4 @@ const DispPl = () => {
 };
 
 export default DispPl;
+

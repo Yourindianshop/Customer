@@ -48,8 +48,7 @@ import Marquee from "react-fast-marquee";
 import Slider from "./components/Slider";
 import Plan from "./pages/home/Plan";
 import Pl from "./pages/Plans/Pl";
-import PaypalR from "./components/PaypalR";
-
+import Razorpay from "./components/Razorpay";
 export const MyContext = createContext();
 
 const App = () => {
@@ -126,7 +125,7 @@ const App = () => {
             />
             <Route path="/plan" element={<PlanPage isBill={false} />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
-            <Route path="/paypal" element={<PaypalR/>} />
+            <Route path="/razorpay" element={<Razorpay amount={100} currency={"INR"} reciept={"YIS_Tb"}/>} />
             <Route
               path="/dashboard/"
               element={

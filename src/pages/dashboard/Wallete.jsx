@@ -89,7 +89,6 @@ function Wallete() {
             const {payer}=details;
             setSuccess(true)
             handlesubmit();
-            
         })
     }
     const createOrder=(data,actions)=>{
@@ -113,6 +112,66 @@ function Wallete() {
     const onError = (data,actions)=>{
         setError(true);
         console.log(data);
+    }
+
+    // RAZORPAY
+    const backend = process.env.REACT_APP_BACKEND;
+    const rclientId = process.env.REACT_APP_CLIENTID;
+    const currency = "INR";
+    const reciept = "YIS31";
+    const paymenthandler = async (e)=>{
+      e.preventDefault();
+      const res = await fetch(`${backend}/getRazorpayOrder/${amount*100}/${currency}/${reciept}`,{method:'GET'});
+      const {order}= await res.json();
+      // console.log(order);
+      var options = {
+        "key": rclientId, // Enter the Key ID generated from the Dashboard
+        "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+        "currency": order.currency,
+        "name": "Your Indian Shop",
+        "description": "Test Transaction",
+        "image": "https://yourindianshop.com",
+        "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+        "handler":async function (response){
+          // this is after payment accors
+        // console.log(response);
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature)
+
+        const validateRes = await fetch(`${backend}/order/validate/${response.razorpay_order_id}/${response.razorpay_payment_id}/${response.razorpay_signature}`,{
+            method: "GET",
+        }
+        );
+        const jsonRes = await validateRes.json();
+        console.log(jsonRes);
+        alert('Transaction Successfully done');
+        setIsclick(false);
+        setAmount(0);
+        setPayment(false);
+        setSuccess(true)
+        handlesubmit();
+      },
+        "notes": {
+            "address": "Razorpay Corporate Office"
+        },
+        "theme": {
+            "color": "#3399cc"
+        }
+      };
+      var rzp1 = new window.Razorpay(options);
+      rzp1.on('payment.failed', function (response){
+        alert(response.error.code);
+        alert(response.error.description);
+        // alert(response.error.source);
+        // alert(response.error.step);
+        // alert(response.error.reason);
+        // alert(response.error.metadata.order_id);
+        // alert(response.error.metadata.payment_id);
+        // alert('Error');
+      });
+      rzp1.open();
+      e.preventDefault();
     }
     useEffect(()=>{
         if(!isLogin){
@@ -143,12 +202,14 @@ function Wallete() {
                 className="btn-r"
                 onClick={() => {
                   setIsclick(false);
+                  setAmount(0);
+                  setPayment(false);
                 }}
               >
                 X
               </button>
               <h1>Add Money To Your Wallet</h1>
-              <input
+              {!payment && <input
                 style={{color: "#000", borderRadius: "8px", borderBottom: "0 !important"}}
                 value={amount}
                 onChange={(e) => {
@@ -157,15 +218,15 @@ function Wallete() {
                 }}
                 type="number"
                 placeholder="Enter Amount to Add"
-              />
+              />}
               {!payment && <button onClick={showpaymentButton} className="btn btn-o-1">
                 Pay to Wallet
               </button>}
 
               {payment && (
                 <div className='credit-card'>
-
-                <PayPalScriptProvider
+                <button onClick={paymenthandler} style={{width:'100%',margin:'10px 0',backgroundColor:"#3399cc",color:'white',padding:'12px',borderRadius:'4px'}}>Pay with Razorpay</button>
+              <PayPalScriptProvider
                   options={{
                     "client-id": clientId,
                   }}
