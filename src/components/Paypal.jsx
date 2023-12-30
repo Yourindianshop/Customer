@@ -5,10 +5,11 @@ function Paypal({afterpayment,amount}) {
     const [success,setSuccess]=useState(false);
     const [error,setError]=useState(false);
     const clientId = process.env.REACT_APP_PAYPAL_CLIENTID;
-    const secretId = process.env.REACT_APP_PAYPAL_SECRET;
-    const environment = process.env.REACT_APP_PAYPAL_ENV;
     const currency = process.env.REACT_APP_PAYPAL_CURENCY;
-    const base = process.env.REACT_APP_PAYPAL_BASE;
+    // const currency = 'USD';
+    const backend = process.env.REACT_APP_BACKEND;
+    const intent = "capture";
+    const paypal_sdk_url = "https://www.paypal.com/sdk/js";
 
     const onApprove =async (data,actions)=>{
         return actions.order.capture().then(function (details){
@@ -17,28 +18,27 @@ function Paypal({afterpayment,amount}) {
             afterpayment();
         })
     }
-    const generateAccessToken = async () => {
-        try {
-          if (!clientId || !secretId) {
-            throw new Error("MISSING_API_CREDENTIALS");
-          }
-          const auth = Buffer.from(
-            clientId + ":" + secretId,
-          ).toString("base64");
-          const response = await fetch(`${base}/v1/oauth2/token`, {
-            method: "POST",
-            body: "grant_type=client_credentials",
-            headers: {
-              Authorization: `Basic ${auth}`,
-            },
-          });
-          
-          const data = await response.json();
-          return data.access_token;
-        } catch (error) {
-          console.error("Failed to generate Access Token:", error);
-        }
-    };
+    const onApprove2 = async (data,actions)=>{
+      let order_id = data.orderID;
+      return fetch(`${backend}/complete_order`, {
+          method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify({
+              "intent": intent,
+              "order_id": order_id
+          })
+      })
+      .then((response) => response.json())
+      .then((order_details) => {
+          console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
+          let intent_object = intent === "authorize" ? "authorizations" : "captures";
+          console.log(intent_object);
+          setSuccess(true);
+          afterpayment();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     async function handleResponse(response) {
         try {
           const jsonResponse = await response.json();
@@ -70,28 +70,12 @@ function Paypal({afterpayment,amount}) {
         })
     }
     const createOrder2 = async (data,actions)=>{
-        const accessToken = await generateAccessToken();
-        const url = `${base}/v2/checkout/orders`;
-        const payload = {
-            intent: "CAPTURE",
-            purchase_units: [
-              {
-                amount: {
-                  currency_code: currency,
-                  value: parseInt(amount),
-                },
-              },
-            ],
-        };
-        const response = await fetch(url, {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${accessToken}`,
-            },
-            method: "POST",
-            body: JSON.stringify(payload),
-        }); 
-        return handleResponse(response);
+      return fetch(`${backend}/create_order`, {
+        method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({ "intent": intent })
+    })
+    .then((response) => response.json())
+    .then((order) => { return order.id; });
     }
     const onError = (data,actions)=>{
         setError(true);
@@ -102,14 +86,23 @@ function Paypal({afterpayment,amount}) {
         // email = sb-dni2e27248921@personal.example.com
         // passworxd = ")P;#l@L5"
     <div>
-        <PayPalScriptProvider>
+        <PayPalScriptProvider
+          options={{
+            'clientId':clientId,
+            'intent':intent,
+            'currency': currency,
+            'sdkBaseUrl': paypal_sdk_url
+          }}
+        >
             {success && <h1>Payment mad successfully</h1>}
             {error && <h1>Some Error occurs</h1>}
             {!success && <PayPalButtons 
                 style={{layout:"vertical"}} 
+                onClick={()=>{ }}
                 createOrder={createOrder2} 
-                onApprove={onApprove} 
-                onError={onError}/>}
+                onApprove={onApprove2} 
+                onError={onError}
+              />}
         </PayPalScriptProvider>
     </div>
   )
