@@ -16,7 +16,8 @@ import Facebook from "@mui/icons-material/Facebook";
 import Instagram from "@mui/icons-material/Instagram";
 import Twitter from "@mui/icons-material/Twitter";
 const Nav = () => {
-  const { user, setUser, isLogin, setIsLogin,setIsBLogin } = useContext(MyContext);
+  const { user, setUser, isLogin, setIsLogin, setIsBLogin } =
+    useContext(MyContext);
   const nav = useNavigate();
   const [si, setSi] = useState("Log In");
   const othenticate = async () => {
@@ -124,13 +125,14 @@ const Nav = () => {
         <div id="links">
           {/* <Link to="/">Home</Link> */}
           <Link to="/about">About</Link>
-          <a id="drop-hd">
+          <Link to="/comming-soon">Services</Link>
+          {/* <a id="drop-hd">
             Services
             <div className="drop-list">
-              <Link to="/offers">Festive Offers </Link>
-              <Link to="/coming-soon">Delivery Partners</Link>
+              {/*<Link to="/offers">Festive Offers </Link>*/}
+          {/* <Link to="/coming-soon">Delivery Partners</Link>
             </div>
-          </a>{" "}
+          </a>{" "} */}
           <Link to="/disp-plan">Plans</Link>
           <Link to="/offers">Offers</Link>
           <Link to="/calc">Shipping Calculator</Link>
