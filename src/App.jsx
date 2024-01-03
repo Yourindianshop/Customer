@@ -422,12 +422,18 @@ const App = () => {
               path="/dashboard/calc"
               element={
                 <div>
-                  <div id="app" className="row">
+                  {/* <div id="app" className="row">
                     <Sidebar />
                     <main>
                       <Calc />
                     </main>
-                  </div>{" "}
+                  </div> */}
+                  <Link to="/dashboard" className="btn-house">
+                    <IconButton>
+                      <House />
+                    </IconButton>
+                  </Link>
+                  <Calc />
                 </div>
               }
             />

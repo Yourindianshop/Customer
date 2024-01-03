@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 const Calc = () => {
-  const [weight, setWeight] = useState("0");
+  const [weight, setWeight] = useState(null);
   const [length, setLength] = useState("");
   const [width, setWidth] = useState("");
   const [height, setHeight] = useState("");
@@ -35,12 +35,10 @@ const Calc = () => {
     let response = await fetchreq("GET", "getAllShippers", {});
     if (response) {
       setShippingData(response.shippings);
+      // console.log(response.shippings);
     }
   };
 
-  useEffect(() => {
-    ship();
-  }, []);
 
   const calculatePrice = () => {
     if (cp == -1) {
@@ -96,16 +94,13 @@ const Calc = () => {
   const handleClose = () => {
     setOpen(false);
     setIsDimentsion(true);
-    setCp(-1);
   };
   const fetchContrys = async () => {
     const dt = await fetchreq("GET", "getCounty", {});
     dt ? setCtr(dt.result) : setCtr([]);
     console.log(dt);
   };
-  useEffect(() => {
-    fetchContrys();
-  }, []);
+  
 
   const calculatePrice2 = () => {
     if (cp == -1) {
@@ -168,6 +163,11 @@ const Calc = () => {
     return volumetriweight > weight ? 1 : 0;
   }
 
+
+  useEffect(() => {
+    fetchContrys();
+    ship();
+  }, []);
   return (
     <div id="dash-calc">
       <div className="t-title">
@@ -322,9 +322,9 @@ const Calc = () => {
           >
             <DialogTitle id="alert-dialog-title">Shipping Prices</DialogTitle>
             <DialogContent>
-              {isDimentsion || weight ? (
+              {(isDimentsion || weight) ? (
                 <DialogContentText id="alert-dialog-description">
-                  <div className="flex justify-center mt-[-20rem] ml-[35rem] h-[30rem] w-[30rem] items-center fixed bg-red-500 p-4">
+                  <div>
                     <div className="modal">
                       <div className="modal-content">
                         <h1>Shipping Weight: {weight} kg</h1>
@@ -346,10 +346,10 @@ const Calc = () => {
                                 <td>
                                   {isFirstGreater(volumetriweight, weight)
                                     ? (
-                                        (volumetriweight * shipping.PRICE) /
+                                        (volumetriweight * shipping.PRICE * cp) /
                                         50
                                       ).toFixed(2)
-                                    : ((weight * shipping.PRICE) / 500).toFixed(
+                                    : ((weight * shipping.PRICE *cp) / 500).toFixed(
                                         2
                                       )}
                                 </td>
@@ -357,12 +357,12 @@ const Calc = () => {
                                   {isFirstGreater(volumetriweight, weight)
                                     ? (
                                         (volumetriweight *
-                                          shipping.PRICE *
+                                          shipping.PRICE * cp *
                                           0.9) /
                                         50
                                       ).toFixed(2)
                                     : (
-                                        (weight * shipping.PRICE * 0.9) /
+                                        (weight * shipping.PRICE * cp * 0.9) /
                                         500
                                       ).toFixed(2)}
                                 </td>
@@ -407,6 +407,7 @@ const Calc = () => {
           </Dialog>
         </div>
       </div>
+      {/* CALCULATOR IS ABOVE BELOVE IS DESCRIPTION */}
       <div style={{ background: "white" }}>
         <div id="pl-kd-sec">
           <div className="kd-l">

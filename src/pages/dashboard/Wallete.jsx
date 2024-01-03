@@ -6,13 +6,18 @@ import {PayPalButtons, PayPalScriptProvider} from '@paypal/react-paypal-js'
 
 function Wallete() {
     const nav = useNavigate();
-    const clientId = "ASMQ8cIBYPm5-ZaxGZhFpodBXIF0n2PBlfyO8mlmGZxoiH0ejWvXGHuZJ3YMH48nocz-2f28DoMhk-ze"
+    const backend = process.env.REACT_APP_BACKEND;
+    const clientId = process.env.REACT_APP_PAYPAL_CLIENTID;
+    const currency2 = process.env.REACT_APP_PAYPAL_CURENCY;
+    const intent = "capture";
+    const paypal_sdk_url = "https://www.paypal.com/sdk/js";
     const {isLogin,user,setUser,isFromPlan,setIsFromPlan}=useContext(MyContext)
     const [transaction,setTransaction]=useState(null);
     const [isClick,setIsclick]=useState(false);
     const [isClick2,setIsclick2]=useState(false);
     const [payment,setPayment]=useState(false);
     const [amount,setAmount]=useState(0);
+
     const loadTransaction = async ()=>{
         const dt = await fetchreq("GET",`transaction/${user?.Cid}?pg=1`,{});
         dt?setTransaction(dt.result):setTransaction([]);
@@ -87,7 +92,7 @@ function Wallete() {
     const onApprove =async (data,actions)=>{
         return actions.order.capture().then(function (details){
             const {payer}=details;
-            setSuccess(true)
+            setSuccess(true);
             handlesubmit();
         })
     }
@@ -113,12 +118,46 @@ function Wallete() {
         setError(true);
         console.log(data);
     }
+    const onApprove2 = async (data,actions)=>{
+      let order_id = data.orderID;
+      console.log("orderId in onApprove",order_id);
+      return await fetch(`${backend}/complete_order`, {
+          method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify({
+              "intent": intent,
+              "order_id": order_id
+          })
+      })
+      .then((response) => response.json())
+      .then((order_details) => {
+          console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
+          let intent_object = intent === "authorize" ? "authorizations" : "captures";
+          console.log("intent Object in onApprove",intent_object);
+          setSuccess(true);
+          handlesubmit();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+    const createOrder2 = async (data,actions)=>{
+      console.log("inCreate Order");
+      return await fetch(`${backend}/create_order`, {
+        method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
+        body: JSON.stringify({ "intent": intent })
+    })
+    .then((response) => response.json())
+    .then((order) => { return order.id; });
+    }
+
+
+
 
     // RAZORPAY
-    const backend = process.env.REACT_APP_BACKEND;
     const rclientId = process.env.REACT_APP_CLIENTID;
-    const currency = "INR";
+    const currency = "USD";
     const reciept = "YIS31";
+    
     const paymenthandler = async (e)=>{
       e.preventDefault();
       const res = await fetch(`${backend}/getRazorpayOrder/${amount*100}/${currency}/${reciept}`,{method:'GET'});
@@ -226,22 +265,27 @@ function Wallete() {
               {payment && (
                 <div className='credit-card'>
                 <button onClick={paymenthandler} style={{width:'100%',margin:'10px 0',backgroundColor:"#3399cc",color:'white',padding:'12px',borderRadius:'4px'}}>Pay with Razorpay</button>
-              <PayPalScriptProvider
-                  options={{
-                    "client-id": clientId,
-                  }}
-                  >
-                  {success && <h1>Payment mad successfully</h1>}
-                  {error && <h1>Some Error occurs</h1>}
-                  {!success && (
-                    <PayPalButtons
-                    style={{ layout: "vertical" }}
-                    createOrder={createOrder}
-                    onApprove={onApprove}
-                    onError={onError}
-                    />
-                    )}
-                </PayPalScriptProvider>
+                <PayPalScriptProvider
+                    options={{
+                      "client-id": clientId,
+                      'intent':intent,
+                      'currency': currency2,
+                      'enableFunding':'paylater,venmo',
+                      'sdkBaseUrl':paypal_sdk_url,
+                      'data-sdk-integration-source': "integrationbuilder_sc",
+                    }}
+                    >
+                    {success && <h1>Payment mad successfully</h1>}
+                    {error && <h1>Some Error occurs</h1>}
+                    {!success && (
+                      <PayPalButtons
+                        style={{ layout: "vertical" }}
+                        createOrder={createOrder}
+                        onApprove={onApprove}
+                        onError={onError}
+                      />
+                      )}
+                  </PayPalScriptProvider>
               </div>
               )}
             </form>
@@ -271,6 +315,7 @@ function Wallete() {
           )}
           <button
             onClick={() => {
+              setSuccess(false);
               setIsclick(true);
               setIsclick2(false);
             }}

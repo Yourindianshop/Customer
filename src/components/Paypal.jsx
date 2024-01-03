@@ -18,27 +18,6 @@ function Paypal({afterpayment,amount}) {
             afterpayment();
         })
     }
-    const onApprove2 = async (data,actions)=>{
-      let order_id = data.orderID;
-      return fetch(`${backend}/complete_order`, {
-          method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
-          body: JSON.stringify({
-              "intent": intent,
-              "order_id": order_id
-          })
-      })
-      .then((response) => response.json())
-      .then((order_details) => {
-          console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
-          let intent_object = intent === "authorize" ? "authorizations" : "captures";
-          console.log(intent_object);
-          setSuccess(true);
-          afterpayment();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
     async function handleResponse(response) {
         try {
           const jsonResponse = await response.json();
@@ -69,7 +48,31 @@ function Paypal({afterpayment,amount}) {
             return orderID;
         })
     }
+
+    const onApprove2 = async (data,actions)=>{
+      let order_id = data.orderID;
+      console.log("orderId in onApprove",order_id);
+      return fetch(`${backend}/complete_order`, {
+          method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
+          body: JSON.stringify({
+              "intent": intent,
+              "order_id": order_id
+          })
+      })
+      .then((response) => response.json())
+      .then((order_details) => {
+          console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
+          let intent_object = intent === "authorize" ? "authorizations" : "captures";
+          console.log("intent Object in onApprove",intent_object);
+          setSuccess(true);
+          afterpayment();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     const createOrder2 = async (data,actions)=>{
+      console.log("inCreate Order");
       return fetch(`${backend}/create_order`, {
         method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
         body: JSON.stringify({ "intent": intent })
@@ -81,7 +84,6 @@ function Paypal({afterpayment,amount}) {
         setError(true);
         console.log(data);
     }
-    
     return (
         // email = sb-dni2e27248921@personal.example.com
         // passworxd = ")P;#l@L5"
@@ -90,19 +92,18 @@ function Paypal({afterpayment,amount}) {
           options={{
             'clientId':clientId,
             'intent':intent,
-            'currency': currency,
-            'sdkBaseUrl': paypal_sdk_url,
+            'currency': currency
           }}
         >
             {success && <h1>Payment mad successfully</h1>}
             {error && <h1>Some Error occurs</h1>}
-            {!success && <PayPalButtons 
+            {!success && <PayPalButtons
                 style={{layout:"vertical"}} 
                 onClick={()=>{ }}
                 createOrder={createOrder2} 
                 onApprove={onApprove2} 
                 onError={onError}
-              />}
+            />}
         </PayPalScriptProvider>
     </div>
   )
