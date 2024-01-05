@@ -81,7 +81,7 @@ const Slider = ({ slides }) => {
   return (
     <>
       {" "}
-      <div style={sliderStyles} className="sm:h-[10%] mt-[3rem] sm:mt-[2rem]">
+      <div style={sliderStyles} className="sm:h-[7%] mt-[3rem] sm:mt-[-2rem]">
         <div>
           <div
             onClick={goToPrevious}
@@ -100,7 +100,7 @@ const Slider = ({ slides }) => {
             alt="Picture "
             height={450}
             width={950}
-            className="slide sm:h-52"
+            className="slide sm:h-44"
           />
         </div>
       </div>
