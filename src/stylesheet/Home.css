@@ -875,7 +875,8 @@ section {
     color: #191919;
   }
   .marquee2 {
-    top: 6px !important;
+    margin-top: 6vh;
+    /* top: px !important; */
   }
 
   #sdsc-ol {

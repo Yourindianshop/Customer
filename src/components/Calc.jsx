@@ -333,7 +333,45 @@ const Calc = () => {
                         </h1>
                         <h2 style={{ color: "#ffffff" }}>Partner Prices:</h2>
                         <table className="styled-table">
-                          {/* ... (rest of the code remains unchanged) */}
+                          <thead>
+                            <tr>
+                              <th>Id</th>
+                              <th>Shipper</th>
+                              <th>Standard Price</th>
+                              <th>YIS Price</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {shippingData?.map((shipping, index) => (
+                              <tr key={shipping.id}>
+                                <td>{shipping.ID}</td>
+                                <td>{shipping.NAME}</td>
+                                <td>
+                                  {isFirstGreater(volumetriweight, weight)
+                                    ? (
+                                        (volumetriweight * shipping.PRICE) /
+                                        50
+                                      ).toFixed(2)
+                                    : ((weight * shipping.PRICE) / 500).toFixed(
+                                        2
+                                      )}
+                                </td>
+                                <td>
+                                  {isFirstGreater(volumetriweight, weight)
+                                    ? (
+                                        (volumetriweight *
+                                          shipping.PRICE *
+                                          0.9) /
+                                        50
+                                      ).toFixed(2)
+                                    : (
+                                        (weight * shipping.PRICE * 0.9) /
+                                        500
+                                      ).toFixed(2)}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
                         </table>
                       </div>
                     </div>
