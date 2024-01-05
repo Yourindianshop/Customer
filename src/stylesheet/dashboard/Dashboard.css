@@ -42,6 +42,9 @@
   #dash > * {
     flex-direction: column;
   }
+  #dash-cont {
+    margin-left: 5rem;
+  }
 }
 
 #dash #ds1 {

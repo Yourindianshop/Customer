@@ -11,6 +11,7 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import { MyContext } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 import { fetchreq } from "../../Helper/fetch";
+import Foot from "../../components/Foot";
 
 const Dashboard = () => {
   const { user, isLogin } = useContext(MyContext);

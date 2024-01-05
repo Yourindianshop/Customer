@@ -1,219 +1,213 @@
 /* CSS for Warehouse Card */
 .warehouse-card:hover .warehouse-image {
-    width: 120%;
-
+  width: 120%;
 }
 .locker {
-    padding: 35px !important;
-    max-height: 100dvh;
-    overflow-y: scroll;
+  padding: 35px !important;
+  max-height: 100dvh;
+  overflow-y: scroll;
 }
 .warehouse-card {
-    position: relative;
-    border: 1px solid #ccc;
-    border-radius: 13.5px;
-    overflow: hidden;
-    background: #fff;
-    width: 350px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.176);
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 13.5px;
+  overflow: hidden;
+  background: #fff;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.176);
 }
 
-.coupon{
-    position: absolute 
+.coupon {
+  position: absolute;
 }
 .w-data {
-    padding: 15px 25px;
-    /* height: 100%; */
-    color: #232323;
-    flex: 1;
-    width: 100%;
-    /* background-color: var(--blue); */
+  padding: 15px 25px;
+  /* height: 100%; */
+  color: #232323;
+  flex: 1;
+  width: 100%;
+  /* background-color: var(--blue); */
 }
 
 .wh-img-ol {
-    display: grid;
-    place-items: center;
-    width: 100%;
-    max-height: 200px;
-    overflow: hidden;
-    position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  max-height: 200px;
+  overflow: hidden;
+  position: relative;
 }
 
 .warehouse-image {
-    width: 100%;
-    /* position: absolute; */
-    transition: 0.2s ease-in-out;
+  width: 100%;
+  /* position: absolute; */
+  transition: 0.2s ease-in-out;
 }
 
 .warehouse-name {
-    color: var(--org);
-    font-weight: 500;
-    font-family: var(--font6) !important;
-    font-size: 1.6rem;
-    /* margin: 10px 0; */
+  color: var(--org);
+  font-weight: 500;
+  font-family: var(--font6) !important;
+  font-size: 1.6rem;
+  /* margin: 10px 0; */
 }
 
 .warehouse-details {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
-
 
 /* CSS for Warehouse Container */
 .warehouse-container {
-    display: flex;
-    height: auto;
-    width: 100%;
-    background: #eee;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 10vh 10vw;
-    gap: 35px;
+  display: flex;
+  height: auto;
+  width: 100%;
+  background: #eee;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10vh 10vw;
+  gap: 35px;
 }
 
 .parallax-effect-glare-scale {
-    transform-style: preserve-3d;
-    width: 350px;
-    min-width: 350px;
-    /* width: 30%;
+  transform-style: preserve-3d;
+  width: 350px;
+  min-width: 350px;
+  /* width: 30%;
 	 */
-    /* text-align: justify;
+  /* text-align: justify;
 	 */
-    border-radius: 13.5px;
-    /* line-height: 25px; */
-    /* background-color: #272731;
+  border-radius: 13.5px;
+  /* line-height: 25px; */
+  /* background-color: #272731;
 	 */
-    transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
 }
 
 .parallax-effect-glare-scale .inner-element {
-    transform: translateZ(45px);
+  transform: translateZ(45px);
 }
 
 .btn {
-    cursor: pointer;
+  cursor: pointer;
 }
 #l-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--db2);
-    margin: 25px;
-    flex-wrap: wrap;
-    padding: 12px 35px;
-    box-shadow: 0 0 35px 1px #00000027;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--db2);
+  margin: 25px;
+  flex-wrap: wrap;
+  padding: 12px 35px;
+  box-shadow: 0 0 35px 1px #00000027;
 }
 
 .btn-o-1 {
-    display: block;
-    color: #fff;
-    background: var(--blue) !important;
+  display: block;
+  color: #fff;
+  background: var(--blue) !important;
 }
 
-
-
-#l-title>.plan-page-title {
-    color: white;
-    display: flex;
-    gap: 7px;
+#l-title > .plan-page-title {
+  color: white;
+  display: flex;
+  gap: 7px;
 }
 
 #bal {
-    background-color: var(--db2);
-    margin: 25px;
-    padding: 12px 35px;
-    box-shadow: 0 0 35px 1px #00000027;
+  background-color: var(--db2);
+  margin: 25px;
+  padding: 12px 35px;
+  box-shadow: 0 0 35px 1px #00000027;
 }
 
 #bal h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 #bal .btn:hover {
-    background-color: rgb(209, 79, 32);
+  background-color: rgb(209, 79, 32);
 }
 
-.bal-lin>* {
-    width: 21%;
-    min-width: 270px;
-    /* flex: 0.25 !important; */
-    flex-shrink: 0 !important;
-    /* min-width: 150px !important; */
+.bal-lin > * {
+  width: 21%;
+  min-width: 270px;
+  /* flex: 0.25 !important; */
+  flex-shrink: 0 !important;
+  /* min-width: 150px !important; */
 }
 
-.bal-lin>* {}
+.bal-lin > * {
+}
 .bal-lin {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 15px ;
-    color: #fff;
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 15px;
+  color: #fff;
 }
 
-.coupon-input{
-    display: flex;
-    flex-direction: column;
+.coupon-input {
+  display: flex;
+  flex-direction: column;
 }
-.coupon-input input{
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 8px;
+.coupon-input input {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 8px;
 }
-.coupon-input button{
-    
-    margin-top: 1rem;
-}
-
-.btn-r .btn .cancel{
-    margin-left: 1rem;
+.coupon-input button {
+  margin-top: 1rem;
 }
 
+.btn-r .btn .cancel {
+  margin-left: 1rem;
+}
 
 #drrr:hover {
-    border-color: var(--org);
+  border-color: var(--org);
 }
 
 #drrr p {
-    font-size: 1rem;
-    font-family: var(--font3);
-    font-weight: 400;
+  font-size: 1rem;
+  font-family: var(--font3);
+  font-weight: 400;
 }
 
 #dis-req-grid {
-    display: flex;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 7.5px;
-    justify-content: space-evenly;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 7.5px;
+  justify-content: space-evenly;
 }
 
 #drrr {
-    width: 100%;
-    /* margin: 25px; */
-    padding: 22.5px;
-    background: #eee;
-    border: 3px solid transparent;
-    transition: 0.2s ease-in-out;
-    box-shadow: 0 0 35px 1px #0000002e;
+  width: 100%;
+  /* margin: 25px; */
+  padding: 22.5px;
+  background: #eee;
+  border: 3px solid transparent;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 0 35px 1px #0000002e;
 }
 
 .btn-g {
-    color: #fff;
+  color: #fff;
 }
 
 .btn-g:hover {
-    background: var(--blue);
+  background: var(--blue);
 }
 
 .btn-r {
-    background: var(--blue);
-    color: #fff;
+  background: var(--blue);
+  color: #fff;
 }
 
 .btn-r:hover {
-    background: var(--blue);
+  background: var(--blue);
 }

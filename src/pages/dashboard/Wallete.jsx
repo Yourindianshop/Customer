@@ -1,233 +1,245 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { MyContext } from '../../App';
-import { fetchreq, getDate } from '../../Helper/fetch';
-import {PayPalButtons, PayPalScriptProvider} from '@paypal/react-paypal-js'
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { MyContext } from "../../App";
+import { fetchreq, getDate } from "../../Helper/fetch";
+import { PayPalButtons, PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 function Wallete() {
-    const nav = useNavigate();
-    const backend = process.env.REACT_APP_BACKEND;
-    const clientId = process.env.REACT_APP_PAYPAL_CLIENTID;
-    const currency2 = process.env.REACT_APP_PAYPAL_CURENCY;
-    const intent = "capture";
-    const paypal_sdk_url = "https://www.paypal.com/sdk/js";
-    const {isLogin,user,setUser,isFromPlan,setIsFromPlan}=useContext(MyContext)
-    const [transaction,setTransaction]=useState(null);
-    const [isClick,setIsclick]=useState(false);
-    const [isClick2,setIsclick2]=useState(false);
-    const [payment,setPayment]=useState(false);
-    const [amount,setAmount]=useState(0);
+  const nav = useNavigate();
+  const backend = process.env.REACT_APP_BACKEND;
+  const clientId = process.env.REACT_APP_PAYPAL_CLIENTID;
+  const currency2 = process.env.REACT_APP_PAYPAL_CURENCY;
+  const intent = "capture";
+  const paypal_sdk_url = "https://www.paypal.com/sdk/js";
+  const { isLogin, user, setUser, isFromPlan, setIsFromPlan } =
+    useContext(MyContext);
+  const [transaction, setTransaction] = useState(null);
+  const [isClick, setIsclick] = useState(false);
+  const [isClick2, setIsclick2] = useState(false);
+  const [payment, setPayment] = useState(false);
+  const [amount, setAmount] = useState(0);
 
-    const loadTransaction = async ()=>{
-        const dt = await fetchreq("GET",`transaction/${user?.Cid}?pg=1`,{});
-        dt?setTransaction(dt.result):setTransaction([]);
+  const loadTransaction = async () => {
+    const dt = await fetchreq("GET", `transaction/${user?.Cid}?pg=1`, {});
+    dt ? setTransaction(dt.result) : setTransaction([]);
+  };
+  const handlesubmit = async (e) => {
+    if (amount <= 0) {
+      alert("invalid amount");
+    } else {
+      const body = {
+        Cid: user.Cid,
+        amount: amount,
+        note: "added by you",
+      };
+      const dt = await fetchreq("POST", "transaction", body);
+      if (dt) {
+        await fetchreq("GET", `updateWallate/${user?.Cid}`, {});
+        let us = user;
+        us.Wallete = parseInt(user.Wallete) + parseInt(amount);
+        setUser(us);
+        loadTransaction();
+      } else {
+        alert("something went wrong");
+      }
+      setPayment(false);
+      setIsclick(false);
+      setIsclick2(false);
+      setAmount(0);
+      alert("Transaction Successfully");
+      if (isFromPlan) {
+        setIsFromPlan(false);
+        nav("/select-warehouse");
+      }
     }
-    const handlesubmit = async (e)=>{
-        if(amount <=0){
-            alert("invalid amount");
-        }else{
-            const body = {
-                Cid : user.Cid,
-                amount: amount,
-                note: "added by you"
-            }
-            const dt = await fetchreq("POST","transaction",body);
-            if(dt){
-                await fetchreq("GET",`updateWallate/${user?.Cid}`,{})
-                let us = user;
-                us.Wallete = parseInt(user.Wallete)+parseInt(amount);
-                setUser(us);
-                loadTransaction();
-            }else{
-                alert("something went wrong");
-            }
-            setPayment(false)
-            setIsclick(false);
-            setIsclick2(false);
-            setAmount(0)
-            alert("Transaction Successfully");
-            if(isFromPlan){
-              setIsFromPlan(false);
-              nav("/select-warehouse");
-            }
-        }
+  };
+  const handlesubmit2 = async (e) => {
+    e.preventDefault();
+    const curamount = parseInt(user?.Wallete);
+    if (amount <= 0 || amount > curamount) {
+      alert("invalid Amount");
+    } else {
+      const body = {
+        Cid: user.Cid,
+        amount: 0 - parseInt(amount),
+        note: "Withdraw by you",
+      };
+      const dt = await fetchreq("POST", "transaction", body);
+      if (dt) {
+        await fetchreq("GET", `updateWallate/${user?.Cid}`, {});
+        let us = user;
+        us.Wallete = parseInt(user.Wallete) - parseInt(amount);
+        setUser(us);
+        loadTransaction();
+      } else {
+        alert("something went wrong");
+      }
+      setIsclick(false);
+      setIsclick2(false);
+      setAmount(0);
     }
-    const handlesubmit2 =async (e)=>{
-        e.preventDefault()
-        const curamount = parseInt(user?.Wallete);
-        if(amount<=0 || amount>curamount){
-            alert("invalid Amount");
-        }else{
-            const body = {
-                Cid : user.Cid,
-                amount: 0-parseInt(amount),
-                note: "Withdraw by you"
-            }
-            const dt = await fetchreq("POST","transaction",body);
-            if(dt){
-                await fetchreq("GET",`updateWallate/${user?.Cid}`,{})
-                let us = user;
-                us.Wallete = parseInt(user.Wallete)-parseInt(amount);
-                setUser(us);
-                loadTransaction();
-            }else{
-                alert("something went wrong")
-            }
-            setIsclick(false);
-            setIsclick2(false);
-            setAmount(0)
-        }
+  };
+  const showpaymentButton = (e) => {
+    e.preventDefault();
+    if (amount > 0) {
+      setPayment(true);
+    } else {
+      setPayment(false);
     }
-    const showpaymentButton = (e)=>{
-        e.preventDefault();
-        if(amount>0){
-            setPayment(true);
-        }else{
-            setPayment(false);
-        }
-    }
-    const [orderId,setOrderId]=useState("");
-    const [success,setSuccess]=useState(false);
-    const [error,setError]=useState(false);
-    const onApprove =async (data,actions)=>{
-        return actions.order.capture().then(function (details){
-            const {payer}=details;
-            setSuccess(true);
-            handlesubmit();
-        })
-    }
-    const createOrder=(data,actions)=>{
-        setError(false);
-        return actions.order.create({
-            purchase_units:[{
-                    description:'Book',
-                    amount: {
-                        currency_code: 'USD',
-                        value: parseInt(amount)
-                    },
-            }],
-            application_context:{
-                shipping_preference:"NO_SHIPPING"
-            }
-        }).then((orderID)=>{
-            setOrderId(orderID);
-            return orderID
-        })
-    }
-    const onError = (data,actions)=>{
-        setError(true);
-        console.log(data);
-    }
-    const onApprove2 = async (data,actions)=>{
-      let order_id = data.orderID;
-      console.log("orderId in onApprove",order_id);
-      return await fetch(`${backend}/complete_order`, {
-          method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
-          body: JSON.stringify({
-              "intent": intent,
-              "order_id": order_id
-          })
+  };
+  const [orderId, setOrderId] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const onApprove = async (data, actions) => {
+    return actions.order.capture().then(function (details) {
+      const { payer } = details;
+      setSuccess(true);
+      handlesubmit();
+    });
+  };
+  const createOrder = (data, actions) => {
+    setError(false);
+    return actions.order
+      .create({
+        purchase_units: [
+          {
+            description: "Book",
+            amount: {
+              currency_code: "USD",
+              value: parseInt(amount),
+            },
+          },
+        ],
+        application_context: {
+          shipping_preference: "NO_SHIPPING",
+        },
       })
+      .then((orderID) => {
+        setOrderId(orderID);
+        return orderID;
+      });
+  };
+  const onError = (data, actions) => {
+    setError(true);
+    console.log(data);
+  };
+  const onApprove2 = async (data, actions) => {
+    let order_id = data.orderID;
+    console.log("orderId in onApprove", order_id);
+    return await fetch(`${backend}/complete_order`, {
+      method: "post",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        intent: intent,
+        order_id: order_id,
+      }),
+    })
       .then((response) => response.json())
       .then((order_details) => {
-          console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
-          let intent_object = intent === "authorize" ? "authorizations" : "captures";
-          console.log("intent Object in onApprove",intent_object);
-          setSuccess(true);
-          handlesubmit();
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }
-    const createOrder2 = async (data,actions)=>{
-      console.log("inCreate Order");
-      return await fetch(`${backend}/create_order`, {
-        method: "post", headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify({ "intent": intent })
+        console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
+        let intent_object =
+          intent === "authorize" ? "authorizations" : "captures";
+        console.log("intent Object in onApprove", intent_object);
+        setSuccess(true);
+        handlesubmit();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+  const createOrder2 = async (data, actions) => {
+    console.log("inCreate Order");
+    return await fetch(`${backend}/create_order`, {
+      method: "post",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ intent: intent }),
     })
-    .then((response) => response.json())
-    .then((order) => { return order.id; });
-    }
+      .then((response) => response.json())
+      .then((order) => {
+        return order.id;
+      });
+  };
 
+  // RAZORPAY
+  const rclientId = process.env.REACT_APP_CLIENTID;
+  const currency = process.env.REACT_APP_PAYPAL_CURENCY;
+  const reciept = "YIS31";
 
-
-
-    // RAZORPAY
-    const rclientId = process.env.REACT_APP_CLIENTID;
-    const currency = process.env.REACT_APP_PAYPAL_CURENCY;
-    const reciept = "YIS31";
-    
-    const paymenthandler = async (e)=>{
-      e.preventDefault();
-      const res = await fetch(`${backend}/getRazorpayOrder/${amount*100}/${currency}/${reciept}`,{method:'GET'});
-      const {order}= await res.json();
-      // console.log(order);
-      var options = {
-        "key": rclientId, // Enter the Key ID generated from the Dashboard
-        "amount": order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
-        "currency": order.currency,
-        "name": "Your Indian Shop",
-        "description": "Test Transaction",
-        "image": "https://yourindianshop.com",
-        "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-        "handler":async function (response){
-          // this is after payment accors
+  const paymenthandler = async (e) => {
+    e.preventDefault();
+    const res = await fetch(
+      `${backend}/getRazorpayOrder/${amount * 100}/${currency}/${reciept}`,
+      { method: "GET" }
+    );
+    const { order } = await res.json();
+    // console.log(order);
+    var options = {
+      key: rclientId, // Enter the Key ID generated from the Dashboard
+      amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: order.currency,
+      name: "Your Indian Shop",
+      description: "Test Transaction",
+      image: "https://yourindianshop.com",
+      order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      handler: async function (response) {
+        // this is after payment accors
         // console.log(response);
         // alert(response.razorpay_payment_id);
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature)
 
-        const validateRes = await fetch(`${backend}/order/validate/${response.razorpay_order_id}/${response.razorpay_payment_id}/${response.razorpay_signature}`,{
+        const validateRes = await fetch(
+          `${backend}/order/validate/${response.razorpay_order_id}/${response.razorpay_payment_id}/${response.razorpay_signature}`,
+          {
             method: "GET",
-        }
+          }
         );
         const jsonRes = await validateRes.json();
         console.log(jsonRes);
-        alert('Transaction Successfully done');
+        alert("Transaction Successfully done");
         setIsclick(false);
         setAmount(0);
         setPayment(false);
-        setSuccess(true)
+        setSuccess(true);
         handlesubmit();
       },
-        "notes": {
-            "address": "Razorpay Corporate Office"
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-      };
-      var rzp1 = new window.Razorpay(options);
-      rzp1.on('payment.failed', function (response){
-        alert(response.error.code);
-        alert(response.error.description);
-        // alert(response.error.source);
-        // alert(response.error.step);
-        // alert(response.error.reason);
-        // alert(response.error.metadata.order_id);
-        // alert(response.error.metadata.payment_id);
-        // alert('Error');
-      });
-      rzp1.open();
-      e.preventDefault();
+      notes: {
+        address: "Razorpay Corporate Office",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+    var rzp1 = new window.Razorpay(options);
+    rzp1.on("payment.failed", function (response) {
+      alert(response.error.code);
+      alert(response.error.description);
+      // alert(response.error.source);
+      // alert(response.error.step);
+      // alert(response.error.reason);
+      // alert(response.error.metadata.order_id);
+      // alert(response.error.metadata.payment_id);
+      // alert('Error');
+    });
+    rzp1.open();
+    e.preventDefault();
+  };
+  useEffect(() => {
+    if (!isLogin) {
+      nav("/");
+    } else {
+      loadTransaction();
+      if (isFromPlan) {
+        setIsclick(true);
+        setIsclick2(false);
+        setAmount(isFromPlan - user?.Wallete);
+        setPayment(true);
+      }
     }
-    useEffect(()=>{
-        if(!isLogin){
-            nav("/")
-        }else{
-            loadTransaction();
-            if(isFromPlan){
-              setIsclick(true);
-              setIsclick2(false);
-              setAmount(isFromPlan-user?.Wallete);
-              setPayment(true);
-            }
-        }
-    },[])
-    
+  }, []);
+
   return (
-    <div id="par-ct">
+    <div id="par-ct" className="wallet-container">
       <div id="l-title" className="no-mar">
         <div className="plan-page-title">
           <span id="org">Wallet</span>
@@ -248,33 +260,53 @@ function Wallete() {
                 X
               </button>
               <h1>Add Money To Your Wallet</h1>
-              {!payment && <input
-                style={{color: "#000", borderRadius: "8px", borderBottom: "0 !important"}}
-                value={amount}
-                onChange={(e) => {
-                  setAmount(e.target.value);
-                  console.log(amount);
-                }}
-                type="number"
-                placeholder="Enter Amount to Add"
-              />}
-              {!payment && <button onClick={showpaymentButton} className="btn btn-o-1">
-                Pay to Wallet
-              </button>}
+              {!payment && (
+                <input
+                  style={{
+                    color: "#000",
+                    borderRadius: "8px",
+                    borderBottom: "0 !important",
+                  }}
+                  value={amount}
+                  onChange={(e) => {
+                    setAmount(e.target.value);
+                    console.log(amount);
+                  }}
+                  type="number"
+                  placeholder="Enter Amount to Add"
+                />
+              )}
+              {!payment && (
+                <button onClick={showpaymentButton} className="btn btn-o-1">
+                  Pay to Wallet
+                </button>
+              )}
 
               {payment && (
-                <div className='credit-card'>
-                <button onClick={paymenthandler} style={{width:'100%',margin:'10px 0',backgroundColor:"#3399cc",color:'white',padding:'12px',borderRadius:'4px'}}>Pay with Razorpay</button>
-                <PayPalScriptProvider
+                <div className="credit-card">
+                  <button
+                    onClick={paymenthandler}
+                    style={{
+                      width: "100%",
+                      margin: "10px 0",
+                      backgroundColor: "#3399cc",
+                      color: "white",
+                      padding: "12px",
+                      borderRadius: "4px",
+                    }}
+                  >
+                    Pay with Razorpay
+                  </button>
+                  <PayPalScriptProvider
                     options={{
                       "client-id": clientId,
-                      'intent':intent,
-                      'currency': currency2,
-                      'enableFunding':'paylater,venmo',
-                      'sdkBaseUrl':paypal_sdk_url,
-                      'data-sdk-integration-source': "integrationbuilder_sc",
+                      intent: intent,
+                      currency: currency2,
+                      enableFunding: "paylater,venmo",
+                      sdkBaseUrl: paypal_sdk_url,
+                      "data-sdk-integration-source": "integrationbuilder_sc",
                     }}
-                    >
+                  >
                     {success && <h1>Payment mad successfully</h1>}
                     {error && <h1>Some Error occurs</h1>}
                     {!success && (
@@ -284,9 +316,9 @@ function Wallete() {
                         onApprove={onApprove}
                         onError={onError}
                       />
-                      )}
+                    )}
                   </PayPalScriptProvider>
-              </div>
+                </div>
               )}
             </form>
           )}
@@ -327,6 +359,18 @@ function Wallete() {
       </div>
       <br />
       {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
+      <div className="wallet-buttons">
+        <button
+          onClick={() => {
+            setSuccess(false);
+            setIsclick(true);
+            setIsclick2(false);
+          }}
+          className="btn btn-o-1"
+        >
+          Add Money To Wallet
+        </button>
+      </div>
       <table className="par-table">
         <thead>
           <tr>
@@ -369,4 +413,4 @@ function Wallete() {
   );
 }
 
-export default Wallete
+export default Wallete;
