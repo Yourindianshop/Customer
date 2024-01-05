@@ -73,7 +73,7 @@
 
 @media only screen and (max-width: 600px) {
   .site {
-    width: 100px !important;
+    width: 115px !important;
     display: grid !important;
   }
   .site-grid {

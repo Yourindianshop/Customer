@@ -149,17 +149,16 @@ const Nav = () => {
             <Twitter />
           </IconButton>
         </div> */}
-        <a
-          href="https://www.youtube.com/watch?v=YB67y0NepPs&t=2s&pp=ygUbZHJvcHNoaXBwaW5nIGFuaW1hdGVkIHZpZGVv"
-          target="_blank"
-        >
-          <IconButton id="yt-ico">
-            <YouTubeIcon />
-          </IconButton>
-        </a>
+        <div className="nav-right mr-2">
+          <div id="log" className="btn  ">
+            <a href="signup" className="text-[#00A1B8]">
+              Sign Up
+            </a>
+          </div>
+        </div>
         <div className="nav-right">
-          <div onClick={othenticate} id="log" className="btn btn-og">
-            <a>{isLogin ? "Dashboard" : si}</a>
+          <div onClick={othenticate} id="log" className="btn btn-o  ">
+            <a className="text-primary">{isLogin ? "Dashboard" : si}</a>
           </div>
           {/* {!isLogin && (
             <Link to="/signUp" id="log" className="btn btn-og">

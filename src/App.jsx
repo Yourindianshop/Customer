@@ -49,6 +49,7 @@ import Slider from "./components/Slider";
 import Plan from "./pages/home/Plan";
 import Pl from "./pages/Plans/Pl";
 import Razorpay from "./components/Razorpay";
+import InnSites from "./pages/home/InnSites";
 export const MyContext = createContext();
 
 const App = () => {
@@ -125,7 +126,12 @@ const App = () => {
             />
             <Route path="/plan" element={<PlanPage isBill={false} />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
-            <Route path="/razorpay" element={<Razorpay amount={100} currency={"INR"} reciept={"YIS_Tb"}/>} />
+            <Route
+              path="/razorpay"
+              element={
+                <Razorpay amount={100} currency={"INR"} reciept={"YIS_Tb"} />
+              }
+            />
             <Route
               path="/dashboard/"
               element={
@@ -482,7 +488,7 @@ const App = () => {
                   <Nav />
                   <main>
                     {" "}
-                    <InSites />
+                    <InnSites />
                   </main>
                 </div>
               }

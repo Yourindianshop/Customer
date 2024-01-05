@@ -24,11 +24,11 @@ const SignUp = () => {
   const [Country, setCountry] = useState("");
   const [pincode, setPincode] = useState("");
   const [State, setState] = useState("");
-  const [inputOTP, setInputOTP] = useState(""); 
+  const [inputOTP, setInputOTP] = useState("");
   const [code, setCode] = useState(null);
-  const [fetchcontries,setFetchcountries]=useState([]);
+  const [fetchcontries, setFetchcountries] = useState([]);
   const form = useRef();
-  const [cc,setCc]=useState(null);
+  const [cc, setCc] = useState(null);
   const sendEmail = async (e) => {
     e.preventDefault();
     if (password != password2) {
@@ -56,10 +56,10 @@ const SignUp = () => {
     }
   };
 
-  const [isbusiness,setIsBusiness]=useState(false);
+  const [isbusiness, setIsBusiness] = useState(false);
   const submitOTP = () => {
     if (code == inputOTP) {
-      isbusiness?handlesubmitBC():handlesubmit();
+      isbusiness ? handlesubmitBC() : handlesubmit();
     } else {
       alert("invalid code...");
     }
@@ -67,7 +67,7 @@ const SignUp = () => {
   const handlesubmit = async () => {
     // e.preventDefault();
     // cc is the county code;
-    console.log("first")
+    console.log("first");
     if (submit === "Creating...") {
       return;
     }
@@ -79,7 +79,7 @@ const SignUp = () => {
       password,
       Address: "AG",
       Address2: "Near Bus Stop",
-      Landmark:"Zudio",
+      Landmark: "Zudio",
       City: "Rajkot",
       Contry: "india",
       State: "Gujarat",
@@ -101,7 +101,7 @@ const SignUp = () => {
     }
     setSubmit("Continue");
   };
-  const handlesubmitBC = async ()=>{
+  const handlesubmitBC = async () => {
     // email,password, name,phone
     console.log("second");
     if (submit === "Creating...") {
@@ -112,7 +112,7 @@ const SignUp = () => {
       name,
       email,
       phone: mobile,
-      password: password
+      password: password,
     };
     const allKeysAreNotNull = Object.keys(body).every(
       (key) => body[key] !== null && body[key] !== ""
@@ -129,20 +129,20 @@ const SignUp = () => {
       alert("please Fill all details");
     }
     setSubmit("Continue");
-  }
-  const getContries = async ()=>{
-
-    const options = { 
-      method: 'GET',
-      url: 'https://referential.p.rapidapi.com/v1/country',
+  };
+  const getContries = async () => {
+    const options = {
+      method: "GET",
+      url: "https://referential.p.rapidapi.com/v1/country",
       params: {
-        fields: 'currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code',
-        limit: '250'
+        fields:
+          "currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code",
+        limit: "250",
       },
       headers: {
-        'X-RapidAPI-Key': '1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4',
-        'X-RapidAPI-Host': 'referential.p.rapidapi.com'
-      }
+        "X-RapidAPI-Key": "1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4",
+        "X-RapidAPI-Host": "referential.p.rapidapi.com",
+      },
     };
 
     try {
@@ -152,28 +152,28 @@ const SignUp = () => {
     } catch (error) {
       console.error(error);
     }
-  }
-  const getContryCode = async (cname)=>{
+  };
+  const getContryCode = async (cname) => {
     // console.log(cname);
-    if(cname==-1){
+    if (cname == -1) {
       setCc(null);
       return;
     }
     const options = {
-      method: 'GET',
-      url: 'https://metropolis-api-phone.p.rapidapi.com/iso',
-      params: {country: cname},
+      method: "GET",
+      url: "https://metropolis-api-phone.p.rapidapi.com/iso",
+      params: { country: cname },
       headers: {
-        'X-RapidAPI-Key': '1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4',
-        'X-RapidAPI-Host': 'metropolis-api-phone.p.rapidapi.com'
-      }
+        "X-RapidAPI-Key": "1395e9ebccmsh783c01060d65695p1923dajsnb41982eb4bc4",
+        "X-RapidAPI-Host": "metropolis-api-phone.p.rapidapi.com",
+      },
     };
     try {
       const response = await axios.request(options);
-      if(response.status==404){
+      if (response.status == 404) {
         setCc(null);
         return false;
-      }else{
+      } else {
         const countryCallingCode = response?.data["country-calling-code"];
         setCc(countryCallingCode);
         return countryCallingCode;
@@ -183,11 +183,11 @@ const SignUp = () => {
       setCc(null);
       return false;
     }
-  }
-  useEffect(()=>{
+  };
+  useEffect(() => {
     getContries();
     // getContryCode("india");
-  },[])
+  }, []);
   return (
     <div id="mcd">
       <section id="SpSignIn" className="spUp">
@@ -200,8 +200,8 @@ const SignUp = () => {
             {!otp && otp !== 2 && (
               <form onSubmit={sendEmail}>
                 {" "}
-                <h3>Type</h3>
-                <div className="acc-type">
+                {/* <h3>Type</h3> */}
+                {/* <div className="acc-type">
                   <button
                     className={`btn ${isbusiness ? "" : "btn btn-b"}`}
                     onClick={() => {
@@ -218,7 +218,7 @@ const SignUp = () => {
                   >
                     Business
                   </button>
-                </div>
+                </div> */}
                 <h3>Firstname & Lastname</h3>
                 <input
                   minLength={2}
@@ -267,9 +267,18 @@ const SignUp = () => {
                   }}
                 />
                 <h3>Contry</h3>
-                <select onChange={(e)=>{getContryCode(e.target.value)}} >
+                <select
+                  onChange={(e) => {
+                    getContryCode(e.target.value);
+                  }}
+                >
                   <option value="-1">Select Country</option>
-                  {fetchcontries.map((e)=><option value={e.value}>  {e.key} - {e.value}</option>)}
+                  {fetchcontries.map((e) => (
+                    <option value={e.value}>
+                      {" "}
+                      {e.key} - {e.value}
+                    </option>
+                  ))}
                 </select>
                 <h3>Mobile No</h3>
                 <input
@@ -374,7 +383,6 @@ const SignUp = () => {
               <button type="submit" className="btn btn-b">
                 Create Account
               </button>
-              
             </form>
           </div>
           <p className="last-p">
@@ -386,7 +394,7 @@ const SignUp = () => {
           {/* <img src="./imgs/sup.png" alt="" /> */}
         </div>
         <div className="right">
-          <img className="img1" src="/signup-img/indian.jpg" alt="no"></img>
+          <img className="img1" src="/signup-img/img-3.jpg" alt="no"></img>
         </div>
       </section>
     </div>

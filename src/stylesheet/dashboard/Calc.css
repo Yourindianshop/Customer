@@ -1,6 +1,6 @@
 #dash-calc {
   overflow-y: scroll;
-  height: 100vh;
+  height: 110vh;
   background-repeat: no-repeat;
   background-size: 220vh 100vh;
   background-image: url("../../../public/home/calculator.png");
@@ -34,8 +34,6 @@
   background: var(--blue);
 }
 @media (max-width: 400px) {
-   
-    
 }
 #dash-calc .btn-o {
   color: #fff;
@@ -53,7 +51,6 @@
 .styled-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
 }
 
 .styled-table th,
