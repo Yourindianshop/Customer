@@ -1,53 +1,72 @@
-import React from "react";
-import { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import "./Sts.css";
+import SearchIcon from "@mui/icons-material/Search";
+import Marquee from "react-fast-marquee";
 
 const Sidebar = ({
   isSidebarOpen,
   handleSearch,
+  handleOfferChange,
   handleCategoryChange,
+  availableOffers,
   availableCategories,
+  selectedOffer,
   selectedCategory,
   searchQuery,
 }) => {
   return (
     <>
-      <div className=" mr-5">
-        <div className="">
-          <div className=" ">
-            <div className="">
-              <input
-                className="p-2 rounded-md border-2"
-                type="text"
-                placeholder="Search by site name"
-                onChange={handleSearch}
-                value={searchQuery}
-              />
+      <div>
+        {isSidebarOpen && (
+          <div className="side-filt-container">
+            <div className="side-filt">
+              <div className="search-d">
+                <SearchIcon />
+                <input
+                  className="search-p"
+                  type="text"
+                  placeholder="Search by site name"
+                  onChange={handleSearch}
+                  value={searchQuery}
+                />
+              </div>
+            </div>
+            <div className="side-filt mt-2">
+              <select
+                className="select-s side-filt"
+                onChange={handleOfferChange}
+                value={selectedOffer}
+              >
+                {availableOffers.map((offer) => (
+                  <option key={offer} value={offer}>
+                    {offer}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div className="side-filt">
+              <h3 className="category-heading">Category</h3>
+              {availableCategories.map((category) => (
+                <label key={category} className="side-filt-cb">
+                  <input
+                    type="radio"
+                    value={category}
+                    checked={selectedCategory === category}
+                    onChange={handleCategoryChange}
+                  />
+                  <span className="ctgr">{category}</span>
+                </label>
+              ))}
             </div>
           </div>
-
-          <div className="side-filt p-2 mt-3 gap-2">
-            <h3 className="category-heading">Category</h3>
-            {availableCategories.map((category) => (
-              <label key={category} className="">
-                <input
-                  type="checkbox"
-                  value={category}
-                  checked={selectedCategory === category}
-                  onChange={handleCategoryChange}
-                  className="mr-2"
-                />
-                <span className="">{category}</span>
-              </label>
-            ))}
-          </div>
-        </div>
+        )}
       </div>
     </>
   );
 };
 
-const InnSites = () => {
+const Sts = () => {
+  // ... (rest of the code remains unchanged)
   const [sites, setSites] = useState([
     {
       id: 1,
@@ -296,7 +315,10 @@ const InnSites = () => {
   const [selectedOffer, setSelectedOffer] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const availableCategories = [...new Set(sites.map((site) => site.category))];
+  const availableCategories = [
+    "Choose Available Offer ",
+    ...new Set(sites.map((site) => site.category)),
+  ];
   const availableOffers = [
     "Choose Available Offer ",
     ...new Set(sites.flatMap((site) => site.offers)),
@@ -338,93 +360,41 @@ const InnSites = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <div className="">
-      <div className="mt-24">
-        <div className="">
-          <h1 className="text-3xl p-5 sm:text-lg font-sans ml-5 sm:p-2">
-            Results for <span className="font-semibold">filter page</span>
-          </h1>
-          {/* Grey line */}
-          <div
-            className="border-t-2 border-gray-500 my-4"
-            style={{ borderColor: "#CCCCCC" }}
-          ></div>
-        </div>
+    <div className="ecommerce-sites">
+      <div className="marquee">
+        <Marquee speed={150}>
+          Save Upto 80% on International Shipping • Exciting Discounts on
+          Premium Plans • Get Your Virtual Indian Address
+        </Marquee>
+        {/* <div>
+          <img className="image-shop" src="/home/fest-1.png" alt="img-shop" />
+        </div> */}
       </div>
-      <div className="flex p-5 sm:p-2 ml-5 ">
-        <div className="sm:hidden">
-          {/* Sidebar visible only on small devices */}
-          <Sidebar
-            isSidebarOpen={isSidebarOpen}
-            setSidebarOpen={setSidebarOpen}
-            handleSearch={handleSearch}
-            handleOfferChange={handleOfferChange}
-            handleCategoryChange={handleCategoryChange}
-            availableOffers={availableOffers}
-            availableCategories={availableCategories}
-            selectedOffer={selectedOffer}
-            selectedCategory={selectedCategory}
-            searchQuery={searchQuery}
-          />
-        </div>
-        <div>
-          <div className="sm:hidden">
-            <select
-              className=""
-              onChange={handleOfferChange}
-              value={selectedOffer}
-            >
-              {availableOffers.map((offer) => (
-                <option key={offer} value={offer}>
-                  {offer}
-                </option>
-              ))}
-            </select>
+
+      <Sidebar
+        isSidebarOpen={isSidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+        handleSearch={handleSearch}
+        handleOfferChange={handleOfferChange}
+        handleCategoryChange={handleCategoryChange}
+        availableOffers={availableOffers}
+        availableCategories={availableCategories}
+        selectedOffer={selectedOffer}
+        selectedCategory={selectedCategory}
+        searchQuery={searchQuery}
+      />
+
+      <div className="site-grid">
+        {filteredSites.map((site) => (
+          <div key={site.id} className="site">
+            <a href={site.link} target="_blank" rel="noopener noreferrer">
+              <img className="s-img" src={site.logo} alt={site.name} />
+            </a>
           </div>
-          <div className="flex flex-wrap gap-10 mt-5 sm:items-center sm:justify-center">
-            {filteredSites.map((site) => (
-              <div key={site.id} className="site">
-                <a href={site.link} target="_blank" rel="noopener noreferrer">
-                  <img className="s-img" src={site.logo} alt={site.name} />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      {/* Bottom bar visible only on small devices */}
-      <div className="hidden sm:flex fixed bottom-0 left-0 w-full bg-[#2D2D2D] text-white p-4">
-        <div className="p-2 mt-3 gap-2">
-          <select
-            className="w-full p-2 border border-[#606060] rounded-md bg-transparent focus:outline-none focus:border-[#3498db]"
-            onChange={handleOfferChange}
-            value={selectedOffer}
-          >
-            <option value="">Offers available</option>
-            {availableOffers.map((offer) => (
-              <option key={offer} value={offer}>
-                {offer}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="p-2 mt-3 gap-2">
-          <select
-            value={selectedCategory}
-            onChange={handleCategoryChange}
-            className="w-full p-2 border border-[#606060] rounded-md bg-transparent bg-opacity-0 focus:outline-none focus:border-[#3498db]"
-          >
-            <option value="">Select a category</option>
-            {availableCategories.map((category) => (
-              <option key={category} value={category}>
-                {category}
-              </option>
-            ))}
-          </select>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export default InnSites;
+export default Sts;
