@@ -3,6 +3,7 @@ import Product from "../../components/Product";
 import "../../stylesheet/dashboard/Shop.css";
 import { Link } from "react-router-dom";
 import { fetchreq } from "../../Helper/fetch";
+import { Key } from "@mui/icons-material";
 const Shop = () => {
   const ar = [1, 2, 3, 4];
   const pr = [1, 2, 3, 4, 4, 5, 6, 7, 8];
@@ -39,7 +40,7 @@ const Shop = () => {
         {products.map((p, e) => {
           const photo = (p.Images)
 
-          return (
+          return (<div key={p.Pid}>
             <Product
               // proImg={`./imgs/btt${e}.webp`}
               proImg={`${url}/${photo[0]}`}
@@ -47,6 +48,7 @@ const Shop = () => {
               proPrice={` ₹${p.Price}`}
               product = {p}
             />
+          </div>
           );
         })}
       </div>

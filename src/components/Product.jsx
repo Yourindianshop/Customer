@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../stylesheet/dashboard/Product.css";
 const Product = (props) => {
   const {product}=props;
+  const makeOrder =async ()=>{
+    
+  }
   return (
     <div id="prod">
       <div className="proTop">
@@ -12,7 +15,7 @@ const Product = (props) => {
         <div className="proPrice">{props.proPrice}</div>
         <div>{product.Details}</div>
       </div>
-      <div className="atc">Buy Now</div>
+      <div onClick={()=>{makeOrder(product)}} className="atc">Buy Now</div>
     </div>
   );
 };

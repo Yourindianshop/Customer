@@ -98,6 +98,7 @@ const Offer = () => {
                 </div>
               );
             })}
+          {coupens && coupens.length == 0 && <h2>No Coupens found</h2>}
         </div>
       </div>
     </div>
