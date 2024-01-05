@@ -155,7 +155,7 @@ function Wallete() {
 
     // RAZORPAY
     const rclientId = process.env.REACT_APP_CLIENTID;
-    const currency = "USD";
+    const currency = process.env.REACT_APP_PAYPAL_CURENCY;
     const reciept = "YIS31";
     
     const paymenthandler = async (e)=>{
