@@ -138,14 +138,14 @@ const App = () => {
                 <div>
                   <div id="app" className="row">
                     <Sidebar />
-                    <main>
-                      <Marquee style={{ background: "black", color: "white" }}>
-                        Save Upto 80% on International Shipping • Exciting
+                    {/* <main>
+                      <Marquee style={{ background: "black", color: "white" }}> */}
+                    {/* Save Upto 80% on International Shipping • Exciting
                         Discounts on Premium Plans • Get Your Virtual Indian
                         Address
-                      </Marquee>
-                      <Dashboard />
-                    </main>
+                      </Marquee> */}
+                    <Dashboard />
+                    {/* </main> */}
                   </div>{" "}
                 </div>
               }
