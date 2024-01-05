@@ -12,7 +12,7 @@ const Product = (props) => {
         <div className="proPrice">{props.proPrice}</div>
         <div>{product.Details}</div>
       </div>
-      <div className="atc">Buy Now</div>
+      <div onClick={()=>{makeOrder(product)}} className="atc">Buy Now</div>
     </div>
   );
 };
