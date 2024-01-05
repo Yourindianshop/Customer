@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../stylesheet/dashboard/Product.css";
 const Product = (props) => {
   const {product}=props;
+  const makeOrder =async ()=>{
+    
+  }
   return (
     <div id="prod">
       <div className="proTop">
