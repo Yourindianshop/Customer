@@ -29,7 +29,7 @@ const Sidebar = () => {
     setIsBLogin(false);
     nav("/");
   };
-  return (
+  return ( (isLogin || isBLogin) && 
     <>
       <aside data-collapse={isCollapsedSidebar}>
         <div id="side_nav">

@@ -127,62 +127,64 @@ function Wallete() {
     setError(true);
     console.log(data);
   };
-  const onApprove2 = async (data, actions) => {
-    let order_id = data.orderID;
-    console.log("orderId in onApprove", order_id);
-    return await fetch(`${backend}/complete_order`, {
-      method: "post",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({
-        intent: intent,
-        order_id: order_id,
-      }),
-    })
-      .then((response) => response.json())
-      .then((order_details) => {
-        console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
-        let intent_object =
-          intent === "authorize" ? "authorizations" : "captures";
-        console.log("intent Object in onApprove", intent_object);
-        setSuccess(true);
-        handlesubmit();
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-  async function get_access_token() {
-    console.log("generate token");
-    const auth = `${clientId}:${clinetSec}`;
-    const data = "grant_type=client_credentials";
-    return fetch(endpoint_url + "/v1/oauth2/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Basic ${Buffer.from(auth).toString("base64")}`,
-      },
-      body: data,
-    })
-      .then((res) => res.json())
-      .then((json) => {
-        console.log(json);
-        return json.access_token;
-      });
-  }
+  // const onApprove2 = async (data, actions) => {
+  //   let order_id = data.orderID;
+  //   console.log("orderId in onApprove", order_id);
+  //   return await fetch(`${backend}/complete_order`, {
+  //     method: "post",
+  //     headers: { "Content-Type": "application/json; charset=utf-8" },
+  //     body: JSON.stringify({
+  //       intent: intent,
+  //       order_id: order_id,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((order_details) => {
+  //       console.log(order_details); //https://developer.paypal.com/docs/api/orders/v2/#orders_capture!c=201&path=create_time&t=response
+  //       let intent_object =
+  //         intent === "authorize" ? "authorizations" : "captures";
+  //       console.log("intent Object in onApprove", intent_object);
+  //       setSuccess(true);
+  //       handlesubmit();
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  // async function get_access_token() {
+  //   console.log("generate token");
+  //   const auth = `${clientId}:${clinetSec}`;
+  //   const data = "grant_type=client_credentials";
+  //   return fetch(endpoint_url + "/v1/oauth2/token", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/x-www-form-urlencoded",
+  //       Authorization: `Basic ${Buffer.from(auth).toString("base64")}`,
+  //     },
+  //     body: data,
+  //   })
+  //     .then((res) => res.json())
+  //     .then((json) => {
+  //       console.log(json);
+  //       return json.access_token;
+  //     });
+  // }
 
-  const createOrder2 = async (data, actions) => {
-    alert("creating Order...");
-    return await fetch(`${backend}/create_order`, {
-      method: "post",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify({ intent: intent }),
-    })
-      .then((response) => response.json())
-      .then((order) => {
-        alert(order.id);
-        return order.id;
-      });
-  };
+  // const createOrder2 = async (data, actions) => {
+  //   alert("creating Order...");
+  //   return await fetch(`${backend}/create_order`, {
+  //     method: "post",
+  //     headers: { "Content-Type": "application/json; charset=utf-8" },
+  //     body: JSON.stringify({ intent: intent }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((order) => {
+  //       alert(order.id);
+  //       return order.id;
+  //     });
+  // };
+
+
 
   // RAZORPAY
   const rclientId = process.env.REACT_APP_CLIENTID;
@@ -333,8 +335,8 @@ function Wallete() {
                     {!success && (
                       <PayPalButtons
                         style={{ layout: "vertical" }}
-                        createOrder={createOrder2}
-                        onApprove={onApprove2}
+                        createOrder={createOrder}
+                        onApprove={onApprove}
                         onError={onError}
                       />
                     )}

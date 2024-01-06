@@ -182,9 +182,9 @@ const App = () => {
               element={
                 <div>
                   <div id="app" className="row">
-                    <Sidebar />
+                    <Sidebar/>
                     <main>
-                      <Reviews />
+                      <Reviews/>
                     </main>
                   </div>
                 </div>
@@ -294,7 +294,22 @@ const App = () => {
                 </div>
               }
             />
-            <Route path="/cart" element={<CartPage />} />
+            <Route path="/cart" element={<div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <CartPage key={1} iscart={true} />
+                    </main>
+                  </div>{" "}
+                </div>} />
+            <Route path="/orders" element={<div>
+                  <div id="app" className="row">
+                    <Sidebar />
+                    <main>
+                      <CartPage key={2} iscart={false} />
+                    </main>
+                  </div>{" "}
+                </div>} />
             <Route
               path="/WhiteLabelingRequest"
               element={
