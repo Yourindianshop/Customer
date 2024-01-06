@@ -50,6 +50,7 @@ import Plan from "./pages/home/Plan";
 import Pl from "./pages/Plans/Pl";
 import Razorpay from "./components/Razorpay";
 import InnSites from "./pages/home/InnSites";
+import CartPage from "./pages/dashboard/CartPage";
 export const MyContext = createContext();
 
 const App = () => {
@@ -288,6 +289,19 @@ const App = () => {
                     <Sidebar />
                     <main>
                       <SingleProduct />
+                    </main>
+                  </div>{" "}
+                </div>
+              }
+            />
+            <Route
+              path="/cart"
+              element={
+                <div>
+                  <div id="app" className="row">
+                    {/* <Sidebar /> */}
+                    <main>
+                      <CartPage />
                     </main>
                   </div>{" "}
                 </div>
