@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import "../../stylesheet/Home.css";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ComputerIcon from "@mui/icons-material/Computer";
-// import Tilt from "react-parallax-tilt";
-import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
+// // import Tilt from "react-parallax-tilt";
+// import CardGiftcardOutlinedIcon from "@mui/icons-material/CardGiftcardOutlined";
 // import Box from "@mui/material/Box";
 // import TextField from "@mui/material/TextField";
 import SellIcon from "@mui/icons-material/Sell";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
+// import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 // import CalculateIcon from "@mui/icons-material/Calculate";
-import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+// import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 // import AirplanemodeActiveOutlinedIcon from "@mui/icons-material/AirplanemodeActiveOutlined";
 // import DirectionsBoatOutlinedIcon from "@mui/icons-material/DirectionsBoatOutlined";
 // import WarehouseOutlinedIcon from "@mui/icons-material/WarehouseOutlined";
-import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
+// import LocalShippingOutlinedIcon from "@mui/icons-material/LocalShippingOutlined";
 // import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 // import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
@@ -58,6 +58,7 @@ const Home = () => {
   const getReview = async () => {
     const dt = await fetchreq("GET", "Review", {});
     dt ? setReview(dt.result) : setReview([]);
+    console.log(dt.result);
   };
   useEffect(() => {
     loadlandingPhoto();
@@ -770,131 +771,134 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                {/* <div className="sc">
-                  <span>
-                    <div id="org">
-                      <EngineeringOutlinedIcon />
+                <div>
+
+                  {/* <div className="sc">
+                    <span>
+                      <div id="org">
+                        <EngineeringOutlinedIcon />
+                      </div>
+                      <div className="t-title">Business Plan</div>
+                    </span>
+                    <p>
+                      Sea cargo dispatches in excess of 5,500 holders per day to
+                      ports all around the globe, making us a top forwarder.
+                    </p>
+                    <ul>
+                      <li>Less-than-container Load</li>
+                      <li>Full Container Load</li>
+                      <li>Inter-modal Solutions</li>
+                    </ul>
+                    <Link to="/coming-soon" className="btn btn-db">
+                      {" "}
+                      Comming Soon
+                    </Link>
+                  </div> */}
+                  {/* <div className="pin">
+                <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
+                </div> */}
+                  {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+
+                  {/* <div className="s-cd">
+                    <div id="sdsc-ol">
+                      {" "}
+                      <EngineeringOutlinedIcon style={{height: "50px", width: "100px"}} />
                     </div>
-                    <div className="t-title">Business Plan</div>
-                  </span>
-                  <p>
-                    Sea cargo dispatches in excess of 5,500 holders per day to
-                    ports all around the globe, making us a top forwarder.
-                  </p>
-                  <ul>
-                    <li>Less-than-container Load</li>
-                    <li>Full Container Load</li>
-                    <li>Inter-modal Solutions</li>
-                  </ul>
-                  <Link to="/coming-soon" className="btn btn-db">
-                    {" "}
-                    Comming Soon
-                  </Link>
-                </div> */}
-                {/* <div className="pin">
-               <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
-              </div> */}
-                {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+                    <div className="st ss">White Labeling</div>
+                    <div className="st-2">
+                    <p className="st-p">
+                      Sea cargo dispatches in excess of 5,500 holders per day to
+                      ports all around the globe, making us a top forwarder.
+                    </p>
+                    <ul style={{display: "flex",flexDirection: "column"  , alignItems: "left"}}>
+                      <li><div className="line" />Less-than-container Load</li>
+                      <li><div className="line" />Full Container Load</li>
+                      <li><div className="line" />Inter-modal Solutions</li>
+                    </ul>
+                    </div>{" "}
+                    <div style={{display: "flex", margin: "0 30%"}}>
 
-                {/* <div className="s-cd">
-                  <div id="sdsc-ol">
-                    {" "}
-                    <EngineeringOutlinedIcon style={{height: "50px", width: "100px"}} />
-                  </div>
-                  <div className="st ss">White Labeling</div>
-                  <div className="st-2">
-                  <p className="st-p">
-                    Sea cargo dispatches in excess of 5,500 holders per day to
-                    ports all around the globe, making us a top forwarder.
-                  </p>
-                  <ul style={{display: "flex",flexDirection: "column"  , alignItems: "left"}}>
-                    <li><div className="line" />Less-than-container Load</li>
-                    <li><div className="line" />Full Container Load</li>
-                    <li><div className="line" />Inter-modal Solutions</li>
-                  </ul>
-                  </div>{" "}
-                  <div style={{display: "flex", margin: "0 30%"}}>
-
-                  <Link to="/white-labeling" className="btn btn-db">
-                    {" "}
-                    Click Here
-                  </Link>
-                  </div>
-                </div> */}
-
-                {/* <div className="pin">
-               <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
-              </div> */}
-                {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
-                {/* <div className="s-cd">
-                  <div id="sdsc-ol">
-                    {" "}
-                    <ComputerIcon style={{height: "50px", width: "100px"}} />
-                  </div>
-                  <div className="st ss">Wholesaler Plan</div>
-                  <div className="st-2">
-                  <p className="st-p">
-                    Sea cargo dispatches in excess of 5,500 holders per day to
-                    ports all around the globe, making us a top forwarder.
-                  </p>
-                  <ul style={{display: "flex",flexDirection: "column"  , alignItems: "left"}}>
-                    <li><div className="line" />Less-than-container Load</li>
-                    <li><div className="line" />Full Container Load</li>
-                    <li><div className="line" />Inter-modal Solutions</li>
-                  </ul>
-                  </div>{" "}
-                  <div style={{display: "flex", margin: "0 30%"}}>
-
-                  <Link to="/wholesaler" className="btn btn-db">
-                    {" "}
-                    Click Here
-                  </Link>
-                  </div>
-                </div> */}
-
-                {/* <div className="sc">
-                  <span>
-                    <div id="org">
-                      <ComputerIcon />
+                    <Link to="/white-labeling" className="btn btn-db">
+                      {" "}
+                      Click Here
+                    </Link>
                     </div>
-                    <div className="t-title">Assisted Purchase</div>
-                  </span>
-                  <p>
-                    Sea cargo dispatches in excess of 5,500 holders per day to
-                    ports all around the globe, making us a top forwarder.
-                  </p>
-                  <ul>
-                    <li>Less-than-container Load</li>
-                    <li>Full Container Load</li>
-                    <li>Inter-modal Solutions</li>
-                  </ul>
-                  <Link to="/assisted-purchase" className="btn btn-db">
-                    {" "}
-                    Assisted Purchase
-                  </Link>
-                </div> */}
+                  </div> */}
 
-                {/* <div className="sc">
-                  <span>
-                    <div id="org">
-                      <ComputerIcon />
-                    </div>
-                    <div className="t-title">Wholesaler Plan</div>
-                  </span>
-                  <p>
-                    Sea cargo dispatches in excess of 5,500 holders per day to
-                    ports all around the globe, making us a top forwarder.
-                  </p>
-                  <ul>
-                    <li>Less-than-container Load</li>
-                    <li>Full Container Load</li>
-                    <li>Inter-modal Solutions</li>
-                  </ul>
-                  <Link to="/wholesaler" className="btn btn-db">
-                    {" "}
-                    Wholesaler
-                  </Link>
+                  {/* <div className="pin">
+                <div id='sdsc-ol'></div> <img src="./imgs/pin.png" alt="" />
                 </div> */}
+                  {/* <div className="st">SHOP FROM INDIAN SITES</div> */}
+                  {/* <div className="s-cd">
+                    <div id="sdsc-ol">
+                      {" "}
+                      <ComputerIcon style={{height: "50px", width: "100px"}} />
+                    </div>
+                    <div className="st ss">Wholesaler Plan</div>
+                    <div className="st-2">
+                    <p className="st-p">
+                      Sea cargo dispatches in excess of 5,500 holders per day to
+                      ports all around the globe, making us a top forwarder.
+                    </p>
+                    <ul style={{display: "flex",flexDirection: "column"  , alignItems: "left"}}>
+                      <li><div className="line" />Less-than-container Load</li>
+                      <li><div className="line" />Full Container Load</li>
+                      <li><div className="line" />Inter-modal Solutions</li>
+                    </ul>
+                    </div>{" "}
+                    <div style={{display: "flex", margin: "0 30%"}}>
+
+                    <Link to="/wholesaler" className="btn btn-db">
+                      {" "}
+                      Click Here
+                    </Link>
+                    </div>
+                  </div> */}
+
+                  {/* <div className="sc">
+                    <span>
+                      <div id="org">
+                        <ComputerIcon />
+                      </div>
+                      <div className="t-title">Assisted Purchase</div>
+                    </span>
+                    <p>
+                      Sea cargo dispatches in excess of 5,500 holders per day to
+                      ports all around the globe, making us a top forwarder.
+                    </p>
+                    <ul>
+                      <li>Less-than-container Load</li>
+                      <li>Full Container Load</li>
+                      <li>Inter-modal Solutions</li>
+                    </ul>
+                    <Link to="/assisted-purchase" className="btn btn-db">
+                      {" "}
+                      Assisted Purchase
+                    </Link>
+                  </div> */}
+
+                  {/* <div className="sc">
+                    <span>
+                      <div id="org">
+                        <ComputerIcon />
+                      </div>
+                      <div className="t-title">Wholesaler Plan</div>
+                    </span>
+                    <p>
+                      Sea cargo dispatches in excess of 5,500 holders per day to
+                      ports all around the globe, making us a top forwarder.
+                    </p>
+                    <ul>
+                      <li>Less-than-container Load</li>
+                      <li>Full Container Load</li>
+                      <li>Inter-modal Solutions</li>
+                    </ul>
+                    <Link to="/wholesaler" className="btn btn-db">
+                      {" "}
+                      Wholesaler
+                    </Link>
+                  </div> */}
+                </div>
               </div>
             </div>
           </Fade>
@@ -974,6 +978,7 @@ const Home = () => {
           </div>
         </div>
 
+       {/* REVIEW SECTION  */}
         <div id="scroll-fade10">
           <Fade bottom when={isVisible3}>
             <div id="feed-l">
@@ -995,29 +1000,29 @@ const Home = () => {
                   loop={true}
                   modules={[Autoplay, Pagination, Navigation]}
                 >
-                  {testimonialsData.map((testimonial, index) => (
+                  {review && review.map((testimonial, index) => (
                     <SwiperSlide key={index}>
                       <div className="testimonial-card">
                         <div className="testimonial-info">
-                          <div className="name">{testimonial.name}</div>
+                          {/* <div className="name">{testimonial.name}</div> */}
                           <div className="stars">
-                            {[...Array(Math.floor(testimonial.stars))].map(
+                            {[...Array(Math.floor(testimonial.Star))].map(
                               (_, i) => (
                                 <Star key={i} />
                               )
                             )}
                             {testimonial.stars % 1 !== 0 && <StarHalf />}
-                            {[...Array(5 - Math.ceil(testimonial.stars))].map(
+                            {[...Array(5 - Math.ceil(testimonial.Star))].map(
                               (_, i) => (
                                 <StarBorder key={i} />
                               )
                             )}
                           </div>
                           <div className="msg-title">"Great Work"</div>
-                          <div className="organization">
+                          {/* <div className="organization">
                             {testimonial.organization}
-                          </div>
-                          <div className="msg-desc">{testimonial.message}</div>
+                          </div> */}
+                          <div className="msg-desc">{testimonial.Review}</div>
                         </div>
                       </div>
                     </SwiperSlide>
@@ -1118,6 +1123,7 @@ const Home = () => {
           </Fade>
         </div>
       </div>
+      <div>
 
       {/* <div id="contact-sec">
         <div id="con-head">
@@ -1208,6 +1214,7 @@ const Home = () => {
         </div>
       </div> */}
       {/* <Testimonials /> */}
+      </div>
       <Footer />
     </>
   );
