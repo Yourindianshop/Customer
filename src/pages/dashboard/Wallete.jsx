@@ -363,18 +363,7 @@ function Wallete() {
       </div>
       <br />
       {/* <button onClick={()=>{setIsclick(false);setIsclick2(true)}} className='btn btn-b'>Transfer to Bank</button> */}
-      <div className="wallet-buttons">
-        <button
-          onClick={() => {
-            setSuccess(false);
-            setIsclick(true);
-            setIsclick2(false);
-          }}
-          className="btn btn-o-1"
-        >
-          Add Money To Wallet
-        </button>
-      </div>
+      
       <table className="par-table">
         <thead>
           <tr>
