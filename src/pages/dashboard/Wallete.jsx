@@ -269,7 +269,7 @@ function Wallete() {
         <div className="plan-page-title">
           <span id="org">Wallet</span>
           <span id="wt">Balance:</span>
-          <span id="lime">₹{user?.Wallete}</span>
+          <span id="wt">₹{user?.Wallete}</span>
         </div>
         <div>
           {isClick && (
@@ -409,10 +409,10 @@ function Wallete() {
               return (
                 <tr key={t.Tid} className="border-b">
                   <td data-label="Account">{t.Tid}</td>
-                  <td data-label="Due Date">{t.note}</td>
+                  <td data-label="Note">{t.note}</td>
                   <td data-label="Amount">{t.amount}</td>
-                  <td data-label="DT">{dt}</td>
-                  <td data-label="Model">{mode}</td>
+                  <td data-label="Date">{dt}</td>
+                  <td data-label="Mode">{mode}</td>
                 </tr>
               );
             })
