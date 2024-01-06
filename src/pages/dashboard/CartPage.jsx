@@ -57,7 +57,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="cart-page bg-gray-200 p-8 rounded-md">
+    <div className="cart-page bg-[#E2E8F0] p-8 rounded-md">
       <h1 className="text-3xl font-bold mb-6" style={{ color: "#4F46E5" }}>
         Your Cart
       </h1>
@@ -97,7 +97,7 @@ const CartPage = () => {
         </div>
       ))}
 
-      <div className="cart-total bg-white rounded-md p-4 mt-6 flex justify-between items-center">
+      <div className="cart-total bg-primary-light rounded-md p-4 mt-6 flex justify-between items-center">
         <h3 className="text-lg font-semibold text-gray-800">
           Total Price: ${getTotalPrice()}
         </h3>

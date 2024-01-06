@@ -294,19 +294,7 @@ const App = () => {
                 </div>
               }
             />
-            <Route
-              path="/cart"
-              element={
-                <div>
-                  <div id="app" className="row">
-                    {/* <Sidebar /> */}
-                    <main>
-                      <CartPage />
-                    </main>
-                  </div>{" "}
-                </div>
-              }
-            />
+            <Route path="/cart" element={<CartPage />} />
             <Route
               path="/WhiteLabelingRequest"
               element={
