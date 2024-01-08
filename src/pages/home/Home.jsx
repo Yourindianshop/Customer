@@ -772,7 +772,6 @@ const Home = () => {
                   </div>
                 </div>
                 <div>
-
                   {/* <div className="sc">
                     <span>
                       <div id="org">
@@ -978,7 +977,7 @@ const Home = () => {
           </div>
         </div>
 
-       {/* REVIEW SECTION  */}
+        {/* REVIEW SECTION  */}
         <div id="scroll-fade10">
           <Fade bottom when={isVisible3}>
             <div id="feed-l">
@@ -1000,33 +999,34 @@ const Home = () => {
                   loop={true}
                   modules={[Autoplay, Pagination, Navigation]}
                 >
-                  {review && review.map((testimonial, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="testimonial-card">
-                        <div className="testimonial-info">
-                          {/* <div className="name">{testimonial.name}</div> */}
-                          <div className="stars">
-                            {[...Array(Math.floor(testimonial.Star))].map(
-                              (_, i) => (
-                                <Star key={i} />
-                              )
-                            )}
-                            {testimonial.stars % 1 !== 0 && <StarHalf />}
-                            {[...Array(5 - Math.ceil(testimonial.Star))].map(
-                              (_, i) => (
-                                <StarBorder key={i} />
-                              )
-                            )}
-                          </div>
-                          <div className="msg-title">"Great Work"</div>
-                          {/* <div className="organization">
+                  {review &&
+                    review.map((testimonial, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="testimonial-card">
+                          <div className="testimonial-info">
+                            {/* <div className="name">{testimonial.name}</div> */}
+                            <div className="stars">
+                              {[...Array(Math.floor(testimonial.Star))].map(
+                                (_, i) => (
+                                  <Star key={i} />
+                                )
+                              )}
+                              {testimonial.stars % 1 !== 0 && <StarHalf />}
+                              {[...Array(5 - Math.ceil(testimonial.Star))].map(
+                                (_, i) => (
+                                  <StarBorder key={i} />
+                                )
+                              )}
+                            </div>
+                            <div className="msg-title">"Great Work"</div>
+                            {/* <div className="organization">
                             {testimonial.organization}
                           </div> */}
-                          <div className="msg-desc">{testimonial.Review}</div>
+                            <div className="msg-desc">{testimonial.Review}</div>
+                          </div>
                         </div>
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                      </SwiperSlide>
+                    ))}
                 </Swiper>
               </div>
             </section>
@@ -1124,8 +1124,7 @@ const Home = () => {
         </div>
       </div>
       <div>
-
-      {/* <div id="contact-sec">
+        {/* <div id="contact-sec">
         <div id="con-head">
           <h1 id="dg">YOUR INDIAN SHOP</h1>
           <div className="s-media">
@@ -1213,7 +1212,7 @@ const Home = () => {
           </form>
         </div>
       </div> */}
-      {/* <Testimonials /> */}
+        {/* <Testimonials /> */}
       </div>
       <Footer />
     </>

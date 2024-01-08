@@ -279,7 +279,7 @@ const Profile = () => {
           </div>
         </div>{" "}
       </div> */}
-      <div className="mt-10 rounded-xl w-[95%] sm:w-[100%] bg-gradient-to-r sm:rounded-none from-[#262626] via-[#333333] to-[#404040] sm:mt-0">
+      <div className="  w-[95%] h-auto sm:w-[100%] bg-gradient-to-r sm:rounded-none from-[#262626] via-[#333333] to-[#404040] sm:mt-0">
         <h1 className="text-primary-light p-4 ml-10 sm:ml-0">
           Dashboard OverView
         </h1>
