@@ -178,7 +178,7 @@ const CartPage = ({ iscart }) => {
                       removeItemFromcart(item.cartid);
                     }}
                     className="quantity-btn rounded-lg px-8 py-2"
-                    style={{ backgroundColor: "red", color: "#FFFFFF" }}
+                    style={{ backgroundColor: "#f23e3e", color: "#FFFFFF" }}
                   >
                     Remove Item
                   </button>
