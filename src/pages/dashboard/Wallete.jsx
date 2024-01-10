@@ -324,10 +324,11 @@ function Wallete() {
                   >
                     Razorpay
                   </button>
+                  {/* <p style={{color:'black'}}>{clientId}</p> */}
                   <PayPalScriptProvider
                     options={{
                       "client-id": clientId,
-                      currency: currency2,
+                      "currency": currency2,
                     }}
                   >
                     {success && <h1>Payment mad successfully</h1>}
