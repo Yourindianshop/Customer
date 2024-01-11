@@ -51,6 +51,7 @@ import Pl from "./pages/Plans/Pl";
 import Razorpay from "./components/Razorpay";
 import InnSites from "./pages/home/InnSites";
 import CartPage from "./pages/dashboard/CartPage";
+import Homie from "./pages/home/Homie";
 export const MyContext = createContext();
 
 const App = () => {
@@ -97,7 +98,7 @@ const App = () => {
         <Router>
           <Routes>
             <>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={<Homie />} />
             </>
             <Route
               path="/signUp"
@@ -125,7 +126,7 @@ const App = () => {
                 </>
               }
             />
-            <Route path="/plan" element={<PlanPage isBill={false} />} />
+            <Route path="/plan" element={<Pl />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
             <Route
               path="/razorpay"
