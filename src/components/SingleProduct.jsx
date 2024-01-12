@@ -14,9 +14,12 @@ const product = {
     "https://raw.githubusercontent.com/KHUNTPRIYANSH/site_photos/main/shipping/btt4.webp",
   ],
 };
+
 const SingleProduct = () => {
   const {wd,setDid,isLogin,user,wh,setUser}=useContext(MyContext);
+  const [openDialog,setOpenDialog]=useState(false);
   const url = process.env.REACT_APP_URL;
+  const [noOfPhotos,setNoOfPhotos]=useState(1);
   const [selectedImage, setSelectedImage] = useState(null);
   const [isDispach,setIsdispach]=useState(true);
   const [pland,setPland]=useState(null);
@@ -92,14 +95,34 @@ const SingleProduct = () => {
   const loadReqdata =async ()=>{
     // const dt = await fetchreq("GET",`checkDispcah/${wd.Did}`,{});
     // const dt2 = await fetchreq("GET",`checkReturn/${wd.Did}`,{});
-    if(wd?.status==0){
-      const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
-      dt? setPland(dt.result[0]) : setPland(null);
-      // if(parseInt(dt.result[0].num)==0 && parseInt(dt2?.result[0].num)==0){
-      //   setIsdispach(false);
-      // }else{
-      //   setIsdispach(true);
-      // }
+    const dt = await fetchreq("GET",`getPlan/${user?.Cid}/${wh?.Wid}`,{});
+    dt? setPland(dt.result[0]) : setPland(null);
+    // if(wd?.status==0){
+    //   // if(parseInt(dt.result[0].num)==0 && parseInt(dt2?.result[0].num)==0){
+    //   //   setIsdispach(false);
+    //   // }else{
+    //   //   setIsdispach(true);
+    //   // }
+    // }
+  }
+  const requestphoto = async ()=>{
+    // console.log("plan details",pland);
+    if(pland){
+      setOpenDialog(true);
+    }
+  }
+  const handleSubmitPhotoRequest = async ()=>{
+    if(noOfPhotos<=pland?.photo){
+      const amount = noOfPhotos*pland?.photoPrice;
+      console.log(user)
+      if(await walletTransaction(amount,"More Photo Request",user,setUser,nav)){
+        
+      }else{
+        alert("request Canceled...");
+      }
+    }else{
+      alert(`you can request ${pland?.photo} maximum photos`);
+      setNoOfPhotos(pland?.photo)
     }
   }
   useEffect(()=>{
@@ -118,6 +141,12 @@ const SingleProduct = () => {
   },[])
   return (
     <div id="height-of">
+      {<dialog open={openDialog} className="w-[300px] absolute bg-gray-light p-8 border-r-2 top-[40%] left-[50%] gap-4 z-10">
+        <button onClick={()=>setOpenDialog(false)}>Close</button>
+        <h3 className="l-title">Request For More Photos</h3>
+        <input value={noOfPhotos}  onChange={(e)=>{setNoOfPhotos(e.target.value)}} className="w-[100%] p-2" type="number" min={1} max={pland?.photo} placeholder="How many Photos You want" />
+        <button onClick={handleSubmitPhotoRequest} className="w-[240px] description btn btn-o-1">Make Request ₹{Math.min(pland?.photoPrice*noOfPhotos,pland?.photoPrice*pland?.photo) }</button>
+      </dialog>} 
       <div id="l-title">
         <div className="plan-page-title">
           <span> ProductId: {wd?.Did} </span>
@@ -127,9 +156,15 @@ const SingleProduct = () => {
           { wd?.status == 0 && pland && <button onClick={navigatesipment} className="btn btn-b">
             {isdp ? "Processing..." : "Dispach to Destination"}
           </button>}
+          <button
+            className="description btn btn-o-1"
+            onClick={requestphoto}
+          >
+            Request for More photos
+          </button>
           <a
             className="description btn btn-o-1"
-            href={`${url}/${wd.proof}`}
+            href={`${url}/${wd?.proof}`}
             target="_blank"
             rel="noreferrer"
           >
