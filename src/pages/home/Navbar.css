@@ -1,0 +1,153 @@
+.navbar {
+  color: black;
+  padding: 15px 0;
+}
+
+.container {
+  display: inline-flex;
+  padding: 30px 150px 0px 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 62.5px;
+}
+
+.head {
+  color: var(--simblue, #2c2d5b);
+  font: bold;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.nav-linkss {
+  color: #000;
+}
+
+.logo {
+  width: 74px;
+  height: 29px;
+}
+
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+.icon {
+  color: black;
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: white;
+  /* color: var(--black, #141414); */
+  /* font-family: Lato; */
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  padding: 15px;
+}
+
+.nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-btn-1 {
+  display: flex;
+  padding: 20px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  border: 1px solid var(--simblue, #2c2d5b);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: capitalize;
+}
+.nav-btn-2 {
+  display: flex;
+  padding: 20px 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  background: var(--simblue, #2c2d5b);
+  color: var(--white, #fff);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+/* Media query for small screens */
+@media (max-width: 767px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .container {
+    padding: 20px;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 15px;
+    justify-content: start;
+    align-items: start;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Adjust font size for small screens */
+  .head {
+    font-size: 18px;
+  }
+
+  /* Adjust font size for navigation links on small screens */
+  .nav-link {
+    font-size: 12px;
+  }
+
+  /* Add some padding for the login and sign-in buttons on small screens */
+  .nav-btn-1,
+  .nav-btn-2 {
+    padding: 15px 30px;
+  }
+}
