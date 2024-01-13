@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NAV_LINKS } from "../../constants/index";
 import "./Navbar.css";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -31,14 +32,14 @@ const Navbar = () => {
           } lg:flex lg:gap-20`}
         >
           {NAV_LINKS.map((link) => (
-            <a
-              href={link.href}
+            <Link
+              to={link.href}
               key={link.key}
               className="nav-link"
               onClick={toggleMenu}
             >
               <span className="nav-linkss">{link.label}</span>
-            </a>
+            </Link>
           ))}
           <div className="nav-btn">
             <div className="nav-btn-1">Login</div>

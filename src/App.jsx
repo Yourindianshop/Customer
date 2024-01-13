@@ -52,6 +52,7 @@ import Razorpay from "./components/Razorpay";
 import InnSites from "./pages/home/InnSites";
 import CartPage from "./pages/dashboard/CartPage";
 import Homie from "./pages/home/Homie";
+import Aboutt from "./pages/home/Aboutt";
 export const MyContext = createContext();
 
 const App = () => {
@@ -483,15 +484,7 @@ const App = () => {
                 </div>
               }
             />
-            <Route
-              path="/about"
-              element={
-                <main>
-                  {" "}
-                  <About />
-                </main>
-              }
-            />
+            <Route path="/about" element={<Aboutt />} />
             <Route
               path="/service"
               element={

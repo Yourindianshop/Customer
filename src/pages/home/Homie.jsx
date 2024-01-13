@@ -1,7 +1,11 @@
 import Navbar from "./Navbar";
 import Footer from "../../components/Footer";
 import "./Homie.css";
-import { TextField } from "@mui/material";
+
+import TestimonialsGrid from "./Testimonials";
+import FeaturedWebsite from "../../components/FeaturedWebsite";
+import VariousSites from "../../components/VariousSites";
+import Calci from "./Calci";
 
 const Homie = () => {
   return (
@@ -47,34 +51,11 @@ const Homie = () => {
             <img className="logo" src="/main.svg" alt="logo" />
           </div>
         </div>
-        <div className="calci">
-          <div className="calculator">
-            <div className="text-field">
-              <TextField
-                className="nor-feild"
-                id="outlined"
-                type="number"
-                label="Length (cm) "
-                placeholder="Optional"
-              />
-              <TextField
-                className="nor-feild"
-                id="outlined"
-                type="number"
-                label="Width (cm) "
-                placeholder="Optional"
-              />
-              <TextField
-                className="nor-feild"
-                id="outlined"
-                type="number"
-                label="Height (cm) "
-                placeholder="Optional"
-              />
-              <div className="nav-btn-2">Calculate</div>
-            </div>
-          </div>
+
+        <div>
+          <Calci />
         </div>
+
         <div className="services">
           <div className="right-side">
             <div className="serv-heading">
@@ -169,6 +150,18 @@ const Homie = () => {
             <div className="nav-btn-2">Sign In</div>
           </div>
         </div>
+        <div className="">
+          <div className="testimoinals-head">
+            <h1>
+              Various <span>Indian Sites</span>
+            </h1>
+            <h4>Ship Your products from a variety of Indian sites</h4>
+          </div>
+          <VariousSites />
+        </div>
+        <div className="featured-website">
+          <FeaturedWebsite />
+        </div>
         <div className="works">
           <div className="work-head">
             <div className="works-heading">
@@ -228,6 +221,18 @@ const Homie = () => {
             </div>
             <img src="/ship.svg" alt="logo" />
           </div>
+        </div>
+        <div className="testimonials">
+          <div className="testimoinals-head">
+            <h1>
+              Loved by <span>Thousands of users</span>{" "}
+            </h1>
+            <h4>
+              Don't take it from us – here's what our users have to say about
+              YIS
+            </h4>
+          </div>
+          <TestimonialsGrid />
         </div>
         <Footer />
       </div>

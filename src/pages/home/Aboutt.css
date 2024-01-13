@@ -1,0 +1,34 @@
+/* Aboutt.css */
+
+.about-page {
+  position: relative;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+h1 {
+  color: #2c2d5b;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #4f4f4f;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Additional styling based on your design preferences */
+/* Aboutt.css */
+
+.img-about {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0; /* Adjust margin as needed */
+}

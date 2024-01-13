@@ -1,0 +1,40 @@
+/* Calci.css */
+
+.calculator-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-title {
+  color: #333;
+}
+
+.calculator-form-control {
+  margin-bottom: 20px;
+}
+
+.calculate-button {
+  background-color: #4caf50;
+  color: #fff;
+  &:hover {
+    background-color: #45a049;
+  }
+}
+
+.dialog-title {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.result-text {
+  margin-top: 10px;
+}
+
+.close-button {
+  color: #4caf50;
+  &:hover {
+    background-color: #e7f4e4;
+  }
+}
