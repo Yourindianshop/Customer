@@ -553,19 +553,7 @@ const App = () => {
                 </div>
               }
             />
-            <Route
-              path="/disp-plan"
-              element={
-                <div id="oooo">
-                  <Nav />
-                  <main>
-                    {" "}
-                    <Pl />
-                    {/* <PlanPage inBill={false} /> */}
-                  </main>
-                </div>
-              }
-            />
+            <Route path="/disp-plan" element={<Pl />} />
             <Route path="/planss" element={<Plan />} />
             <Route
               path="/coming-soon"

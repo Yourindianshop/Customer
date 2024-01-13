@@ -4,6 +4,8 @@ import SaleComponent from "./SalesComponent";
 import HalfYearly from "./HalfYearly";
 import Yearly from "./Yearly";
 import { GoDotFill } from "react-icons/go";
+import Navbar from "../home/Navbar";
+import Footer from "../../components/Footer";
 
 const Pl = () => {
   const [activeLink, setActiveLink] = useState("Trial Plan");
@@ -21,6 +23,7 @@ const Pl = () => {
   };
   return (
     <div>
+      <Navbar />
       <div className="relative">
         <div className="container1">
           <h1 className="colorss sm:text-xl">Compare plans</h1>
@@ -312,13 +315,7 @@ const Pl = () => {
       )}
       {activeLink === "Half Yearly" && <HalfYearly />}
       {activeLink === "Yearly Plan" && <Yearly />}
-      <div className="footer">
-        <div className="footer-img">
-          <div className="footer-text">
-            So Start Your YIS Journey With Us Now !!
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };
