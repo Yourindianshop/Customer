@@ -46,29 +46,34 @@ const CartPage = ({ iscart }) => {
     }
   };
   const handleBuyNow = async () => {
-    // Implement your buy now logic
-    if (
-      await walletTransaction(
-        total,
-        null,
-        "Order Product From Cart",
-        user,
-        setUser,
-        nav
-      )
-    ) {
-      let allItems = cartItems;
-      const res = await fetchreq("POST", "orderCart", {
-        itemArr: allItems,
-        Cid: user?.Cid,
-      });
-      // alert("Buy Now clicked!");
-      if (res) {
-        nav("/orders");
-      } else {
-        alert("error");
+    if(user.Address && user.Address!=""){
+      if (
+        await walletTransaction(
+          total,
+          null,
+          "Order Product From Cart",
+          user,
+          setUser,
+          nav
+        )
+      ) {
+        let allItems = cartItems;
+        const res = await fetchreq("POST", "orderCart", {
+          itemArr: allItems,
+          Cid: user?.Cid,
+        });
+        // alert("Buy Now clicked!");
+        if (res) {
+          nav("/orders");
+        } else {
+          alert("error");
+        }
       }
+    }else{
+      alert("Complet Address in profile");
+      nav('/dashboard/profile');
     }
+    // Implement your buy now logic
   };
 
   const handleIncreaseQuantity = async (itemId) => {

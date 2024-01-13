@@ -44,23 +44,28 @@ const Shop = () => {
     setIsprocess(false);
   };
   const Buynow = async () => {
-    setIsprocess(true);
-    const op = singleproduct.Price;
-    if (await walletTransaction(op, null, "Buy Product", user, setUser, nav)) {
-      const res = await fetchreq("POST", `makeOrder`, {
-        cid: user?.Cid,
-        pid: singleproduct.Pid,
-        qtn: 1,
-        Oprice: op,
-      });
-      if (res) {
-        alert("Order Placed Successfully");
-        nav("/orders");
-      } else {
-        alert("Order Not placed");
+    if(user.Address && user.Address!=""){
+      setIsprocess(true);
+      const op = singleproduct.Price;
+      if (await walletTransaction(op, null, "Buy Product", user, setUser, nav)) {
+        const res = await fetchreq("POST", `makeOrder`, {
+          cid: user?.Cid,
+          pid: singleproduct.Pid,
+          qtn: 1,
+          Oprice: op,
+        });
+        if (res) {
+          alert("Order Placed Successfully");
+          nav("/orders");
+        } else {
+          alert("Order Not placed");
+        }
       }
+      setIsprocess(false);
+    }else{
+      alert('Complete Address');
+      nav('/dashboard/profile');
     }
-    setIsprocess(false);
   };
 
   useEffect(() => {
@@ -156,7 +161,18 @@ const Shop = () => {
               </Link>
             </div>
           )}
+          <h1 className="text-xl">Parcel Deliver to this Address</h1>
+          {user.Address && user.Address!="" && <div>
+            <p>Address: {user.Address}</p>
+            <p>Address2: {user.Address2}</p>
+            <p>LandMark: {user.Landmark}</p>
+            <p>City: {user.City}</p>
+            <p>State: {user.State}</p>
+            <p>Country: {user.Country}</p>
+          </div>}
+          <Link to={"/dashboard/profile"} className="btn btn-b">Change Address</Link>
         </div>
+        
       )}
       <div id="displayProducts">
         {products.map((p, e) => {

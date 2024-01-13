@@ -6,14 +6,22 @@ import { fetchreq } from "../../Helper/fetch";
 
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
-  const { user, isLogin } = useContext(MyContext);
+  const [isEditing2, setIsEditing2] = useState(false);
+  const { user, isLogin ,setUser} = useContext(MyContext);
   const nav = useNavigate();
   const [ad, setAd] = useState(null);
 
   const [userData, setUserData] = useState(user);
 
-  const handleEditClick = () => {
-    setIsEditing(true);
+  const handleEditClick =async  () => {
+    if(isEditing2){
+      // console.log(userData);
+      const res = await fetchreq("POST","ChangeAddress",{user:userData});
+      res ? setUser(userData) : alert("Address not changed");
+      setIsEditing2(false);
+    }else{
+      setIsEditing2(true);
+    }
   };
 
   const handleSaveClick = () => {
@@ -71,214 +79,7 @@ const Profile = () => {
 
   return (
     <div className="flex justify-center sm:justify-start">
-      {/* <div className="dashboard-profile">
-        <div className="top">
-          <img
-            src="/imgs1/man-mask.jpg"
-            height={220}
-            width={200}
-            className="img-profile"
-          />
-          <h1 className="name">{userData?.Name}</h1>
-        </div>
-        <div id="pfl">
-          <div className="profile-details">
-            <div className="detail-item">
-              <span className="detail-label">Id:</span>
-              {isEditing ? (
-                <input
-                  type="text"
-                  value={userData?.email}
-                  onChange={(e) =>
-                    setUserData({ ...userData, email: e.target.value })
-                  }
-                />
-              ) : (
-                <span className="detail-value">{userData?.email}</span>
-              )}
-            </div>
-            <div className="detail-item">
-              <span className="detail-label">Name:</span>
-              {isEditing ? (
-                <input
-                  type="text"
-                  value={userData?.Name}
-                  onChange={(e) =>
-                    setUserData({ ...userData, Name: e.target.value })
-                  }
-                />
-              ) : (
-                <span className="detail-value">{userData?.Name}</span>
-              )}
-            </div>
-            <div className="detail-item">
-              <span className="detail-label">Phone Number:</span>
-              {isEditing ? (
-                <input
-                  type="text"
-                  value={userData?.phoneNo}
-                  onChange={(e) =>
-                    setUserData({ ...userData, phoneNo: e.target.value })
-                  }
-                />
-              ) : (
-                <span className="detail-value">{userData?.phoneNo}</span>
-              )}
-            </div>
-
-            <h1 style={{ paddingLeft: "15px" }}>Your Virtual address</h1>
-
-            {ad &&
-              ad.length != 0 &&
-              ad.map((a) => {
-                return (
-                  <>
-                    <div className="detail-item">
-                      <span className="detail-label">WareHouse Name:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.Address}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              Address: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.Name}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Address Line 1:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.Address}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              Address: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.Address}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Address Line 2:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.Address2}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              Address2: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.Address2}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Landmark:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.Landmark}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              Landmark: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.Landmark}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">City:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.City}
-                          onChange={(e) =>
-                            setUserData({ ...userData, City: e.target.value })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.City}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">State:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.State}
-                          onChange={(e) =>
-                            setUserData({ ...userData, State: e.target.value })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.State}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Pincode:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.pincode}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              pincode: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.pincode}</span>
-                      )}
-                    </div>
-                    <div className="detail-item">
-                      <span className="detail-label">Country:</span>
-                      {isEditing ? (
-                        <input
-                          type="text"
-                          value={userData?.pincode}
-                          onChange={(e) =>
-                            setUserData({
-                              ...userData,
-                              pincode: e.target.value,
-                            })
-                          }
-                        />
-                      ) : (
-                        <span className="detail-value">{a?.Country}</span>
-                      )}
-                    </div>
-                    <div>
-                      <button
-                        className="copy-button"
-                        onClick={() => handleCopyClick(a)}
-                      >
-                        Copy Virtual Address
-                      </button>
-                    </div>
-                  </>
-                );
-              })}
-            {ad && ad.length == 0 && <p>No Data found</p>}
-            {!ad && <p>Loading...</p>}
-          </div>
-        </div>{" "}
-      </div> */}
+      
       <div className="  w-[95%] h-auto sm:w-[100%] bg-gradient-to-r sm:rounded-none from-[#262626] via-[#333333] to-[#404040] sm:mt-0">
         <h1 className="text-primary-light p-4 ml-10 sm:ml-0">
           Dashboard OverView
@@ -477,11 +278,107 @@ const Profile = () => {
             {ad && ad.length == 0 && <p>No Data found</p>}
             {!ad && <p>Loading...</p>}
           </div>
-          <img
-            src="/mapp.jpg"
-            alt="map"
-            className="h-[20rem] w-[30rem] rounded-xl lg:hidden"
-          />
+          <div>
+            <img
+              src="/mapp.jpg"
+              alt="map"
+              className="h-[20rem] w-[30rem] rounded-xl lg:hidden"
+            />
+            {(user.Address && user.Address!="" ) ? <div style={{color:'white'}} className="flex flex-col">
+            <p className="text-xl mt-2">Your Physical Address</p>
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.Address}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    Address: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>Address: {user.Address}</p>
+            )}
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.Address2}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    Address2: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>Address2: {user.Address2}</p>
+            )}
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.Landmark}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    Landmark: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>LandMark: {user.Landmark}</p>
+            )}
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.City}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    City: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>City: {user.City}</p>
+            )}
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.State}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    State: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>State: {user.State}</p>
+            )}
+            {isEditing2 ? (
+              <input
+                style={{color:'black',padding:'4px'}}
+                type="text"
+                value={userData?.Country}
+                onChange={(e) =>
+                  setUserData({
+                    ...userData,
+                    Country: e.target.value,
+                  })
+                }
+              />
+            ) : (
+              <p>Country: {user.Country}</p>
+            )}
+            <button className="btn btn-b" onClick={handleEditClick}>{isEditing2 ? "Submit" : "Change Address"}</button>
+          </div>: <button onClick={handleEditClick} className="btn btn-b">Add Address</button> }
+          </div>
         </div>
       </div>
     </div>
