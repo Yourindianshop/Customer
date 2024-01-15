@@ -1,40 +1,131 @@
 /* Calci.css */
 
-.calculator-container {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.cal-box {
+  margin-top: -8rem;
 }
 
-.calculator-title {
-  color: #333;
+.sh-top {
+  display: flex;
+  justify-content: center;
 }
 
-.calculator-form-control {
-  margin-bottom: 20px;
+.sh-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.calculate-button {
-  background-color: #4caf50;
-  color: #fff;
-  &:hover {
-    background-color: #45a049;
-  }
+.btn-pg {
+  /* Add your button styles */
 }
 
+.nor-feild {
+  margin: 1rem;
+  width: 20ch;
+}
+
+.dim {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fl-bx {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center; /* Center the items vertically */
+}
+
+.fl-bx select {
+  flex: 1; /* Take up available space */
+  max-width: calc(50% - 0.5rem); /* Adjust as needed, considering the gap */
+}
+
+/* Add more styles based on your design preferences */
+
+/* Styles for the Dialog */
 .dialog-title {
-  background-color: #4caf50;
-  color: #fff;
+  color: #3498db;
 }
 
-.result-text {
-  margin-top: 10px;
+.dialog-actions {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.like-our-price {
+  color: #3498db;
+  margin-right: 1rem;
+}
+
+.signup-button {
+  background: #3498db;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #ffffff;
 }
 
 .close-button {
-  color: #4caf50;
-  &:hover {
-    background-color: #e7f4e4;
+  color: #3498db;
+}
+
+/* Add more styles for the Dialog based on your design preferences */
+/* Add this CSS to your stylesheet */
+.cal-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust the height based on your design */
+}
+
+.sh-top {
+  width: 100%;
+  max-width: 600px; /* Adjust the max-width based on your design */
+  margin: 0 auto;
+}
+
+.sh-l {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fl-bx {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.dim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 600px) {
+  .cal-box {
+    margin-top: -3rem;
   }
+  .fl-bx {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dim {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Add more media queries as needed */
+}
+@media (max-width: 600px) {
+  .fl-bx select {
+    max-width: 100%; /* On smaller screens, take up full width */
+  }
+  /* Add more media queries as needed */
 }

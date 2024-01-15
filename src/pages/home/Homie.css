@@ -481,7 +481,7 @@ body::-webkit-scrollbar {
 
   .testimoinals-head {
     padding: 2rem;
-    gap: 15px;
+    gap: 0px;
   }
 
   .testimoinals-head > h1 {
