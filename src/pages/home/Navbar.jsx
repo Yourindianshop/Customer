@@ -15,10 +15,10 @@ const Navbar = () => {
     <div className="navbar">
       <div className="container">
         <a href="/">
-          <h1 className="head">YOUR INDIAN SHOP</h1>
+          <h2 className="headdddd">YOUR INDIAN SHOP</h2>
         </a>
 
-        <div className="menu-icon lg:hidden" onClick={toggleMenu}>
+        <div className="menu-icon" onClick={toggleMenu}>
           {isMenuOpen ? (
             <FaTimes className="icon" />
           ) : (
@@ -26,11 +26,7 @@ const Navbar = () => {
           )}
         </div>
 
-        <div
-          className={`nav-links ${
-            isMenuOpen ? "active" : ""
-          } lg:flex lg:gap-20`}
-        >
+        <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
           {NAV_LINKS.map((link) => (
             <Link
               to={link.href}
@@ -38,12 +34,16 @@ const Navbar = () => {
               className="nav-link"
               onClick={toggleMenu}
             >
-              <span className="nav-linkss">{link.label}</span>
+              <h3 className="nav-linkss">{link.label}</h3>
             </Link>
           ))}
           <div className="nav-btn">
-            <div className="nav-btn-1">Login</div>
-            <div className="nav-btn-2">Sign In</div>
+            <a href="/signup">
+              <div className="nav-btn-1">Login</div>
+            </a>
+            <a href="/signIn">
+              <div className="nav-btn-2">Sign In</div>
+            </a>
           </div>
         </div>
       </div>

@@ -215,47 +215,177 @@ body::-webkit-scrollbar {
 }
 
 .services-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 75px;
-  margin-top: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 3rem 5%;
 }
 
-.services-item {
-  text-align: center; /* Center the text */
+.service-item {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px 0px rgba(151, 151, 151, 0.25);
+  border-radius: 10px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .service-item-circle {
   width: 60px;
   height: 60px;
-  flex-shrink: 0;
-  border-radius: 100px;
+  border-radius: 50%;
   background: var(--white, #fff);
-  box-shadow: 0px 0px 25px 0px rgba(151, 151, 151, 0.25);
+  box-shadow: 0 0 25px 0 rgba(151, 151, 151, 0.25);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 }
 
 .service-item-heading {
   color: var(--simblue, #2c2d5b);
-  font-size: 24px;
-  font-style: normal;
+  font-size: 1.5rem;
   font-weight: 600;
-  line-height: normal;
-  text-transform: capitalize;
-  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .service-item-span {
   color: var(--text-1, #4f4f4f);
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 150%;
+}
+
+.calculator-section {
+  background-color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.calculator-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+
+.calculator-text {
+  flex: 1;
+  max-width: 600px;
+  text-align: left;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 20px;
+}
+
+.calcu-mid-head {
+  display: flex;
+  /* flex-direction: column; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.calculator-image {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 767px) {
+  .calculator-content {
+    flex-direction: column;
+  }
+
+  .calculator-text {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .calcu-mid-head {
+    flex-direction: column;
+  }
+}
+.beautiful-card-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.beautiful-card {
+  display: flex;
+  width: 100%;
+  border: 1px solid #ddd; /* Add a border for a card-like appearance */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  overflow: hidden; /* Ensure contents don't overflow */
+  margin-bottom: 20px; /* Add spacing between cards */
+}
+
+.card-left {
+  padding: 20px;
+  background-color: #f0f0f0; /* Optional: Add a background color to the left section */
+}
+
+.card-right {
+  padding: 20px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.card-link {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.card-link:hover {
+  background-color: #0056b3;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+  .calculator-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .calculator-text {
+    max-width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    margin: 3rem 5%;
+  }
 }
 
 .nav-btnn {
@@ -339,18 +469,18 @@ body::-webkit-scrollbar {
 }
 
 .testimoinals-head {
-  padding: 4rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 30px;
 }
 
 .testimoinals-head > h1 {
   font-size: 48px;
   font-weight: 800;
   line-height: 60px;
+  align-items: center;
 }
 
 .testimoinals-head > h1 > span {
@@ -491,4 +621,68 @@ body::-webkit-scrollbar {
   .testimoinals-head > h4 {
     font-size: 14px;
   }
+}
+
+.tititiiti {
+  margin-bottom: 10rem;
+}
+
+.custom-beautiful-card-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+
+.custom-beautiful-card {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  width: 500px;
+  max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.custom-beautiful-card:hover {
+  transform: scale(1.05);
+}
+
+.custom-card-left {
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.custom-card-right {
+  padding: 20px;
+  flex: 1;
+}
+
+.custom-card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.custom-card-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.custom-card-link {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.custom-card-link:hover {
+  background-color: #0056b3;
 }

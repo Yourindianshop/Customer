@@ -1,15 +1,12 @@
 import React from "react";
-import DoubleArrowIcon from "@mui/icons-material/DoubleArrow";
 import "../../stylesheet/About.css";
-import Nav from "../../components/Nav";
 import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
 import PgTitle from "../../components/PgTitle";
+import Navbar from "./Navbar";
 const Service = () => {
   return (
-    <div id="Site" className="sttt">
-      <header>
-        <Nav />
-      </header>
+    <div>
+      <Navbar />
       <br />
       <br />
       <PgTitle

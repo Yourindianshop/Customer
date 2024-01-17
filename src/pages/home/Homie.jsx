@@ -6,6 +6,9 @@ import TestimonialsGrid from "./Testimonials";
 import FeaturedWebsite from "../../components/FeaturedWebsite";
 import VariousSites from "../../components/VariousSites";
 import Calci from "./Calci";
+import { Link } from "react-router-dom";
+import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
+import ComputerIcon from "@mui/icons-material/Computer";
 
 const Homie = () => {
   return (
@@ -25,8 +28,10 @@ const Homie = () => {
               global footprint
             </h2>
             <div className="heading-bottom">
-              <div className="nav-btn-2">Join Now</div>
-              <div className="vdo">
+              <a href="/signup">
+                <div className="nav-btn-2">Join Now</div>
+              </a>
+              {/* <div className="vdo">
                 <div className="play-vdo">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -44,16 +49,12 @@ const Homie = () => {
                   </svg>
                 </div>
                 Play Demo
-              </div>
+              </div> */}
             </div>
           </div>
           <div>
             <img className="logo" src="/main.svg" alt="logo" />
           </div>
-        </div>
-
-        <div>
-          <Calci />
         </div>
 
         <div className="services">
@@ -81,41 +82,35 @@ const Homie = () => {
             </div>
           </div>
           <div className="services-container">
-            <div className="services-item">
+            <div className="service-item">
               <div className="service-item-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                >
-                  <path
-                    d="M4.00033 24H28.0003V26.6667H4.00033V24ZM28.679 11.3693C28.4992 10.8292 28.1121 10.3826 27.603 10.1278C27.0939 9.87302 26.5045 9.83088 25.9643 10.0107L20.0003 12L9.33366 8L6.66699 9.33333L14.667 14.6667L9.33366 17.3333L4.00033 14.6667L2.66699 16L8.00033 21.3333L27.3963 14.06C27.9167 13.8646 28.3411 13.4751 28.5803 12.9734C28.8195 12.4716 28.8549 11.8966 28.679 11.3693Z"
-                    fill="#2C2D5B"
-                  />
-                </svg>
+                {/* SVG for Plans We Offer */}
+                <img src="/planss.png" alt="" />
+              </div>
+              <h1 className="service-item-heading">Plans We Offer</h1>
+              <span className="service-item-span">
+                WE OFFER A RANGE OF PLANS TO SUIT YOUR NEEDS, FROM BASIC TO
+                PREMIUM, ENSURING AFFORDABILITY, FLEXIBILITY AND QUALITY
+                SERVICE.
+              </span>
+            </div>
+
+            <div className="service-item">
+              <div className="service-item-circle">
+                {/* SVG for International Courier */}
+                <img src="/delivery-man.png" alt="" />
               </div>
               <h1 className="service-item-heading">International Courier</h1>
               <span className="service-item-span">
-                WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
+                WE OFFER A HASSLE-FREE, RELIABLE AND LOW-COST COURIER SERVICE
                 FROM INDIA INTERNATIONALLY.
               </span>
             </div>
-            <div className="services-item">
+
+            <div className="service-item">
               <div className="service-item-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                >
-                  <path
-                    d="M4.00033 24H28.0003V26.6667H4.00033V24ZM28.679 11.3693C28.4992 10.8292 28.1121 10.3826 27.603 10.1278C27.0939 9.87302 26.5045 9.83088 25.9643 10.0107L20.0003 12L9.33366 8L6.66699 9.33333L14.667 14.6667L9.33366 17.3333L4.00033 14.6667L2.66699 16L8.00033 21.3333L27.3963 14.06C27.9167 13.8646 28.3411 13.4751 28.5803 12.9734C28.8195 12.4716 28.8549 11.8966 28.679 11.3693Z"
-                    fill="#2C2D5B"
-                  />
-                </svg>
+                {/* SVG for Indian Shop Cart */}
+                <img src="/shopping.png" alt="" />
               </div>
               <h1 className="service-item-heading">Indian Shop Cart</h1>
               <span className="service-item-span">
@@ -123,33 +118,79 @@ const Homie = () => {
                 FROM INDIA INTERNATIONALLY.
               </span>
             </div>
-            <div className="services-item">
+
+            <div className="service-item">
               <div className="service-item-circle">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                >
-                  <path
-                    d="M4.00033 24H28.0003V26.6667H4.00033V24ZM28.679 11.3693C28.4992 10.8292 28.1121 10.3826 27.603 10.1278C27.0939 9.87302 26.5045 9.83088 25.9643 10.0107L20.0003 12L9.33366 8L6.66699 9.33333L14.667 14.6667L9.33366 17.3333L4.00033 14.6667L2.66699 16L8.00033 21.3333L27.3963 14.06C27.9167 13.8646 28.3411 13.4751 28.5803 12.9734C28.8195 12.4716 28.8549 11.8966 28.679 11.3693Z"
-                    fill="#2C2D5B"
-                  />
-                </svg>
+                {/* SVG for Assisted Purchase */}
+                <img src="/procurement.png" alt="" />
               </div>
-              <h1 className="service-item-heading">ASSISTED PURCHASE</h1>
+              <h1 className="service-item-heading">Assisted Purchase</h1>
               <span className="service-item-span">
-                WE OFFER A HASSLE FREE, RELIABLE AND LOW-COST COURIER SERVICE
+                WE OFFER A HASSLE-FREE, RELIABLE AND LOW-COST COURIER SERVICE
                 FROM INDIA INTERNATIONALLY.
               </span>
             </div>
           </div>
+
           <div className="nav-btnn">
-            <div className="nav-btn-1">Login</div>
-            <div className="nav-btn-2">Sign In</div>
+            <a href="/service">
+              <div className="nav-btn-2">View more</div>
+            </a>
           </div>
         </div>
+
+        <div className="tititiiti">
+          <div className="testimoinals-head">
+            <h1>
+              Explore <span>Our Business</span>
+            </h1>
+            <h4>
+              Uncover Limitless Opportunities: Navigate YourIndianShop's
+              Business Solutions Today!
+            </h4>
+          </div>
+          <div className="custom-beautiful-card-container">
+            <div className="custom-beautiful-card">
+              <div className="custom-card-left">
+                <EngineeringOutlinedIcon
+                  style={{ height: "50px", width: "100px" }}
+                />
+              </div>
+              <div className="custom-card-right">
+                <div className="custom-card-title">White Labeling</div>
+                <div className="custom-card-text">
+                  White labeling is when a company rebrands and sells a product
+                  or service originally created by another company under its own
+                  name.
+                </div>
+                <div className="custom-card-link" id="org">
+                  <Link to="/white-labeling" rel="noopener noreferrer">
+                    Click Here
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="custom-beautiful-card">
+              <div className="custom-card-left">
+                <ComputerIcon style={{ height: "50px", width: "100px" }} />
+              </div>
+              <div className="custom-card-right">
+                <div className="custom-card-title">Wholesaler Plan</div>
+                <div className="custom-card-text">
+                  When you buy bulk items with us, Our commitment to providing
+                  cost-effective solutions ensures that you get the most value
+                  for your investment.
+                </div>
+                <Link to="/wholesaler" rel="noopener noreferrer">
+                  <div className="custom-card-link" id="org">
+                    Click Here
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="">
           <div className="testimoinals-head">
             <h1>
@@ -222,6 +263,43 @@ const Homie = () => {
             <img src="/ship.svg" alt="logo" />
           </div>
         </div>
+
+        <div className="">
+          <div className="testimoinals-head">
+            <h1>
+              Shipping <span>Calculator</span>
+            </h1>
+            <h4>Ship Your products from a variety of Indian sites</h4>
+          </div>
+          <div className="calculator-section">
+            <div className="calcu-mid-head">
+              <p className="calculator-text">
+                Introducing our user-friendly Shipping Calculator—an essential
+                tool for seamless shipping experiences at YourIndianShop.
+                Designed with your convenience in mind, our calculator provides
+                instant and transparent shipping estimates tailored to your
+                specific needs. Whether you're a business shipping products or
+                an individual sending a gift, this tool ensures you have all the
+                information you need at your fingertips. Enjoy the benefits of
+                accurate real-time estimates, transparent pricing, and
+                customizable shipping options. Make informed decisions and take
+                control of your shipping journey with our hassle-free Shipping
+                Calculator.
+                <div className="nav-btn">
+                  <a href="/calc">
+                    <div className="nav-btn-2">Calculate Now</div>
+                  </a>
+                </div>
+              </p>
+              <img
+                className="calculator-image"
+                src="/home/food_delivery.gif"
+                alt="no"
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="testimonials">
           <div className="testimoinals-head">
             <h1>

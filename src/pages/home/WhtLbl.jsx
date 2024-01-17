@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
+import "./WhiteLBl.css";
 import "../../stylesheet/WhtLbl.css";
 import { Link, useLocation } from "react-router-dom";
-import Marquee from "react-fast-marquee";
 import { Star, StarBorder, StarHalf } from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import Fade from "react-reveal/Fade";
 import { Autoplay } from "swiper/modules";
+import Navbar from "./Navbar";
+import Footer from "../../components/Footer";
 
 const WhtLbl = () => {
   const [value, setValue] = useState(
@@ -83,12 +85,7 @@ const WhtLbl = () => {
 
   return (
     <div id="wlb-cont">
-      <div className="marquee">
-        <Marquee speed={150}>
-          Save Upto 80% on International Shipping • Exciting Discounts on
-          Premium Plans • Get Your Virtual Indian Address
-        </Marquee>
-      </div>
+      <Navbar />
       <div id="scroll-fade">
         <Fade bottom when={isVisible}>
           <div id="wl-sec-1">
@@ -449,36 +446,12 @@ const WhtLbl = () => {
                     </div>{" "}
                   </div>
                 </SwiperSlide>
-
-                {/* <div className="feed-info">
-                        <div id="hd-fd">
-                          <div id="blue" className="btn btn-b">
-                            {r.Name}
-                          </div>
-                          {/* <div className="msg-title">"Great Work"</div> */}
-                {/* <div id="org">CLIENT OF COMPANY</div>
-                          <div className="msg-desc">{r.Review}</div>
-                          <div className="sitara">
-                            {Array(r.Star)
-                              .fill(null)
-                              .map((a) => {
-                                return <Star />;
-                              })}
-                          </div>{" "}
-                        </div>{" "}
-                      </div> */}
               </Swiper>
             </div>
           </section>
         </Fade>
       </div>
-      <div className="footer">
-        <div className="footer-img">
-          <div className="footer-text">
-            So Start Your YIS Journey With Us Now !!
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

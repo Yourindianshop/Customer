@@ -53,6 +53,7 @@ import InnSites from "./pages/home/InnSites";
 import CartPage from "./pages/dashboard/CartPage";
 import Homie from "./pages/home/Homie";
 import Aboutt from "./pages/home/Aboutt";
+import Calcu from "./components/Calcu";
 export const MyContext = createContext();
 
 const App = () => {
@@ -472,42 +473,10 @@ const App = () => {
                 </div>
               }
             />
-            <Route
-              path="/calc"
-              element={
-                <div id="oooo">
-                  <main>
-                    <Nav />
-                    <br />
-                    <Calc />
-                  </main>
-                </div>
-              }
-            />
+            <Route path="/calc" element={<Calcu />} />
             <Route path="/about" element={<Aboutt />} />
-            <Route
-              path="/service"
-              element={
-                <main>
-                  {" "}
-                  <Link to="/" className="btn-house">
-                    <div className="btn-div">
-                      <House />
-                    </div>
-                  </Link>
-                  <Service />
-                </main>
-              }
-            />
-            <Route
-              path="/offers"
-              element={
-                <main>
-                  {" "}
-                  <Offer />
-                </main>
-              }
-            />
+            <Route path="/service" element={<Service />} />
+            <Route path="/offers" element={<Offer />} />
             <Route
               path="/in-sites"
               element={
@@ -520,28 +489,8 @@ const App = () => {
                 </div>
               }
             />
-            <Route
-              path="/white-labeling"
-              element={
-                <div id="oooo">
-                  <Nav />
-                  <main>
-                    <WhtLbl />
-                  </main>
-                </div>
-              }
-            />
-            <Route
-              path="/wholesaler"
-              element={
-                <div id="oooo">
-                  <Nav />
-                  <main>
-                    <Wsaller />
-                  </main>
-                </div>
-              }
-            />
+            <Route path="/white-labeling" element={<WhtLbl />} />
+            <Route path="/wholesaler" element={<Wsaller />} />
             <Route
               path="/assisted-purchase"
               element={

@@ -31,7 +31,7 @@ export const SOCIALS = {
 // NAVIGATION
 export const NAV_LINKS = [
   { href: "/about", key: "home", label: "About" },
-  { href: "/about", key: "about", label: "Services" },
+  { href: "/service", key: "about", label: "Services" },
   { href: "/disp-plan", key: "Flats", label: "Plans" },
   { href: "/offers", key: "pricing ", label: "Offers " },
   { href: "/calc", key: "pricing ", label: "Shipping Calculator" },

@@ -14,24 +14,22 @@ const TestimonialsGrid = () => {
               />
             </div>
             <div className="detbox">
-              <p className="name">Daniel Clifford</p>
-              <p className="designation">Verified Graduate</p>
+              <p className="name">Rajesh Mishra</p>
+              <p className="designation">Lives in Canada</p>
             </div>
           </div>
           <div className="review">
-            <h4>
-              I received a job offer mid-course, and the subjects I learned were
-              current, if not more so, in the company I joined. I honestly feel
-              I got every penny’s worth.
-            </h4>
+            <h4>Impressive service! I particularly like the second one</h4>
             <p>
-              “ I was an EMT for many years before I joined the bootcamp. I’ve
-              been looking to make a transition and have heard some people who
-              had an amazing experience here. I signed up for the free intro
-              course and found it incredibly fun! I enrolled shortly thereafter.
-              The next 12 weeks was the best - and most grueling - time of my
-              life. Since completing the course, I’ve successfully switched
-              careers, working as a Software Engineer at a VR startup. ”
+              "Your impressive service at Your Indian Shop has been a
+              game-changer for us! Reliable and timely parcel deliveries have
+              become a cornerstone for our family. The professionalism and
+              consistency in exceeding our expectations make your service stand
+              out. It's more than just a delivery; it's a reliable partnership
+              for those living outside India. Your commitment to excellence has
+              made every interaction a seamless and trustworthy experience.
+              Thank you for making our lives easier with your exceptional
+              service!"
             </p>
           </div>
         </div>
@@ -45,50 +43,22 @@ const TestimonialsGrid = () => {
               />
             </div>
             <div className="detbox">
-              <p className="name">Jonathan Walters</p>
-              <p className="designation">Verified Graduate</p>
+              <p className="name">Vibhu Sharma</p>
+              <p className="designation"> Lives in Dubai</p>
             </div>
           </div>
           <div className="review">
-            <h4>The team was very supportive and kept me motivated</h4>
+            <h4>The team was very suppotive</h4>
             <p>
-              “ I started as a total newbie with virtually no coding skills. I
-              now work as a mobile engineer for a big company. This was one of
-              the best investments I’ve made in myself. ”
+              “I've been using YIS for personal shipments, and I'm thrilled with
+              the experience. From the easy shipping process to on-time
+              deliveries, it's been hassle-free. The rates are reasonable, and
+              their half yearly plans are awesome"
             </p>
           </div>
         </div>
         {/* div3 */}
-        <div className="div3 eachdiv">
-          <div className="userdetails">
-            <div className="imgbox">
-              <img
-                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
-                alt=""
-              />
-            </div>
-            <div className="detbox">
-              <p className="name dark">Kira Whittle</p>
-              <p className="designation dark">Verified Graduate</p>
-            </div>
-          </div>
-          <div className="review dark">
-            <h4>Such a life-changing experience. Highly recommended!</h4>
-            <p>
-              “ Before joining the bootcamp, I’ve never written a line of code.
-              I needed some structure from professionals who can help me learn
-              programming step by step. I was encouraged to enroll by a former
-              student of theirs who can only say wonderful things about the
-              program. The entire curriculum and staff did not disappoint. They
-              were very hands-on and I never had to wait long for assistance.
-              The agile team project, in particular, was outstanding. It took my
-              learning to the next level in a way that no tutorial could ever
-              have. In fact, I’ve often referred to it during interviews as an
-              example of experience. It certainly helped me land a job as a
-              full-stack 100% recommend! ”
-            </p>
-          </div>
-        </div>
+
         {/* div4 */}
         <div className="div4 eachdiv">
           <div className="userdetails">
@@ -99,16 +69,15 @@ const TestimonialsGrid = () => {
               />
             </div>
             <div className="detbox">
-              <p className="name dark">Jeanette Harmon</p>
-              <p className="designation dark">Verified Graduate</p>
+              <p className="name dark">Harpreet Singh</p>
+              <p className="designation dark"> Lives in London</p>
             </div>
           </div>
           <div className="review dark">
             <h4>An overall wonderful and rewarding experience</h4>
             <p>
-              “ Thank you for the wonderful experience! I now have a job I
-              really enjoy, and make a good living while doing something I love.
-              ”
+              “ Working remotely means I often need to send and receive
+              important documents. YIS service has been a lifesaver ”
             </p>
           </div>
         </div>
@@ -122,23 +91,26 @@ const TestimonialsGrid = () => {
               />
             </div>
             <div className="detbox">
-              <p className="name">Patrick Abrams</p>
-              <p className="designation">Verified Graduate</p>
+              <p className="name">Cris Leina</p>
+              <p className="designation">Lives in Mallorca</p>
             </div>
           </div>
           <div className="review">
             <h4>
-              Awesome teaching support from TAs who did the bootcamp themselves.
-              Getting guidance from them and learning from their experiences was
-              easy.
+              Seamless Global Delivery: Ensuring Your Packages Reach You
+              Anywhere in the World
             </h4>
             <p>
-              “ The staff seem genuinely concerned about my progress which I
-              find really refreshing. The program gave me the confidence
-              necessary to be able to go out in the world and present myself as
-              a capable junior developer. The standard is above the rest. You
-              will get the personal attention you need from an incredible
-              community of smart and amazing people. ”
+              “ "Frequent travel to India often introduces an element of chaos,
+              yet your exceptional service acts as a reliable anchor, ensuring
+              that my packages reach me seamlessly regardless of my location in
+              the world. The proficiency of your international shipping services
+              adds an extra layer of convenience to my globetrotting lifestyle,
+              making each delivery a hassle-free experience. Your commitment to
+              excellence and the streamlined logistics process truly make a
+              significant difference in managing the challenges of constant
+              travel. I appreciate the peace of mind your services bring to the
+              complex world of international parcel deliveries. ”
             </p>
           </div>
         </div>

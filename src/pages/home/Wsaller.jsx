@@ -8,6 +8,8 @@ import Fade from "react-reveal/Fade";
 import { Autoplay } from "swiper/modules";
 import "../../stylesheet/Wsaller.css";
 import React, { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import Footer from "../../components/Footer";
 
 const Wsaller = () => {
   const [value, setValue] = useState(
@@ -83,12 +85,7 @@ const Wsaller = () => {
 
   return (
     <div id="wlb-cont">
-      <div className="marquee">
-        <Marquee speed={150}>
-          Save Upto 80% on International Shipping • Exciting Discounts on
-          Premium Plans • Get Your Virtual Indian Address
-        </Marquee>
-      </div>
+      <Navbar />
       <div className="box-out">
         <div className="box">
           <div className="items">
@@ -462,13 +459,7 @@ const Wsaller = () => {
           </Swiper>
         </div>
       </section>
-      <div className="footer">
-        <div className="footer-img">
-          <div className="footer-text">
-            So Start Your YIS Journey With Us Now !!
-          </div>
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };
