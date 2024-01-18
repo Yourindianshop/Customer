@@ -18,15 +18,13 @@ const Homie = () => {
         <div className="main">
           <div className="heading">
             <h1 className="main-heading">
-              quick & reliable{" "}
-              <span className="text-org">warehousing and logistics</span>{" "}
-              solution.
+              Ship It Ease <span className="text-org">From India</span> To Your
+              Doorstep
             </h1>
-            <h2>
-              ShipUp delivers an unparalleled customer service through dedicated
-              customer teams, engaged people working in an agile culture, and a
-              global footprint
-            </h2>
+            <h3>
+              Your Indian Shop Delivers An Unparalled Shipping & Shopping
+              Experience To It’s Customers With Amazing Offers
+            </h3>
             <div className="heading-bottom">
               <a href="/signup">
                 <div className="nav-btn-2">Join Now</div>
@@ -163,10 +161,11 @@ const Homie = () => {
                   or service originally created by another company under its own
                   name.
                 </div>
-                <div className="custom-card-link" id="org">
-                  <Link to="/white-labeling" rel="noopener noreferrer">
-                    Click Here
-                  </Link>
+
+                <div className="nav-btn">
+                  <a href="/white-labeling">
+                    <div className="nav-btn-2">Click Here</div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -181,11 +180,11 @@ const Homie = () => {
                   cost-effective solutions ensures that you get the most value
                   for your investment.
                 </div>
-                <Link to="/wholesaler" rel="noopener noreferrer">
-                  <div className="custom-card-link" id="org">
-                    Click Here
-                  </div>
-                </Link>
+                <div className="nav-btn">
+                  <a href="/wholesaler">
+                    <div className="nav-btn-2">Click Here</div>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -285,17 +284,13 @@ const Homie = () => {
                 customizable shipping options. Make informed decisions and take
                 control of your shipping journey with our hassle-free Shipping
                 Calculator.
-                <div className="nav-btn">
+                <div className="nav-btn mt-5">
                   <a href="/calc">
                     <div className="nav-btn-2">Calculate Now</div>
                   </a>
                 </div>
               </p>
-              <img
-                className="calculator-image"
-                src="/home/food_delivery.gif"
-                alt="no"
-              />
+              <img className="calculator-image" src="/calc.png" alt="no" />
             </div>
           </div>
         </div>

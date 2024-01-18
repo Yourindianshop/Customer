@@ -54,6 +54,7 @@ import CartPage from "./pages/dashboard/CartPage";
 import Homie from "./pages/home/Homie";
 import Aboutt from "./pages/home/Aboutt";
 import Calcu from "./components/Calcu";
+import Calci from "./pages/home/Calci";
 export const MyContext = createContext();
 
 const App = () => {
@@ -458,18 +459,14 @@ const App = () => {
               path="/dashboard/calc"
               element={
                 <div>
-                  {/* <div id="app" className="row">
+                  <div id="app" className="row">
                     <Sidebar />
                     <main>
-                      <Calc />
+                      <div id="dash-pro-item" className="article-container">
+                        <Calci />
+                      </div>
                     </main>
-                  </div> */}
-                  <Link to="/dashboard" className="btn-house">
-                    <IconButton>
-                      <House />
-                    </IconButton>
-                  </Link>
-                  <Calc />
+                  </div>{" "}
                 </div>
               }
             />
@@ -477,18 +474,7 @@ const App = () => {
             <Route path="/about" element={<Aboutt />} />
             <Route path="/service" element={<Service />} />
             <Route path="/offers" element={<Offer />} />
-            <Route
-              path="/in-sites"
-              element={
-                <div id="oooo">
-                  <Nav />
-                  <main>
-                    {" "}
-                    <InnSites />
-                  </main>
-                </div>
-              }
-            />
+            <Route path="/in-sites" element={<InnSites />} />
             <Route path="/white-labeling" element={<WhtLbl />} />
             <Route path="/wholesaler" element={<Wsaller />} />
             <Route

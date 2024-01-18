@@ -1,6 +1,8 @@
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import Navbar from "./Navbar";
+import Footer from "../../components/Footer";
 
 const Sidebar = ({
   isSidebarOpen,
@@ -339,7 +341,8 @@ const InnSites = () => {
 
   return (
     <div className="">
-      <div className="mt-24">
+      <Navbar />
+      <div className="">
         <div className="">
           <h1 className="text-3xl p-5 sm:text-lg font-sans ml-5 sm:p-2">
             Results for <span className="font-semibold">filter page</span>
@@ -423,6 +426,7 @@ const InnSites = () => {
           </select>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
