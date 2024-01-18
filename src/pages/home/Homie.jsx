@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import Footer from "../../components/Footer";
 import "./Homie.css";
+import Call from "../../components/Call";
 
 import TestimonialsGrid from "./Testimonials";
 import FeaturedWebsite from "../../components/FeaturedWebsite";
@@ -325,6 +326,7 @@ const Homie = () => {
           />
         </svg>
       </div>
+      <Call />
     </div>
   );
 };

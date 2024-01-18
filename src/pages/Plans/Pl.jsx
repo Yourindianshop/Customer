@@ -25,7 +25,7 @@ const Pl = () => {
               <span className="plan-subheading">
                 For startups & side projects
               </span>
-              <h2 className="plan-price">₹0</h2>
+              <h3 className="plan-price">₹0</h3>
               {/* <h5 className="plan-subheading">Per year</h5> */}
               <h2 className="plan-heighlight">Upto 25 days of free storage</h2>
             </div>
@@ -112,7 +112,7 @@ const Pl = () => {
               <span className="plan-subheading">
                 For larger teams with increased usage
               </span>
-              <h2 className="plan-price">₹2499</h2>
+              <h3 className="plan-price">₹2499</h3>
               {/* <h5 className="plan-subheading">Per year</h5> */}
               <h2 className="plan-heighlight">Upto 30 days of free storage</h2>
             </div>
@@ -199,7 +199,7 @@ const Pl = () => {
               <span className="plan-subheading">
                 For businesses with custom needs
               </span>
-              <h2 className="plan-price">₹4499</h2>
+              <h3 className="plan-price">₹4499</h3>
               {/* <h5 className="plan-subheading">Per year</h5> */}
               <h2 className="plan-heighlight">Upto 40 days of free storage</h2>
             </div>
