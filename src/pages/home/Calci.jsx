@@ -304,9 +304,9 @@ const Calci = () => {
                 <div className="flex justify-center items-center">
                   <div className="modal" style={{ padding: "2rem" }}>
                     <div className="modal-content">
-                      <h1 style={{ color: "#ffffff" }}>
+                      <h3 style={{ color: "#000" }}>
                         Shipping Weight: {weight} kg
-                      </h1>
+                      </h3>
                       <h2 style={{ color: "#ffffff" }}>Partner Prices:</h2>
                       <table className="styled-table">
                         <thead>
