@@ -218,12 +218,11 @@ const Homie = () => {
             <div className="works-text-1">
               <div className="works-inside">
                 <div className="works-number">1</div>
-                <h1 className="works-heading">connect</h1>
+                <h1 className="works-heading">SIGN UP</h1>
               </div>
               <span className="works-text">
-                You’re currently running your store on Shopify, WooCommerce, or
-                any other platform. As a first step, you’ll connect your store
-                with our platform.
+                WE PROVIDE A FREE INDIAN VIRTUAL ADDRESS. SIMPLY SIGN UP AND GET
+                STARTED TODAY.
               </span>
             </div>
             <img src="/connect.svg" alt="connect" />
@@ -236,12 +235,10 @@ const Homie = () => {
             <div className="works-text-1">
               <div className="works-inside">
                 <div className="works-number">2</div>
-                <h1 className="works-heading">Store</h1>
+                <h1 className="works-heading">SHOP </h1>
               </div>
               <span className="works-text">
-                Then, you can send us your inventory and the fun begins. We’ll
-                choose a delivery day together so your fulfilment is not
-                interrupted.
+                BROWSE & SHOP FROM TOP INDIAN E-COMMERCE STORES & BRANDS.
               </span>
             </div>
           </div>
@@ -255,12 +252,25 @@ const Homie = () => {
                 <h1 className="works-heading">Ship</h1>
               </div>
               <span className="works-text">
-                You’re currently running your store on Shopify, WooCommerce, or
-                any other platform. As a first step, you’ll connect your store
-                with our platform.
+                SHIP YOUR CONSOLIDATED PARCELS TO YOUR GLOBAL ADDRESS.
               </span>
             </div>
             <img src="/ship.svg" alt="logo" />
+          </div>
+          <div className="line1">
+            <img src="/line1.svg" className="line1-img" alt="" />
+          </div>
+          <div className="works-content">
+            <img src="/store.svg" alt="connect" />
+            <div className="works-text-1">
+              <div className="works-inside">
+                <div className="works-number">4</div>
+                <h1 className="works-heading">RECEIVE </h1>
+              </div>
+              <span className="works-text">
+                GET IT AT YOUR ADDRESS WITHIN 3-6 DAYS FROM INDIA.
+              </span>
+            </div>
           </div>
         </div>
 

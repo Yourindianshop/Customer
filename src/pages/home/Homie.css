@@ -416,6 +416,7 @@ body::-webkit-scrollbar {
   font-weight: 500;
   line-height: normal;
   text-transform: capitalize;
+  margin-bottom: 2rem;
 }
 
 .works-content {

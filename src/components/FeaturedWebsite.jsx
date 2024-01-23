@@ -110,7 +110,7 @@ const FeaturedWebsite = () => {
         </div>
       </div>
       <div className="nav-btnn">
-        <a href="">
+        <a href="/feature-website">
           <div className="nav-btn-2">View More</div>
         </a>
       </div>

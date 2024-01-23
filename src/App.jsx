@@ -55,6 +55,7 @@ import Homie from "./pages/home/Homie";
 import Aboutt from "./pages/home/Aboutt";
 import Calcu from "./components/Calcu";
 import Calci from "./pages/home/Calci";
+import FeatureWebsite from "./pages/home/FeatureWebsite";
 export const MyContext = createContext();
 
 const App = () => {
@@ -477,6 +478,7 @@ const App = () => {
             <Route path="/in-sites" element={<InnSites />} />
             <Route path="/white-labeling" element={<WhtLbl />} />
             <Route path="/wholesaler" element={<Wsaller />} />
+            <Route path="/feature-website" element={<FeatureWebsite />} />
             <Route
               path="/assisted-purchase"
               element={
