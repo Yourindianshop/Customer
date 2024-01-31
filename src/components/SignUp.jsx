@@ -1,13 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "../stylesheet/SignIn.css";
 import "../stylesheet/SignUp.css";
-import AddCardIcon from "@mui/icons-material/AddCard";
 import { fetchreq } from "../Helper/fetch";
-import emailjs from "@emailjs/browser";
 import axios from "axios";
 
-import { Google, WhatsApp } from "@mui/icons-material";
 const SignUp = () => {
   const nav = useNavigate();
   const [otp, setOtp] = useState(false);
@@ -27,14 +24,18 @@ const SignUp = () => {
   const [inputOTP, setInputOTP] = useState("");
   const [code, setCode] = useState(null);
   const [fetchcontries, setFetchcountries] = useState([]);
-  const form = useRef();
   const [cc, setCc] = useState(null);
   const sendEmail = async (e) => {
     e.preventDefault();
-    if (password != password2) {
+    if (password !== password2) {
       alert("password not Matched...");
       return;
-    } else if (name != "" && email != "" && password != "" && mobile != "") {
+    } else if (
+      name !== "" &&
+      email !== "" &&
+      password !== "" &&
+      mobile !== ""
+    ) {
       setSubmit("Sending Verification  Mail...");
       let tempcode = Math.round(1000000 * Math.random()).toString();
       const dt = await fetchreq("POST", "sendMail", {
@@ -58,7 +59,7 @@ const SignUp = () => {
 
   const [isbusiness, setIsBusiness] = useState(false);
   const submitOTP = () => {
-    if (code == inputOTP) {
+    if (code === inputOTP) {
       isbusiness ? handlesubmitBC() : handlesubmit();
     } else {
       alert("invalid code...");
@@ -155,7 +156,7 @@ const SignUp = () => {
   };
   const getContryCode = async (cname) => {
     // console.log(cname);
-    if (cname == -1) {
+    if (cname === -1) {
       setCc(null);
       return;
     }
@@ -170,7 +171,7 @@ const SignUp = () => {
     };
     try {
       const response = await axios.request(options);
-      if (response.status == 404) {
+      if (response.status === 404) {
         setCc(null);
         return false;
       } else {
@@ -292,12 +293,16 @@ const SignUp = () => {
                     setMobile(e.target.value);
                   }}
                 />
-                <button type="submit" className="btn btn-blk">
+                <button
+                  type="submit"
+                  className="p-4 bg-primary text-primary-light font-bold
+                  rounded-md px-6"
+                >
                   {submit}
                 </button>
               </form>
             )}
-            {otp == 2 && (
+            {otp === 2 && (
               <div>
                 <input
                   type="number"

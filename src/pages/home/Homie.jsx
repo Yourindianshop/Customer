@@ -6,8 +6,6 @@ import Call from "../../components/Call";
 import TestimonialsGrid from "./Testimonials";
 import FeaturedWebsite from "../../components/FeaturedWebsite";
 import VariousSites from "../../components/VariousSites";
-import Calci from "./Calci";
-import { Link } from "react-router-dom";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import ComputerIcon from "@mui/icons-material/Computer";
 
