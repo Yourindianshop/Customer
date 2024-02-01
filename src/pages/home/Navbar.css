@@ -131,6 +131,11 @@
     z-index: 1000; /* Add a higher z-index */
   }
 
+  .nav-linkss {
+    font: bold;
+    font-size: 20px;
+  }
+
   .nav-links {
     display: none;
     flex-direction: column;
@@ -147,7 +152,7 @@
 
   .nav-links.active {
     display: flex;
-    background-color: rgb(153, 145, 145);
+    background-color: #f67366;
   }
 
   .nav-links.active {
@@ -167,6 +172,6 @@
   /* Add some padding for the login and sign-in buttons on small screens */
   .nav-btn-1,
   .nav-btn-2 {
-    padding: 15px 30px;
+    padding: 30px 40px;
   }
 }

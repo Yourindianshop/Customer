@@ -12,7 +12,7 @@ import ComputerIcon from "@mui/icons-material/Computer";
 const Homie = () => {
   return (
     <div>
-      <div className="navb">
+      <div>
         <Navbar />
         <div className="main">
           <div className="heading">

@@ -12,10 +12,10 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar">
-      <div className="container">
+    <div className="navbar sm:border-b-2 sm:border-gray">
+      <div className="container sm:p-4">
         <a href="/">
-          <h2 className="headdddd">YOUR INDIAN SHOP</h2>
+          <h2 className="headdddd cursor-pointer ">YOUR INDIAN SHOP</h2>
         </a>
 
         <div className="menu-icon" onClick={toggleMenu}>
@@ -34,10 +34,10 @@ const Navbar = () => {
               className="nav-link"
               onClick={toggleMenu}
             >
-              <h3 className="nav-linkss">{link.label}</h3>
+              <h5 className="nav-linkss">{link.label}</h5>
             </Link>
           ))}
-          <div className="nav-btn">
+          <div className="nav-btn sm:flex-col">
             <a href="/signup">
               <div className="nav-btn-1">Login</div>
             </a>

@@ -1,13 +1,16 @@
 import React from "react";
 import "../../stylesheet/About.css";
-import ArrowRightAltOutlinedIcon from "@mui/icons-material/ArrowRightAltOutlined";
-import PgTitle from "../../components/PgTitle";
 import Navbar from "./Navbar";
+import Footer from "../../components/Footer";
 const Service = () => {
   return (
     <div>
       <Navbar />
-      <br />
+      <div class="flex justify-center items-center h-screen">
+        <h3 className="text-6xl font-bold">Coming Soon...</h3>
+      </div>
+      <Footer />
+      {/* <br />
       <br />
       <PgTitle
         pageName="Services We Offers"
@@ -63,7 +66,7 @@ const Service = () => {
             <ArrowRightAltOutlinedIcon />
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };
