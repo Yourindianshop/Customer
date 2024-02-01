@@ -7,7 +7,10 @@ const Feature = () => {
     <div>
       <Navbar />
       <div class="flex justify-center items-center h-screen">
-        <h3 className="text-6xl font-bold">Coming Soon...</h3>
+        <iframe
+          src="https://lottie.host/embed/6fb5025f-eaeb-475d-adac-f121a885c729/sqZE4l5tvg.json"
+          title="hello"
+        ></iframe>
       </div>
       <Footer />
     </div>
