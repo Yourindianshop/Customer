@@ -108,9 +108,9 @@ const App = () => {
             <>
               <Route path="/" element={<Homie />} />
             </>
-            <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
-            <Route path="/termsandconditions" element={<TC/>} />
-            <Route path="/termsandconditions" element={<ProhabitedItems/>} />
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+            <Route path="/termsandconditions" element={<TC />} />
+            {/* <Route path="/termsandconditions" element={<ProhabitedItems/>} /> */}
             <Route
               path="/signUp"
               element={
