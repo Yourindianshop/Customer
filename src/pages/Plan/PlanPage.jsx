@@ -2,6 +2,9 @@ import React, { useContext, useEffect, useState } from "react";
 import PlanCard from "../../components/Plans";
 import {fetchreq} from "../../Helper/fetch"
 import { MyContext } from "../../App";
+import "../Plans/PI.css";
+import Navbar from "../home/Navbar";
+import Footer from "../../components/Footer";
 
 const PlanPage = ({inBill}) => {
   const [plans,setPlans]=useState([]);
@@ -17,10 +20,18 @@ const PlanPage = ({inBill}) => {
   },[])
   return (
     <div>
-      <center>
-      <h1 className="plan-h">Our <span style={{color: "var(--blue)"}}>Plans</span></h1>
-      </center>
-      <div id="plan-cards">
+      <Navbar/>
+      <div className="testimoinals-head">
+          <h1>
+            Affordable <span>Pricing</span>
+            <br />
+          </h1>
+          <h4>
+            Explore exclusive, personalized offers for a premium shopping
+            experience with unbeatable savings.
+          </h4>
+        </div>
+      <div  style={{marginTop:"-10px"}} className="container-plan">
         {plans.length !=0 && plans.map((plan, index) => {
           const hide = inBill && plan.Price==0;
           return !hide && <PlanCard
@@ -30,6 +41,7 @@ const PlanPage = ({inBill}) => {
           />
         })}
       </div>
+      <Footer/>
     </div>
   );
 };

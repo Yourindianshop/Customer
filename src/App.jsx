@@ -498,7 +498,7 @@ const App = () => {
                 </div>
               }
             />
-            {/* <Route path="/disp-plan" element={<Pl />} /> */}
+            <Route path="/disp-plan2" element={<Pl />} />
             <Route path="/disp-plan" element={<PlanPage />} />
             <Route path="/planss" element={<Plan />} />
             <Route

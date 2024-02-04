@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { NAV_LINKS } from "../../constants/index";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
+import { MyContext } from "../../App";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const {  isLogin } = useContext(MyContext);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
@@ -14,9 +16,9 @@ const Navbar = () => {
   return (
     <div className="navbar sm:border-b-2 sm:border-gray">
       <div className="container sm:p-4">
-        <a href="/">
+        <Link to="/">
           <h2 className="headdddd cursor-pointer ">YOUR INDIAN SHOP</h2>
-        </a>
+        </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
           {isMenuOpen ? (
@@ -37,14 +39,20 @@ const Navbar = () => {
               <h5 className="nav-linkss">{link.label}</h5>
             </Link>
           ))}
-          <div className="nav-btn sm:flex-col">
+          {!isLogin ? <div className="nav-btn sm:flex-col">
             <Link to="/signup">
               <div className="nav-btn-1">Create Account</div>
             </Link>
             <Link to="/signIn">
               <div className="nav-btn-2">Login</div>
             </Link>
-          </div>
+          </div> :
+          <div className="nav-btn sm:flex-col">
+            <Link to="/dashboard">
+              <div className="nav-btn-1">Dashboard</div>
+            </Link>
+            
+          </div>}
         </div>
       </div>
     </div>

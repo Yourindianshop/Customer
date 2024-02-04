@@ -9,9 +9,10 @@ import { fetchreq, walletTransaction } from "../../Helper/fetch";
 // import "./PlanCompTab.css";
 import { Link } from "react-router-dom";
 
-const Pl = ({ plan, state }) => {
-  const { setPlanId, isLogin, user, wh, setUser } = useContext(MyContext);
+const Pl = ({ plan, state}) => {
+  const {setIsFromPlan, setPlanId, isLogin, user, wh, setUser } = useContext(MyContext);
   const nav = useNavigate();
+  const [plans,setPlans]=useState([]);
   const [ispro, setIspro] = useState(false);
   const choseplan = () => {
     const given = {
@@ -57,11 +58,18 @@ const Pl = ({ plan, state }) => {
       setIspro(false);
     }
   };
+  const loadplans = async ()=>{
+    const pl = await fetchreq("GET","plans",{});
+    pl? setPlans(pl.result): setPlans([]);
+  }
   const planDetails = [];
   // console.log(plan);
   useEffect(() => {
     if (!isLogin && state) {
       nav("/");
+    }else{
+      loadplans();
+      setIsFromPlan(false);
     }
   }, []);
   return (
@@ -80,6 +88,7 @@ const Pl = ({ plan, state }) => {
         </div>
 
         <div className="container-plan">
+          
           <div className="plan1">
             <div className="pl2">
               <h2 className="plan-heading">Free</h2>
@@ -183,6 +192,7 @@ const Pl = ({ plan, state }) => {
               </div>
             )}
           </div>
+
           <div className="plan1">
             <div className="pl2">
               <h2 className="plan-heading">Half Yearly</h2>

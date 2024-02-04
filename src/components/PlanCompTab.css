@@ -178,9 +178,9 @@
   #mt-ls {
     display: block;
   }
-  .plan {
+  /* .plan {
     display: none !important;
-  }
+  } */
   .ph-hdr big {
     font-size: 1.5rem;
     font-weight: bold;
