@@ -100,21 +100,26 @@ const Wsaller = () => {
               </p>
             </div>
             <div className="btnn">
-              <button className="btn-1">
-                {" "}
-                <img
-                  src="/Assisted/customer-service.png"
-                  alt="chat"
-                  className="chat"
-                />
-                <span className="word"> Chat US</span>
-              </button>
-              {/* <Link to="/signIn"> */}
-              <button className="btn">
-                {/* <img src="/Assisted/download.png" alt="chat" className="chat" /> */}
-                <span className="word">Sign Up</span>
-              </button>
-              {/* </Link> */}
+              <a
+                href="https://wa.me/9903581809"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <button className="btn-1">
+                  <img
+                    src="/Assisted/customer-service.png"
+                    alt="chat"
+                    className="chat"
+                  />
+                  <span className="word text-primary"> Chat US</span>
+                </button>
+              </a>{" "}
+              <Link to="/signIn">
+                <button className="btn">
+                  {/* <img src="/Assisted/download.png" alt="chat" className="chat" /> */}
+                  <span className="word">Sign Up</span>
+                </button>
+              </Link>
             </div>
           </div>
           <div className="circle">

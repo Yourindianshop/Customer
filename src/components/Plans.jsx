@@ -15,9 +15,9 @@ const Plans = ({ plan, state }) => {
       Pid: plan.Pid,
       duration: plan.duration,
       Price: plan.Price,
-      storage: plan.storage
-    }
-    if(user?.Wallete>=plan?.Price){
+      storage: plan.storage,
+    };
+    if (user?.Wallete >= plan?.Price) {
       setPlanId(given);
       setTimeout(() => {
         nav("/select-warehouse");
@@ -54,9 +54,7 @@ const Plans = ({ plan, state }) => {
       setIspro(false);
     }
   };
-  const planDetails = [
-    
-  ];
+  const planDetails = [];
   // console.log(plan);
   useEffect(() => {
     if (!isLogin && state) {
@@ -65,68 +63,70 @@ const Plans = ({ plan, state }) => {
   }, []);
   return (
     <div id="dp-pl">
-    <div className="plan">
-      <div className="row-ctr">
-        <div id="pc-top">
-        <div className="ph-hdr">
-                  <big>{plan.Name}</big>
-                  <strong>₹{plan.Price}</strong>
-                </div>
-          {/* <div className="plan-duretion"></div> */}
-                
-                <div className="phone-table-row">
-                    <span style={{fontWeight: "700"}}>CONSOLIDATION </span>
-                  <span className="feature">
-                  ₹{plan.consolidation}</span>
-                </div>
-                <div className="phone-table-row">
-                    <span style={{fontWeight: "700"}}>STORAGE </span>
-                  <span className="feature">
-                  25 DAYS (after 25 days ₹{plan.storage} per item per day)
-                  </span>
-                </div>
-                <div className="phone-table-row">
-                  <span style={{fontWeight: "700"}}>PHOTO </span>
-                  <span className="feature">
-                  {plan.photo} PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹{plan.photoPrice})
-                  </span>
-                </div>
-                <div className="phone-table-row">
-                <span style={{fontWeight: "700"}}>PACKAGE RETURN </span>
-                  <span className="feature"> ₹{plan.package_ret} PER ITEM</span>
-                </div>
-                <div className="phone-table-row">
-                <span style={{fontWeight: "700"}}>Warehouse Pickup </span>
-                  <span className="feature"> ₹{plan.warehouse_pic}</span>
-                </div>
-                <div className="phone-table-row">
-                  <span style={{fontWeight: "700"}}>Scanned Copies Of Documents </span>
-                  <span className="feature">
-                  ₹{plan.scane_copy}
-                  </span>
-                </div>
-                <div className="phone-table-row">
-               
-                <span style={{fontWeight: "700"}}>Shipping Address </span>  <span className="feature">{plan.shippingAddress}</span>
-                </div>
-                <div className="phone-table-row">
-                  <span style={{fontWeight: "700"}}> Semiliquid/Liquid Clearance Charge </span>
-                  <span className="feature">
-                  {plan.liquidCharge}% (EXCLUSIVE OF ALL OTHER CHARGES)
-                  </span>
-                </div>
-                <div className="phone-table-row">
-                    <span style={{fontWeight: "700"}}>Real-Time Tracking </span> 
-                  <span className="feature">
-                  {plan.detail}</span>
-                </div>
-                <div className="phone-table-row">
-                  <span style={{fontWeight: "700"}}> Personal Shopper </span>
-                  <span className="feature">
-                  {plan.personalShopper}% of item value (exclusive of all charges)
-                  </span>
-                </div>
-                {/* <div className="phone-table-row">
+      <div className="plan">
+        <div className="row-ctr">
+          <div id="pc-top">
+            <div className="ph-hdr">
+              <big>{plan.Name}</big>
+              <strong>₹{plan.Price}</strong>
+            </div>
+            {/* <div className="plan-duretion"></div> */}
+
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>CONSOLIDATION </span>
+              <span className="feature">₹{plan.consolidation}</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>STORAGE </span>
+              <span className="feature">
+                25 DAYS (after 25 days ₹{plan.storage} per item per day)
+              </span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>PHOTO </span>
+              <span className="feature">
+                {plan.photo} PHOTOS FREE (DETAILED PHOTO SERVICE UPTO 10, ₹
+                {plan.photoPrice})
+              </span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>PACKAGE RETURN </span>
+              <span className="feature"> ₹{plan.package_ret} PER ITEM</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>Warehouse Pickup </span>
+              <span className="feature"> ₹{plan.warehouse_pic}</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>
+                Scanned Copies Of Documents{" "}
+              </span>
+              <span className="feature">₹{plan.scane_copy}</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>Shipping Address </span>{" "}
+              <span className="feature">{plan.shippingAddress}</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>
+                {" "}
+                Semiliquid/Liquid Clearance Charge{" "}
+              </span>
+              <span className="feature">
+                {plan.liquidCharge}% (EXCLUSIVE OF ALL OTHER CHARGES)
+              </span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>Real-Time Tracking </span>
+              <span className="feature">{plan.detail}</span>
+            </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}> Personal Shopper </span>
+              <span className="feature">
+                {plan.personalShopper}% of item value (exclusive of all charges)
+              </span>
+            </div>
+            {/* <div className="phone-table-row">
                   <span className="feature">
                     Indian Virtual Shipping Address & Personal Locker : FREE
                   </span>
@@ -134,46 +134,45 @@ const Plans = ({ plan, state }) => {
                 <div className="phone-table-row">
                   <span className="feature">Receive Parcels : FREE</span>
                 </div> */}
-                <div className="phone-table-row">
-                  <span style={{fontWeight: "700"}}>Set Up A Local Hub For Your Business </span>
-                  <span className="feature">
-                  {plan.detail}
-                  </span>
-                </div>
-                <div className="phone-table-row">
-                    <span style={{fontWeight: "700"}}>Assisted Purchase</span> 
-                  <span className="feature">
-                    Actual Charges + Other Charges
-                  </span>
-                </div>
-        {state == 0 && (
-          <Link to="/signUp" className="btn btn-b">
-            Buy Now
-          </Link>
-        )}
-
-
-
-        </div>
-        
-        {state && (
-          <div id="pc-bot">
-            <div className="choose-plan">
-              {isLogin?<button
-                className="btnn"
-                onClick={state == true ? choseplan : upgradeplan}
-              >
-                {ispro
-                  ? "Processing..."
-                  : state == true
-                  ? "Choose Plan"
-                  : "Upgrade Plan"}
-              </button>: <Link to={"/SignIn"}>Buy Now</Link> }
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>
+                Set Up A Local Hub For Your Business{" "}
+              </span>
+              <span className="feature">{plan.detail}</span>
             </div>
+            <div className="phone-table-row">
+              <span style={{ fontWeight: "700" }}>Assisted Purchase</span>
+              <span className="feature">Actual Charges + Other Charges</span>
+            </div>
+            {state === 0 && (
+              <Link to="/signUp" className="btn btn-b">
+                Buy Now
+              </Link>
+            )}
           </div>
-        )}
+
+          {state && (
+            <div id="pc-bot">
+              <div className="choose-plan">
+                {isLogin ? (
+                  <button
+                    className="btnn"
+                    onClick={state === true ? choseplan : upgradeplan}
+                  >
+                    {ispro
+                      ? "Processing..."
+                      : state === true
+                      ? "Choose Plan"
+                      : "Upgrade Plan"}
+                  </button>
+                ) : (
+                  <Link to={"/SignIn"}>Buy Now</Link>
+                )}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 };

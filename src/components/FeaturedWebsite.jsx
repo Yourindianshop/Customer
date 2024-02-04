@@ -15,7 +15,7 @@ const FeaturedWebsite = () => {
       </div>
       <div className="card-container">
         <div className="card">
-          <img className="card-img" src="/insta.webp" alt="insta" />
+          <img className="card-img" src="/beyoung.jpg" alt="insta" />
           <div>
             <a
               href="https://www.beyoung.in"
@@ -31,7 +31,7 @@ const FeaturedWebsite = () => {
         </div>
         {/* Add two more similar cards here */}
         <div className="card">
-          <img className="card-img" src="/git.jpg" alt="example2" />
+          <img className="card-img" src="/gallery.jpg" alt="example2" />
           <div>
             <a
               href="https://www.thegallerystore.in"
@@ -46,7 +46,7 @@ const FeaturedWebsite = () => {
           </div>
         </div>
         <div className="card">
-          <img className="card-img" src="/ik.jpg" alt="example3" />
+          <img className="card-img" src="/kw.png" alt="example3" />
           <div>
             <a
               href="https://www.kolkataweb.com"
@@ -108,11 +108,6 @@ const FeaturedWebsite = () => {
             </span> */}
           </div>
         </div>
-      </div>
-      <div className="nav-btnn">
-        <a href="/feature-website">
-          <div className="nav-btn-2">View More</div>
-        </a>
       </div>
     </div>
   );

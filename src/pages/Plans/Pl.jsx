@@ -1,8 +1,69 @@
 import "./PI.css";
 import Navbar from "../home/Navbar";
 import Footer from "../../components/Footer";
+import React, { useContext, useEffect, useState } from "react";
+// import "../stylesheet/Plans.css";
+import { MyContext } from "../../App";
+import { useNavigate } from "react-router-dom";
+import { fetchreq, walletTransaction } from "../../Helper/fetch";
+// import "./PlanCompTab.css";
+import { Link } from "react-router-dom";
 
-const Pl = () => {
+const Pl = ({ plan, state }) => {
+  const { setPlanId, isLogin, user, wh, setUser } = useContext(MyContext);
+  const nav = useNavigate();
+  const [ispro, setIspro] = useState(false);
+  const choseplan = () => {
+    const given = {
+      Pid: plan.Pid,
+      duration: plan.duration,
+      Price: plan.Price,
+      storage: plan.storage,
+    };
+    if (user?.Wallete >= plan?.Price) {
+      setPlanId(given);
+      setTimeout(() => {
+        nav("/select-warehouse");
+      }, 1000);
+    } else {
+      alert(
+        "You have not Sufficient Amount to buy plan Add Balace to the Wallete..."
+      );
+      nav("/Walete");
+    }
+  };
+  const upgradeplan = async () => {
+    if (!ispro) {
+      setIspro(true);
+      const dt = await walletTransaction(
+        plan.Price,
+        wh?.Wid,
+        `Upgrade plan in ${wh?.Name} `,
+        user,
+        setUser,
+        nav
+      );
+      if (dt) {
+        const res = await fetchreq("POST", "upgradePlan", { plan, tid: 13 });
+        if (res) {
+          alert("upgrade sussfully");
+          nav("/warehousedata");
+        } else {
+          alert("Something Went Wrong...");
+        }
+      } else {
+        alert("Payment Canceled");
+      }
+      setIspro(false);
+    }
+  };
+  const planDetails = [];
+  // console.log(plan);
+  useEffect(() => {
+    if (!isLogin && state) {
+      nav("/");
+    }
+  }, []);
   return (
     <div>
       <Navbar />
@@ -98,13 +159,29 @@ const Pl = () => {
                 </h3>
               </li>
             </ul>
-            <div className="pl2">
-              <div className="nav-btnn">
-                <a href="/signIn">
-                  <div className="nav-btn-2">Buy Now</div>
-                </a>
+
+            {state && (
+              <div id="pc-bot">
+                <div className="choose-plan">
+                  {isLogin ? (
+                    <button
+                      className="btnn text-[#000]"
+                      onClick={state === true ? choseplan : upgradeplan}
+                    >
+                      {ispro
+                        ? "Processing..."
+                        : state === true
+                        ? "Choose Plan"
+                        : "Upgrade Plan"}
+                    </button>
+                  ) : (
+                    <Link to={"/SignIn"} className="text-[#000]">
+                      <p className="text-[#000]">Buy Now</p>
+                    </Link>
+                  )}
+                </div>
               </div>
-            </div>
+            )}
           </div>
           <div className="plan1">
             <div className="pl2">

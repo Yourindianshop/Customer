@@ -49,6 +49,7 @@ const Dashboard = () => {
                 fontWeight: "700",
                 fontFamily: "var(--font3)",
               }}
+              className="capitalize"
             >
               {user?.Name}
             </h1>
@@ -77,14 +78,8 @@ const Dashboard = () => {
                   <div className="icon-new ico-r">
                     <LocalShippingIcon />
                   </div>
-                  <small style={{ marginTop: "1rem" }}>Indian Shop </small>
-                  {pktinfo && <big style={{ marginTop: "1rem" }}></big>}
+                  <p style={{ marginTop: "1rem" }}>Indian Shop </p>
                 </div>
-              </div>
-              <div class="flip-card-back">
-                <h1>John Doe</h1>
-                <p>Architect & Engineer</p>
-                <p>We love that guy</p>
               </div>
             </div>
           </div>
@@ -105,7 +100,7 @@ const Dashboard = () => {
                   </div>
                   <small style={{ marginTop: "1rem" }}>Wallet Balance</small>
                   {pktinfo && (
-                    <big style={{ marginTop: "1rem" }}>₹{user?.Wallete}</big>
+                    <p style={{ marginTop: "1rem" }}>₹{user?.Wallete}</p>
                   )}
                 </div>
               </div>
@@ -132,7 +127,7 @@ const Dashboard = () => {
                     <LocalShippingIcon />
                   </div>
                   <small style={{ marginTop: "1rem" }}>Warehouses ID</small>
-                  {pktinfo && <big style={{ marginTop: "1rem" }}>1</big>}
+                  {pktinfo && <p style={{ marginTop: "1rem" }}>1</p>}
                 </div>
               </div>
               <div class="flip-card-back">
@@ -159,9 +154,9 @@ const Dashboard = () => {
                   </div>
                   <small style={{ marginTop: "1rem" }}>Locker</small>
                   {pktinfo && (
-                    <big style={{ marginTop: "1rem" }}>
+                    <p style={{ marginTop: "1rem" }}>
                       {pktinfo.Locker} packages
-                    </big>
+                    </p>
                   )}
                 </div>
               </div>
@@ -189,9 +184,9 @@ const Dashboard = () => {
                   </div>
                   <small style={{ marginTop: "1rem" }}>Delivered </small>
                   {pktinfo && (
-                    <big style={{ marginTop: "1rem" }}>
+                    <p style={{ marginTop: "1rem" }}>
                       {pktinfo.Dispatched} packages
-                    </big>
+                    </p>
                   )}
                 </div>
               </div>
@@ -219,9 +214,9 @@ const Dashboard = () => {
                   </div>
                   <small style={{ marginTop: "1rem" }}>Shipment </small>
                   {pktinfo && (
-                    <big style={{ marginTop: "1rem" }}>
+                    <p style={{ marginTop: "1rem" }}>
                       {pktinfo.Delivered} packages
-                    </big>
+                    </p>
                   )}
                 </div>
               </div>
@@ -243,7 +238,6 @@ const Dashboard = () => {
           </div>
         </div> */}
       </div>
-      <div id="vAdd"></div>
     </div>
   );
 };

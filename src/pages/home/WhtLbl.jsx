@@ -101,7 +101,7 @@ const WhtLbl = () => {
                   Think of this as your elevator pitch to get the reader's
                   attention.
                 </p>
-                <Link to="/signIn" className="head-btn">
+                <Link to="https://wa.me/9903581809" className="head-btn">
                   Contact Us
                 </Link>
               </div>
@@ -183,9 +183,9 @@ const WhtLbl = () => {
             <div className="ws-l">
               <div className="ws-title">build your dream brand now !!!</div>
 
-              <Link to={"/signIn"} className="btn btn-b">
+              {/* <Link to={"/signIn"} className="btn btn-b">
                 Contact us
-              </Link>
+              </Link> */}
             </div>
             <div className="ws-r">
               <img src="./imgs/wh-sec-3.jpg" alt="" />

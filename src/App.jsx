@@ -110,6 +110,7 @@ const App = () => {
             </>
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/termsandconditions" element={<TC />} />
+            <Route path="/ProhabitedItems" element={<Service />} />
             {/* <Route path="/termsandconditions" element={<ProhabitedItems/>} /> */}
             <Route
               path="/signUp"
