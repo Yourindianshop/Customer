@@ -116,7 +116,7 @@ const SingleProduct = () => {
       const amount = noOfPhotos*pland?.photoPrice;
       console.log(user)
       if(await walletTransaction(amount,"More Photo Request",user,setUser,nav)){
-        
+        // const dt = await fetchreq("get",`makeReqPhoto/${pid}/${photos}`,{});
       }else{
         alert("request Canceled...");
       }

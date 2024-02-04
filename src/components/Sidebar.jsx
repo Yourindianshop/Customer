@@ -61,7 +61,7 @@ const Sidebar = () => {
                   <span>
                     <LockClockOutlinedIcon />
                   </span>
-                  <b className="sidebar_nav_txt">locker</b>
+                  <b className="sidebar_nav_txt">Warehouse</b>
                 </Link>
                 <Link to="/dashboard/shop">
                   <span>

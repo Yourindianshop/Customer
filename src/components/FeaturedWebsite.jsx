@@ -18,15 +18,15 @@ const FeaturedWebsite = () => {
           <img className="card-img" src="/insta.webp" alt="insta" />
           <div>
             <a
-              href="https://instagram.com"
+              href="https://www.beyoung.in"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>Instagram</h1>
+              <h1>beyoung</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
         {/* Add two more similar cards here */}
@@ -34,30 +34,30 @@ const FeaturedWebsite = () => {
           <img className="card-img" src="/git.jpg" alt="example2" />
           <div>
             <a
-              href="https://github.com"
+              href="https://www.thegallerystore.in"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>GitHub</h1>
+              <h1>thegallerystore</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
         <div className="card">
           <img className="card-img" src="/ik.jpg" alt="example3" />
           <div>
             <a
-              href="https://example3.com"
+              href="https://www.kolkataweb.com"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>Example 3</h1>
+              <h1>kolkataweb</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
@@ -66,15 +66,15 @@ const FeaturedWebsite = () => {
           <img className="card-img" src="/insta.webp" alt="insta" />
           <div>
             <a
-              href="https://instagram.com"
+              href="https://youngtrendz.in/?gad_source=1&gclid=Cj0KCQiA5fetBhC9ARIsAP1UMgGU-8pHuP-ZJPzYLr5jgJaaq5OJqr1L5fXWwQudKjkitvT6gSflJUAaAuHjEALw_wcB"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>Instagram</h1>
+              <h1>youngtrendz</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
         {/* Add two more similar cards here */}
@@ -82,30 +82,30 @@ const FeaturedWebsite = () => {
           <img className="card-img" src="/git.jpg" alt="example2" />
           <div>
             <a
-              href="https://github.com"
+              href="https://lbb.in/kolkata/best-bakeries-kolkata/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>GitHub</h1>
+              <h1>lbb</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
         <div className="card">
           <img className="card-img" src="/ik.jpg" alt="example3" />
           <div>
             <a
-              href="https://example3.com"
+              href="https://www.baazarkolkata.com/ladies-wear.php"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <h1>Example 3</h1>
+              <h1>baazarkolkata</h1>
             </a>
-            <span>
+            {/* <span>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, hic.
-            </span>
+            </span> */}
           </div>
         </div>
       </div>

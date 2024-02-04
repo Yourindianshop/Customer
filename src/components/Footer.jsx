@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { FOOTER_CONTACT_INFO, FOOTER_LINKS, SOCIALS } from "../constants";
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap gap-8 md:gap-16 lg:gap-8 xl:gap-16">
-          {FOOTER_LINKS.map((columns) => (
+          {/* {FOOTER_LINKS.map((columns) => (
             <FooterColumn title={columns.title} key={columns.title}>
               <ul className="text-[#CBD5E0]">
                 {columns.links.map((link) => (
@@ -28,8 +29,24 @@ const Footer = () => {
                 ))}
               </ul>
             </FooterColumn>
-          ))}
-
+          ))} */}
+          <ul>
+            <li>
+              <Link to="/about">About us</Link><br />
+              {/* <Link to="">Our Teams</Link><br /> */}
+              {/* <Link to="">Features</Link><br /> */}
+              <Link to="/termsandconditions">Terms and Conditions</Link><br />
+              <Link to="/privacypolicy">Privacy Policy</Link><br />
+              <Link to="/">Contact Us</Link><br />
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <Link to="/ProhabitedItems">Prohibited Items </Link><br />
+              {/* <Link to="">Feedback</Link><br /> */}
+              <Link to="">FAQ</Link><br />
+            </li>
+          </ul>
           <FooterColumn title={FOOTER_CONTACT_INFO.title}>
             <ul className="text-[#CBD5E0]">
               {FOOTER_CONTACT_INFO.links.map((link) => (
@@ -81,7 +98,7 @@ const FooterColumn = ({ title, children }) => {
   return (
     <div className="flex flex-col gap-5">
       <h4 className="font-bold text-lg text-primary-light ">{title}</h4>
-      {children}
+      {children}  
     </div>
   );
 };

@@ -212,7 +212,7 @@ function Wallete() {
         // console.log(response);
         // alert(response.razorpay_payment_id);
         // alert(response.razorpay_order_id);
-        // alert(response.razorpay_signature)
+        // alert(response.razorpay_signature);
 
         const validateRes = await fetch(
           `${backend}/order/validate/${response.razorpay_order_id}/${response.razorpay_payment_id}/${response.razorpay_signature}`,

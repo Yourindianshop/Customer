@@ -15,7 +15,7 @@ import AssistedPurchase from "./pages/dashboard/AssistedPurchase";
 import ProductAcceptanceForm from "./pages/dashboard/ProductAcceptanceForm";
 import Profile from "./pages/dashboard/Profile";
 import ProhibitedItems from "./pages/dashboard/ProhibitedItems";
-import Plans from "./components/Plans";
+import Plans from "./components/Plans"; // main plans
 import PlanPage from "./pages/Plan/PlanPage";
 import SelectWareHouse from "./pages/dashboard/SelectWareHouse";
 import SingleProduct from "./components/SingleProduct";
@@ -57,6 +57,9 @@ import Calcu from "./components/Calcu";
 import Calci from "./pages/home/Calci";
 import FeatureWebsite from "./pages/home/FeatureWebsite";
 import Feature from "./components/Feature";
+import PrivacyPolicy from "./pages/home/PrivacyPolicy";
+import TC from "./pages/home/TC";
+import ProhabitedItems from "./pages/home/ProhabitedItems";
 export const MyContext = createContext();
 
 const App = () => {
@@ -105,6 +108,9 @@ const App = () => {
             <>
               <Route path="/" element={<Homie />} />
             </>
+            <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
+            <Route path="/termsandconditions" element={<TC/>} />
+            <Route path="/termsandconditions" element={<ProhabitedItems/>} />
             <Route
               path="/signUp"
               element={
@@ -491,7 +497,8 @@ const App = () => {
                 </div>
               }
             />
-            <Route path="/disp-plan" element={<Pl />} />
+            {/* <Route path="/disp-plan" element={<Pl />} /> */}
+            <Route path="/disp-plan" element={<PlanPage />} />
             <Route path="/planss" element={<Plan />} />
             <Route
               path="/coming-soon"

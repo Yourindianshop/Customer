@@ -38,12 +38,12 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="nav-btn sm:flex-col">
-            <a href="/signup">
-              <div className="nav-btn-1">Login</div>
-            </a>
-            <a href="/signIn">
-              <div className="nav-btn-2">Sign In</div>
-            </a>
+            <Link to="/signup">
+              <div className="nav-btn-1">Create Account</div>
+            </Link>
+            <Link to="/signIn">
+              <div className="nav-btn-2">Login</div>
+            </Link>
           </div>
         </div>
       </div>
