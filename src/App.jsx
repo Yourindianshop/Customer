@@ -60,6 +60,8 @@ import Feature from "./components/Feature";
 import PrivacyPolicy from "./pages/home/PrivacyPolicy";
 import TC from "./pages/home/TC";
 import ProhabitedItems from "./pages/home/ProhabitedItems";
+import Navbar from "./pages/home/Navbar";
+import Footer from "./components/Footer";
 export const MyContext = createContext();
 
 const App = () => {
@@ -110,7 +112,16 @@ const App = () => {
             </>
             <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             <Route path="/termsandconditions" element={<TC />} />
-            <Route path="/ProhabitedItems" element={<Service />} />
+            <Route
+              path="/ProhabitedItems"
+              element={
+                <>
+                  <Navbar />
+                  <ProhibitedItems />
+                  <Footer />
+                </>
+              }
+            />
             {/* <Route path="/termsandconditions" element={<ProhabitedItems/>} /> */}
             <Route
               path="/signUp"

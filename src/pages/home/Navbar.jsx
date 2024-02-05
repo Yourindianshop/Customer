@@ -7,14 +7,14 @@ import { MyContext } from "../../App";
 
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
-  const {  isLogin } = useContext(MyContext);
+  const { isLogin } = useContext(MyContext);
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
   return (
-    <div className="navbar sm:border-b-2 sm:border-gray">
+    <div className="navbar sm:border-b-2 sm:border-gray ">
       <div className="container sm:p-4">
         <Link to="/">
           <h2 className="headdddd cursor-pointer ">YOUR INDIAN SHOP</h2>
@@ -39,20 +39,22 @@ const Navbar = () => {
               <h5 className="nav-linkss">{link.label}</h5>
             </Link>
           ))}
-          {!isLogin ? <div className="nav-btn sm:flex-col">
-            <Link to="/signup">
-              <div className="nav-btn-1">Create Account</div>
-            </Link>
-            <Link to="/signIn">
-              <div className="nav-btn-2">Login</div>
-            </Link>
-          </div> :
-          <div className="nav-btn sm:flex-col">
-            <Link to="/dashboard">
-              <div className="nav-btn-1">Dashboard</div>
-            </Link>
-            
-          </div>}
+          {!isLogin ? (
+            <div className="nav-btn sm:flex-col sm:items-start">
+              <Link to="/signup">
+                <div className="nav-btn-1">Create Account</div>
+              </Link>
+              <Link to="/signIn">
+                <div className="nav-btn-2">Login</div>
+              </Link>
+            </div>
+          ) : (
+            <div className="nav-btn sm:flex-col px-5">
+              <Link to="/dashboard">
+                <div className="nav-btn-1 px-[50px]">Dashboard</div>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </div>

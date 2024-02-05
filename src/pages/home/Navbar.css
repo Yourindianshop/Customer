@@ -1,6 +1,11 @@
 .navbar {
   color: black;
   padding: 15px 0;
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it's above other elements */
+  background-color: #ffffff;
 }
 
 .container {
@@ -121,6 +126,14 @@
 
 /* Media query for small screens */
 @media (max-width: 767px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff; /* Adjust as needed */
+    z-index: 1000;
+  }
   .container {
     padding: 10px;
     justify-content: space-between;
