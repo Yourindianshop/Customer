@@ -50,7 +50,7 @@ const Footer = () => {
               <br />
               <Link to="/privacypolicy">Privacy Policy</Link>
               <br />
-              <Link to="/">Contact Us</Link>
+              {/* <Link to="/">Contact Us</Link> */}
               <br />
             </li>
           </ul>
@@ -102,8 +102,14 @@ const Footer = () => {
         Copyright © 2023 Privacy Policy Terms & Conditions
       </p>
 
-      <p className="text-center text-[#CBD5E0] mt-8">
-        2023 | Created and Managed by Metawebtx
+      <p className="text-center text--[#63B3ED] mt-8">
+        <a
+          href="https://metawebtx.com/"
+          className="flex justify-center items-center"
+        >
+          2023 | Created and Managed by Metawebtx{" "}
+          <img src="meta.png" alt="meta" className="h-[2rem] w-[2rem]" />
+        </a>
       </p>
 
       {/* Scroll to top button */}

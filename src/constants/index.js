@@ -7,7 +7,7 @@ export const FOOTER_LINKS = [
       "Features",
       "Jobs",
       "Privacy Policy",
-      "Contact Us",
+      // "Contact Us",
     ],
   },
   {
