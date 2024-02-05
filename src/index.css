@@ -322,3 +322,24 @@ body::-webkit-scrollbar-track {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Add this CSS to your existing CSS file or create a new one for footer styles */
+
+.scroll-to-top-btn {
+  position: fixed;
+  padding: 5px;
+  bottom: 10px;
+  right: 40px;
+  /* background-color: #f67366; Button background color */
+  /* color: white; Button text color */
+  /* border: none; */
+  /* border-radius: 50%; Make the button circular */
+
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.scroll-to-top-btn:hover {
+  /* background-color: #4299e1; Change the background color on hover */
+}
