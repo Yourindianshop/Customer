@@ -62,6 +62,7 @@ import TC from "./pages/home/TC";
 import ProhabitedItems from "./pages/home/ProhabitedItems";
 import Navbar from "./pages/home/Navbar";
 import Footer from "./components/Footer";
+import FAQ from "./components/FAQ";
 export const MyContext = createContext();
 
 const App = () => {
@@ -150,6 +151,7 @@ const App = () => {
               }
             />
             <Route path="/plan" element={<Pl />} />
+            <Route path="/faq" element={<FAQ />} />
             <Route path="/select-warehouse" element={<SelectWareHouse />} />
             <Route
               path="/razorpay"

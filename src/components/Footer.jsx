@@ -58,7 +58,7 @@ const Footer = () => {
             <li>
               <Link to="/ProhabitedItems">Prohibited Items </Link>
               <br />
-              <Link to="">FAQ</Link>
+              <Link to="/faq">FAQ</Link>
               <br />
             </li>
           </ul>

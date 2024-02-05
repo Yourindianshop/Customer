@@ -63,7 +63,7 @@ const FeaturedWebsite = () => {
       </div>
       <div className="card-container">
         <div className="card">
-          <img className="card-img" src="/insta.webp" alt="insta" />
+          <img className="card-img" src="/1.jpg" alt="insta" />
           <div>
             <a
               href="https://youngtrendz.in/?gad_source=1&gclid=Cj0KCQiA5fetBhC9ARIsAP1UMgGU-8pHuP-ZJPzYLr5jgJaaq5OJqr1L5fXWwQudKjkitvT6gSflJUAaAuHjEALw_wcB"
@@ -79,7 +79,7 @@ const FeaturedWebsite = () => {
         </div>
         {/* Add two more similar cards here */}
         <div className="card">
-          <img className="card-img" src="/git.jpg" alt="example2" />
+          <img className="card-img" src="/2.jpg" alt="example2" />
           <div>
             <a
               href="https://lbb.in/kolkata/best-bakeries-kolkata/"
@@ -94,7 +94,7 @@ const FeaturedWebsite = () => {
           </div>
         </div>
         <div className="card">
-          <img className="card-img" src="/ik.jpg" alt="example3" />
+          <img className="card-img" src="/3.jpg" alt="example3" />
           <div>
             <a
               href="https://www.baazarkolkata.com/ladies-wear.php"
