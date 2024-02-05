@@ -17,18 +17,15 @@ const Homie = () => {
         <div className="main">
           <div className="heading">
             <h1 className="main-heading">
-              Ship It Ease <span className="text-org">From India</span> To Your
-              Doorstep
+              Start Shopping <span className="text-org">From India& </span>Get
+              Products At Your Doorstep
             </h1>
             <h3>
               Your Indian Shop Delivers An Unparalled Shipping & Shopping
               Experience To It’s Customers With Amazing Offers
             </h3>
-            <div className="heading-bottom">
-              <a href="/signup">
-                <div className="nav-btn-2">Join Now</div>
-              </a>
-              {/* <div className="vdo">
+
+            {/* <div className="vdo">
                 <div className="play-vdo">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +44,6 @@ const Homie = () => {
                 </div>
                 Play Demo
               </div> */}
-            </div>
           </div>
           <div>
             <img className="logo" src="/main.svg" alt="logo" />
@@ -86,9 +82,9 @@ const Homie = () => {
               </div>
               <h1 className="service-item-heading">Plans We Offer</h1>
               <span className="service-item-span">
-                WE OFFER A RANGE OF PLANS TO SUIT YOUR NEEDS, FROM BASIC TO
-                PREMIUM, ENSURING AFFORDABILITY, FLEXIBILITY AND QUALITY
-                SERVICE.
+                We provide a variety of plans tailored to your requirements,
+                spanning from basic to premium, guaranteeing affordability,
+                flexibility, and high-quality service
               </span>
             </div>
 
@@ -99,8 +95,9 @@ const Homie = () => {
               </div>
               <h1 className="service-item-heading">International Courier</h1>
               <span className="service-item-span">
-                WE OFFER A HASSLE-FREE, RELIABLE AND LOW-COST COURIER SERVICE
-                FROM INDIA INTERNATIONALLY.
+                We provide an efficient, dependable, and cost-effective
+                international courier service from India, ensuring a hassle-free
+                experience
               </span>
             </div>
 
@@ -111,8 +108,8 @@ const Homie = () => {
               </div>
               <h1 className="service-item-heading">Indian Shop Cart</h1>
               <span className="service-item-span">
-                SHOP FROM THE BEST OF INDIA’S BRANDS, AND GET THEM DELIVERED
-                FROM INDIA INTERNATIONALLY.
+                Explore top Indian brands and enjoy international delivery
+                services directly from India.
               </span>
             </div>
 
@@ -123,8 +120,8 @@ const Homie = () => {
               </div>
               <h1 className="service-item-heading">Assisted Purchase</h1>
               <span className="service-item-span">
-                WE OFFER A HASSLE-FREE, RELIABLE AND LOW-COST COURIER SERVICE
-                FROM INDIA INTERNATIONALLY.
+                We provide assistance for your personalised needs while shopping
+                through Your Indian Shop
               </span>
             </div>
           </div>

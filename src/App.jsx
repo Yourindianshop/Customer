@@ -63,6 +63,7 @@ import ProhabitedItems from "./pages/home/ProhabitedItems";
 import Navbar from "./pages/home/Navbar";
 import Footer from "./components/Footer";
 import FAQ from "./components/FAQ";
+import Prohib from "./components/Prohib";
 export const MyContext = createContext();
 
 const App = () => {
@@ -117,9 +118,7 @@ const App = () => {
               path="/ProhabitedItems"
               element={
                 <>
-                  <Navbar />
-                  <ProhibitedItems />
-                  <Footer />
+                  <Prohib />
                 </>
               }
             />

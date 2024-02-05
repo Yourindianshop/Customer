@@ -80,6 +80,7 @@ body::-webkit-scrollbar {
   justify-content: center; /* Center the content */
   gap: 30px;
   text-align: center; /* Center the text */
+  cursor: pointer;
 }
 
 .logo {

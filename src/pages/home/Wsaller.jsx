@@ -191,9 +191,9 @@ const Wsaller = () => {
         <div className="ws-l">
           <div className="ws-title">Order in bulk now !!!</div>
 
-          <Link to={"/signIn"} className="btn btn-b">
+          {/* <Link to={"/signIn"} className="btn btn-b">
             Contact us
-          </Link>
+          </Link> */}
         </div>
         <div className="ws-r">
           <img src="./imgs/wh-sec-3.jpg" alt="" />
