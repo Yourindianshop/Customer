@@ -19,7 +19,7 @@ export const FOOTER_LINKS = [
 export const FOOTER_CONTACT_INFO = {
   title: "Contact Us",
   links: [
-    { label: "Phone NO", value: "9331089123" },
+    { label: "Phone No", value: "9331089123" },
     { label: "Email ", value: "admin@yourindianshop.com" },
   ],
 };
