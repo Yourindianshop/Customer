@@ -32,13 +32,13 @@ const Locker = () => {
             <span id="org">WareHouse</span>
           </div>
           <div>
-            <Link
+            {/* <Link
               to="/disp-plan"
               className="btn btn-o-1"
               style={{ float: "right" }}
             >
               Add WareHouse
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
