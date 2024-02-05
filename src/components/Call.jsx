@@ -9,7 +9,7 @@ const Call = () => {
   return (
     <Wrapper>
       <div className="top-wa">
-        <a href="https://wa.me/9903581809" target="_blank" rel="noreferrer">
+        <a href="https://wa.me/9331089123" target="_blank" rel="noreferrer">
           <BsWhatsapp href="tel:+919205859621" />{" "}
         </a>
       </div>

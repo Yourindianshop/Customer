@@ -101,7 +101,7 @@ const WhtLbl = () => {
                   Think of this as your elevator pitch to get the reader's
                   attention.
                 </p>
-                <Link to="https://wa.me/9903581809" className="head-btn">
+                <Link to="https://wa.me/9331089123" className="head-btn">
                   Contact Us
                 </Link>
               </div>
