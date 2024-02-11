@@ -43,7 +43,7 @@ const Warehouse = ({warehouse}) => {
         </p>
       </div>
       <button className="btn btn-b" onClick={handleSelect}>
-        Manage
+        Click Here For Product Acceptance Request(PAR) or Manage
       </button>
     </div>
   );

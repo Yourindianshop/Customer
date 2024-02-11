@@ -8,7 +8,11 @@ import FeaturedWebsite from "../../components/FeaturedWebsite";
 import VariousSites from "../../components/VariousSites";
 import EngineeringOutlinedIcon from "@mui/icons-material/EngineeringOutlined";
 import ComputerIcon from "@mui/icons-material/Computer";
+<<<<<<< HEAD
 import Slider from "../../components/Slider";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> 591ca983e7eed860bcfebe38643863c2e1da7b62
 
 const Homie = () => {
   const slides = [
@@ -60,7 +64,7 @@ const Homie = () => {
             </div> */}
           </div>
           <div className="services-container">
-            <div className="service-item">
+            <Link to={"/disp-plan"} className="service-item">
               <div className="service-item-circle">
                 {/* SVG for Plans We Offer */}
                 <img src="/planss.png" alt="" />
@@ -71,7 +75,7 @@ const Homie = () => {
                 spanning from basic to premium, guaranteeing affordability,
                 flexibility, and high-quality service
               </span>
-            </div>
+            </Link>
 
             <div className="service-item">
               <div className="service-item-circle">

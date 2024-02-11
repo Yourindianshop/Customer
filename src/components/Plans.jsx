@@ -144,11 +144,14 @@ const Plans = ({ plan, state }) => {
               <span style={{ fontWeight: "700" }}>Assisted Purchase</span>
               <span className="feature">Actual Charges + Other Charges</span>
             </div>
-            {state === 0 && (
+            {/* {state === 0 && (
               <Link to="/signUp" className="btn btn-b">
                 Buy Now
               </Link>
-            )}
+            )} */}
+            {!isLogin && <Link to="/signUp" className="btn btn-b">
+                Buy Now
+              </Link> }
           </div>
 
           {state && (
