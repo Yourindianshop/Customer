@@ -23,6 +23,21 @@ export const FOOTER_CONTACT_INFO = {
     { label: "Email ", value: "admin@yourindianshop.com" },
   ],
 };
+export const FOOTER_ABOUT_INFO = {
+  title: "About Us",
+  links: [
+    { label: "About", value: "/about" },
+    { label: "Terms and Condition ", value: "/termsandconditions" },
+    { label: "Privacy Policy ", value: "/privacypolicy" },
+  ],
+};
+export const FOOTER_FAQ_INFO = {
+  title: "FAQ",
+  links: [
+    { label: "Prohibited Items", value: "/ProhabitedItems" },
+    { label: "FAQ ", value: "/faq" },
+  ],
+};
 
 export const SOCIALS = {
   title: "Social",

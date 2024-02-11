@@ -8,7 +8,7 @@ const Calcu = () => {
     <div>
       <Navbar />
       <Calci />
-      <img src="/maze.png" alt="" />
+      <img src="/maze.png" alt="" className="mt:-[-3rem]" />
       <Footer />
     </div>
   );

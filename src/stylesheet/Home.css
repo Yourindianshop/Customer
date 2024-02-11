@@ -185,11 +185,11 @@ html {
 }
 /*===============hero===================*/
 section {
-  width: 87vw !important;
+  /* width: 87vw !important; */
   height: auto;
 
-  margin: 5vh 6vw !important;
-  box-shadow: 0 0 50px 1px #00000034;
+  /* margin: 5vh 6vw !important; */
+  /* box-shadow: 0 0 50px 1px #00000034; */
   position: relative;
 }
 

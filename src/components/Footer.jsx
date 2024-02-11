@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FOOTER_CONTACT_INFO, SOCIALS } from "../constants";
+import {
+  FOOTER_ABOUT_INFO,
+  FOOTER_CONTACT_INFO,
+  FOOTER_FAQ_INFO,
+  SOCIALS,
+} from "../constants";
 
 const Footer = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -42,26 +47,36 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-wrap gap-8 md:gap-16 lg:gap-8 xl:gap-16">
-          <ul>
-            <li>
-              <Link to="/about">About us</Link>
-              <br />
-              <Link to="/termsandconditions">Terms and Conditions</Link>
-              <br />
-              <Link to="/privacypolicy">Privacy Policy</Link>
-              <br />
-              {/* <Link to="/">Contact Us</Link> */}
-              <br />
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <Link to="/ProhabitedItems">Prohibited Items </Link>
-              <br />
-              <Link to="/faq">FAQ</Link>
-              <br />
-            </li>
-          </ul>
+          <FooterColumn title={FOOTER_ABOUT_INFO.title}>
+            <ul className="text-[#CBD5E0]">
+              {FOOTER_ABOUT_INFO.links.map((link) => (
+                <li key={link.label} className="flex items-center gap-4">
+                  <a href={link.value}>
+                    <p className="whitespace-nowrap text-primary-light">
+                      {link.label}
+                    </p>
+                    {/* <p className="text-[#63B3ED]">{link.value}</p> */}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </FooterColumn>
+          <FooterColumn title={FOOTER_FAQ_INFO.title}>
+            <ul className="text-[#FFF]">
+              {FOOTER_FAQ_INFO.links.map((link) => (
+                <li key={link.label} className="flex items-center gap-4">
+                  <a href={link.value}>
+                    <p className="whitespace-nowrap text-primary-light">
+                      {link.label}
+                    </p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </FooterColumn>
+          {/* <FooterColumn title>
+
+          </FooterColumn> */}
           <FooterColumn title={FOOTER_CONTACT_INFO.title}>
             <ul className="text-[#CBD5E0]">
               {FOOTER_CONTACT_INFO.links.map((link) => (
@@ -73,7 +88,7 @@ const Footer = () => {
             </ul>
           </FooterColumn>
 
-          <FooterColumn title={SOCIALS.title}>
+          {/* <FooterColumn title={SOCIALS.title}>
             <ul className="flex gap-4 text-white">
               {SOCIALS.links.map((link) => (
                 <li key={link}>
@@ -92,7 +107,7 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
-          </FooterColumn>
+          </FooterColumn> */}
         </div>
       </div>
 

@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 const VariousSites = () => {
   return (
     <div className="various-sites-container">
-      <section id="Site" className="bkl">
-        <div id="indianshopcart" style={{ padding: "10vh 0px" }}>
+      <section id="" className="">
+        <div id="indianshopcart">
           <div class="client-slider">
             <div class="client-slide-track">
               <div class="client-slide">

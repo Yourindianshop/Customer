@@ -5,13 +5,11 @@ import "./Feature.css";
 const FeaturedWebsite = () => {
   return (
     <div className="features">
-      <div className="featuress">
-        <div className="works-heading">
-          <h1 className="serv-head">
-            Our <span className="serv-head-2">Featured Websites</span>
-          </h1>
-          <div className="linee"></div>
-        </div>
+      <div className="testimoinals-head">
+        <h1>
+          Our <span>Featured Website</span>
+        </h1>
+        <h4>Ship Your products from a variety of Indian sites</h4>
       </div>
       <div className="card-container">
         <div className="card">
@@ -31,7 +29,11 @@ const FeaturedWebsite = () => {
         </div>
         {/* Add two more similar cards here */}
         <div className="card">
-          <img className="card-img" src="/gallery.jpg" alt="example2" />
+          <img
+            className=" h-[9.5rem] w-full"
+            src="/gallery.jpg"
+            alt="example2"
+          />
           <div>
             <a
               href="https://www.thegallerystore.in"
@@ -46,7 +48,7 @@ const FeaturedWebsite = () => {
           </div>
         </div>
         <div className="card">
-          <img className="card-img" src="/kw.png" alt="example3" />
+          <img className="h-[9.5rem]" src="/kw.png" alt="example3" />
           <div>
             <a
               href="https://www.kolkataweb.com"
@@ -63,7 +65,7 @@ const FeaturedWebsite = () => {
       </div>
       <div className="card-container">
         <div className="card">
-          <img className="card-img" src="/1.jpg" alt="insta" />
+          <img className="h-[9.5rem] w-full" src="/3.jpg" alt="insta" />
           <div>
             <a
               href="https://youngtrendz.in/?gad_source=1&gclid=Cj0KCQiA5fetBhC9ARIsAP1UMgGU-8pHuP-ZJPzYLr5jgJaaq5OJqr1L5fXWwQudKjkitvT6gSflJUAaAuHjEALw_wcB"
@@ -79,7 +81,7 @@ const FeaturedWebsite = () => {
         </div>
         {/* Add two more similar cards here */}
         <div className="card">
-          <img className="card-img" src="/2.jpg" alt="example2" />
+          <img className="h-[9.5rem] w-full" src="/2.jpg" alt="example2" />
           <div>
             <a
               href="https://lbb.in/kolkata/best-bakeries-kolkata/"
@@ -94,7 +96,7 @@ const FeaturedWebsite = () => {
           </div>
         </div>
         <div className="card">
-          <img className="card-img" src="/3.jpg" alt="example3" />
+          <img className=" h-[9.5rem] w-full" src="/1.jpg" alt="example3" />
           <div>
             <a
               href="https://www.baazarkolkata.com/ladies-wear.php"

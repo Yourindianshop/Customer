@@ -171,7 +171,7 @@ const Calci = () => {
 
   return (
     <>
-      <div className="testimoinals-head">
+      <div className="testimoinals-head sm:mt-12">
         <h1>
           Shipping <span>Calculator</span>
         </h1>
